@@ -1,0 +1,21 @@
+---
+- command: luarocks list
+  register: installed_luarocks
+
+- name: Install LuaRocks
+  shell: luarocks install "{{ item }}"
+  when: installed_luarocks.stdout.find(item) == -1
+  with_items:
+    - underscore
+    - mjolnir.alert
+    - mjolnir.application
+    - mjolnir.fnutils
+    - mjolnir.geometry
+    - mjolnir.hotkey
+    - mjolnir.keycodes
+    - mjolnir.screen
+    - mjolnir.bg.grid
+    - mjolnir.cmsj.appfinder
+    - mjolnir._asm.hydra
+    - mjolnir._asm.hydra.applescript
+    - mjolnir._asm.watcher.screen
