@@ -1,0 +1,11 @@
+---
+- name: link dotfiles
+  file: src={{ playbook_dir }}/home/{{ item }} dest=~/{{ item | basename }} state=link force=yes
+  with_lines: 
+    - ls -A ../../../home
+
+- name: install NeoBundle
+  git: repo=https://github.com/Shougo/neobundle.vim dest=~/.vim/bundle/neobundle.vim
+
+- name: install tpm
+  git: repo=https://github.com/tmux-plugins/tpm dest=~/.tmux/plugins/tpm
