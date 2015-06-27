@@ -1,0 +1,18 @@
+#!/bin/bash
+
+count=0
+if git commit -m "WIP [STAGED]" > /dev/null
+  then
+    let count+=1
+fi
+git add --all .
+if git commit -am "WIP [UNSTAGED]" > /dev/null
+  then
+    let count+=1
+fi
+if [ $count -eq 0 ]
+  then
+    echo "nothing committed"
+else
+    git log -n$count --pretty=format:'%Cgreen%h %Cred%an%Creset: %s'
+fi

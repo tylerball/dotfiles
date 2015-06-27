@@ -1,0 +1,60 @@
+[user]
+    name = Tyler Ball
+    email = tyler@tylerball.net
+[color]
+    ui = auto
+[core]
+    editor = "vim"
+    excludesfile = ~/.gitignore
+    autocrlf = false
+[svn]
+    rmdir = true
+[push]
+    # default = upstream
+    default = current
+[pretty]
+    pretty = %C(blue)%h%Creset %C(238)-%Creset%C(yellow)%d%Creset %s %C(240)(%an, %cr)%Creset
+    date = %C(blue)%h%Creset %C(238)-%Creset%C(yellow)%d%Creset %s %C(240)(%an, %ai)%Creset
+[difftool]
+    prompt = false
+[alias]
+    st = status -s
+    co = checkout
+    ci = commit
+    remotes = remote -v
+
+    pull = pull --rebase
+
+    l = log --pretty=pretty
+    graph = log --graph --pretty=oneline
+    date = log --pretty="date"
+
+    # ignore css and minified js when working with less
+    ldiff = !git diff -- $(git diff --name-only | grep -Ev \"*(min\\.js|\\.css)\")
+
+    # see the commits you're going to pull into your repo. Assumes remote is called origin
+    incoming = !git fetch && git log ..origin/$(git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3)
+
+    # see when remote branches were last updated
+    when = "!for k in `git branch -r|cut -d' ' -f 3`;do echo `git show --pretty=format:'%Cgreen%ci %Cblue%cr%Creset' $k|head -n 1` $k;done|sort -rn"
+    prune = remote prune origin
+[difftool "fugitive"]
+    cmd = vim -c "Gdiff"
+    keepBackup = false
+[merge]
+    tool = splice
+[mergetool "splice"]
+    cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+    trustExitCode = true
+    keepBackup = false
+[branch]
+	autosetuprebase = always
+[pack]
+    SizeLimit = 100m
+    threads = 1
+    windowMemory = 100m
+[github]
+    user = tylerball
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f

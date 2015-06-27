@@ -1,0 +1,40 @@
+snippet !
+	<!-- ${1} -->
+snippet nbs
+	&nbsp;
+snippet attr
+	${1:attribute}="${2:property}"
+snippet .
+	class="${1}"${2}
+snippet #
+	id="${1}"${2}
+snippet alt
+	alt="${1}"${2}
+snippet data
+	data-${1}="${2:$1}"${3}
+snippet href
+	href="${1:#}"${2}
+snippet name
+	name="${1}"${2}
+snippet src
+	src="${1}"${2}
+snippet title=
+	title="${1}"${2}
+snippet a
+	<a href="${1:#}">${2:$1}</a>
+snippet form
+	<form action="${1}" method="${2:get}">
+		${3}
+	</form>
+snippet img
+	<img src="${1}" alt="${2}" />${3}
+snippet input
+	<input type="${1:text/submit/hidden/button/image}" name="${2}" id="${3:$2}" value="${4}" />${5}
+snippet label
+	<label for="${2:$1}">${1}</label>
+snippet select
+	<select name="${1}" id="${2:$1}">
+		${3}
+	</select>
+snippet textarea
+	<textarea name="${1}" id=${2:$1} rows="${3:8}" cols="${4:40}">${5}</textarea>${6}

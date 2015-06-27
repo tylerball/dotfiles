@@ -1,0 +1,17 @@
+set ignorecase
+set windownumbers
+set windows lists,library,playlist
+set window library
+set playonadd
+set incsearch
+
+set albumartist
+set songformat {%a - %b - %t}|{%f}$E$R $H[$H%l$H]$H
+
+unmap <BS>
+
+map <Space> p
+map <A-n> :tabprev<C-M>
+map <A-m> :tabnext<C-M>
+
+update

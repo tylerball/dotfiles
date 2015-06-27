@@ -1,0 +1,18 @@
+# #!/usr/bin/env ruby
+snippet #!
+	#!/usr/bin/env ruby
+	# encoding: utf-8
+snippet nam
+	namespace :${1:`Filename()`} do
+		${2}
+	end
+snippet tas
+	desc "${1:Task description}"
+	task :${2:task_name => [:dependent, :tasks]} do
+		${3}
+	end
+# block
+snippet b
+	{ |${1:var}| ${2} }
+snippet pry
+	require 'pry'; binding.pry

@@ -1,0 +1,35 @@
+# Generic tags
+
+snippet %
+	{% ${1} %}${2}
+snippet %%
+	{% ${1:tag_name} %}
+	${2}
+	{% end$1 %}
+snippet {
+	{{ ${1} }${2}
+snippet block
+	{% block ${1} %}
+		${2}
+	{% endblock %}
+snippet #
+	{# ${1:comment} #}
+snippet for
+	{% for ${1} in ${2} %}
+		${3}
+	{% endfor %}
+snippet if
+	{% if ${1} %}
+		${2}
+	{% endif %}
+snippet else
+	{% else %}
+		${1}
+snippet include
+	{% include "${1}" %}
+snippet load
+	{% load ${1} %}
+snippet url
+	{% url ${1} as ${2} %}
+snippet with
+	{% with ${1} as ${2} %}

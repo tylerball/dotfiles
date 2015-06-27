@@ -1,0 +1,57 @@
+plugins: [
+  discogs,
+  web,
+  embedart,
+  convert,
+  fetchart,
+  play,
+  replaygain,
+  missing,
+  mpdstats,
+  smartplaylist,
+  timedelta,
+  itunescopy,
+  lastgenre,
+  duplicates,
+  mbsync,
+  git_annex,
+]
+
+import:
+  move: yes
+  incremental: yes
+
+library: ~/tunes/beets.db
+directory: ~/tunes/
+pluginpath:
+  - ~/.config/beets/plugins
+
+embedart:
+  auto: yes
+
+convert:
+  dest: ~/Downloads
+
+replaygain:
+  overwrite: yes
+
+smartplaylist:
+  relative_to: ~/tunes
+  playlist_dir: ~/.mpd/playlists
+  playlists:
+    - name: "added_today.m3u"
+      album_query: added:@{1d}.. added-
+    - name: "added_this_week.m3u"
+      album_query: added:@{1w}.. added-
+    - name: "added_this_month.m3u"
+      album_query: added:@{1m}.. added-
+
+itunescopy:
+  auto: yes
+  dest: ~/Music/iTunes/iTunes Media/Automatically Add to iTunes.localized
+
+lastgenre:
+  count: 3
+
+duplicates:
+  keys: [track, title, mb_albumid]

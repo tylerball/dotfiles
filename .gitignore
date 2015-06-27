@@ -1,0 +1,14 @@
+home/.vim/bundle/
+home/.vim/sessions/
+/home/.config/*
+!/home/.config/beets
+/home/.config/beets/*
+!/home/.config/beets/config.yaml
+!/home/.config/beets/plugins/*
+!home/.config/ipython/**/*
+!home/.config/flake8
+home/.bin/vim
+home/.mpd/*
+!home/.mpd/mpd.conf
+home/.tmux/plugins
+home/.tmux/resurrect
