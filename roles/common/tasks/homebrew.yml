@@ -1,0 +1,15 @@
+---
+- name: Tap Brews
+  homebrew_tap: tap={{ item }} state=present
+  with_items: homebrew_taps
+
+- name: Install brew apps
+  homebrew: name={{ item }} state=present
+  with_items: homebrew_apps
+
+- name: Install macvim
+  homebrew: name=macvim install_options=override-system-vim,HEAD,with-lua
+
+- name: Install brew cask apps
+  homebrew_cask: name={{ item }} state=present
+  with_items: homebrew_cask_apps

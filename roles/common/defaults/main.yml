@@ -1,0 +1,35 @@
+homebrew_taps:
+  - tylerball/macvim
+  - homebrew/versions
+  - homebrew/dupes
+homebrew_apps:
+  - git
+  - lua
+  - node
+  - python
+  - rbenv
+  - ruby-build
+  - the_silver_searcher
+  - tmux
+  - tree
+  - zsh
+  - fasd
+  - gst-python010
+  - mp3val
+  - mp3gain
+  - mpd
+  - mpc
+  - ncmpcpp
+homebrew_cask_apps:
+  - haskell-platform
+  - alfred
+  - google-chrome
+  - karabiner
+  - mjolnir
+  - path-finder
+  - iterm2
+  - slack
+  - mailplane
+  - dropbox
+  - flux
+  - xquartz
