@@ -4,6 +4,9 @@
   with_lines: 
     - ls -A ../../../home
 
+- name: install prezto
+  git: repo=https://github.com/sorin-ionescu/prezto.git dest=~/.zprezto recursive=yes
+
 - name: install NeoBundle
   git: repo=https://github.com/Shougo/neobundle.vim dest=~/.vim/bundle/neobundle.vim
 

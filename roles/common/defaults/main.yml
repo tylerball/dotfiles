@@ -2,6 +2,7 @@ homebrew_taps:
   - tylerball/macvim
   - homebrew/versions
   - homebrew/dupes
+
 homebrew_apps:
   - git
   - lua
@@ -20,6 +21,8 @@ homebrew_apps:
   - mpd
   - mpc
   - ncmpcpp
+  - git-annex
+
 homebrew_cask_apps:
   - haskell-platform
   - alfred
