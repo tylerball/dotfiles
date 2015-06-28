@@ -33,3 +33,9 @@ homebrew_cask_apps:
   - dropbox
   - flux
   - xquartz
+
+python_packages:
+  - beets
+  - discogs-client
+  - "git+git://github.com/geigerzaehler/beets-check.git@master#egg=beets-check"
+  - pylast
