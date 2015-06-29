@@ -1,5 +1,5 @@
 ---
 - hosts: localhost
-  connection: local
   roles:
     - common
+    - { role: mac, when: ansible_os_family == 'Darwin' }
