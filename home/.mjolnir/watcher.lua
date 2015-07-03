@@ -100,7 +100,9 @@ function watcher.changeWindow(value, layout, screen, window)
     value(layout, screen, window)
   end
   if type(value) == 'table' then
-    grid.set(window, value, screen)
+    if window then
+      grid.set(window, value, screen)
+    end
   end
 end
 
