@@ -1,10 +1,9 @@
 home/.vim/bundle/
 home/.vim/sessions/
-/home/.config/*
-!/home/.config/beets
-/home/.config/beets/*
-!/home/.config/beets/config.yaml
-!/home/.config/beets/plugins/*
+home/.config/*
+!home/.config/beets
+home/.config/beets/state.pickle
+home/.config/beets/discogs_token.json
 !home/.config/ipython/**/*
 !home/.config/flake8
 home/.bin/vim

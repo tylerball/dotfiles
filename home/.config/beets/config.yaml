@@ -55,3 +55,6 @@ lastgenre:
 
 duplicates:
   keys: [track, title, mb_albumid]
+
+git_annex:
+  directory: ~/tunes
