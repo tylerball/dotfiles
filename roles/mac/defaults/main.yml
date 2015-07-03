@@ -2,9 +2,10 @@ homebrew_taps:
   - tylerball/macvim
   - homebrew/versions
   - homebrew/dupes
+  - caskroom/cask
 
 homebrew_apps:
-  - caskroom/cask/brew-cask
+  - brew-cask
   - git
   - lua
   - node
