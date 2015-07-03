@@ -46,7 +46,7 @@ if executable('ag')
 end
 nnoremap <C-p> :Unite -buffer-name=search file_rec/async buffer -resume -start-insert<CR><Esc>GC
 nnoremap <C-b> :Unite -buffer-name=buffers buffer -start-insert<CR><Esc>GC
-nnoremap <leader>a :Unite -buffer-name=grep -no-quit -default-action=switch grep:.
+nnoremap <leader>a :Unite -buffer-name=grep -no-quit -default-action=above grep:.
 nnoremap <C-c> :Unite -buffer-name=yank -default-action=insert history/yank<CR>
 nnoremap <C-f> :Unite -buffer-name=search -start-insert line<CR>
 nnoremap <leader>ur :UniteResume search<CR>
