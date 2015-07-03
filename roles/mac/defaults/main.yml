@@ -4,6 +4,7 @@ homebrew_taps:
   - homebrew/dupes
 
 homebrew_apps:
+  - caskroom/cask/brew-cask
   - git
   - lua
   - node
