@@ -24,7 +24,7 @@ homebrew_apps:
   - git-annex
 
 homebrew_cask_apps:
-  - haskell-platform
+  - 1password
   - alfred
   - google-chrome
   - karabiner
@@ -36,6 +36,7 @@ homebrew_cask_apps:
   - dropbox
   - flux
   - xquartz
+  - haskell-platform
 
 python_packages:
   - beets
