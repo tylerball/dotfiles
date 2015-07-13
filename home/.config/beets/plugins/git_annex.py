@@ -18,8 +18,10 @@ class GitAnnexPlugin(BeetsPlugin):
         })
 
         self.db_loc = os.path.expanduser(config['library'].get())
-        self.annex_loc = os.path.expanduser(config['directory'].get())
         self.override = self.config['override_dir']
+        self.annex_loc = os.path.expanduser(config['directory'].get())
+        if self.override:
+            self.annex_loc = self.override.get()
         self.unlock_db()
         self.register_listener('write', self.write)
         self.register_listener('item_removed', self.delete)
@@ -40,12 +42,12 @@ class GitAnnexPlugin(BeetsPlugin):
 
     def get(self, path):
         return call(["git-annex", "get", self.relpath(path)],
-            cwd=os.path.dirname(self.annex_loc)
+            cwd=os.path.expanduser(self.annex_loc)
         )
 
     def unlock(self, path):
         return call(["git-annex", "unlock", self.relpath(path)],
-            cwd=os.path.dirname(self.annex_loc)
+            cwd=os.path.expanduser(self.annex_loc)
         )
 
     def write(self, path, tags):
@@ -60,7 +62,7 @@ class GitAnnexPlugin(BeetsPlugin):
 
     def delete(self, item):
         call(["git", "rm", self.relpath(item.path)],
-            cwd=os.path.dirname(self.annex_loc)
+            cwd=os.path.expanduser(self.annex_loc)
         )
 
     def commands(self):
