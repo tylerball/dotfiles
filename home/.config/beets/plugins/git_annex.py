@@ -45,6 +45,11 @@ class GitAnnexPlugin(BeetsPlugin):
             cwd=os.path.expanduser(self.annex_loc)
         )
 
+    def drop(self, path):
+        return call(["git-annex", "drop", self.relpath(path)],
+            cwd=os.path.expanduser(self.annex_loc)
+        )
+
     def unlock(self, path):
         return call(["git-annex", "unlock", self.relpath(path)],
             cwd=os.path.expanduser(self.annex_loc)
@@ -66,13 +71,24 @@ class GitAnnexPlugin(BeetsPlugin):
         )
 
     def commands(self):
-        def func(lib, opts, args):
+        def get_func(lib, opts, args):
             self._log.setLevel(logging.INFO)
 
             for item in lib.items(ui.decargs(args)):
                 self.get(item.path)
 
-        cmd = ui.Subcommand('gxget', help='get files from git-annex')
-        cmd.parser.add_album_option()
-        cmd.func = func
-        return [cmd]
+        get = ui.Subcommand('get', help='get files from git-annex')
+        get.parser.add_album_option()
+        get.func = get_func
+
+        def drop_func(lib, opts, args):
+            self._log.setLevel(logging.INFO)
+
+            for item in lib.items(ui.decargs(args)):
+                self.drop(item.path)
+
+        drop = ui.Subcommand('drop', help='drop files from git-annex')
+        drop.parser.add_album_option()
+        drop.func = drop_func
+
+        return [get, drop]
