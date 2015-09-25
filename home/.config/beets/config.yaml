@@ -39,12 +39,14 @@ smartplaylist:
   relative_to: ~/tunes
   playlist_dir: ~/.mpd/playlists
   playlists:
-    - name: "added_today.m3u"
-      album_query: added:@{1d}.. added-
-    - name: "added_this_week.m3u"
-      album_query: added:@{1w}.. added-
-    - name: "added_this_month.m3u"
-      album_query: added:@{1m}.. added-
+    - name: "1-added_this_week.m3u"
+      album_query: added:@{1w}..
+    - name: "2-added_last_week.m3u"
+      album_query: added:@{1d}..added-@{1w}
+    - name: "3-added_this_month.m3u"
+      album_query: added:@{1m}..
+    - name: "4-added_last_month.m3u"
+      album_query: added:@{2m}..added-@{1m}
 
 itunescopy:
   auto: yes

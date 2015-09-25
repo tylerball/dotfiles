@@ -5,7 +5,7 @@ import os
 import sys
 import argparse
 import shutil
-from beets import config
+from beets import config, ui, logging
 from beets.plugins import BeetsPlugin
 from beets.ui import print_
 from beets.ui.commands import import_cmd, default_commands
@@ -33,11 +33,26 @@ class iTunesPlugin(BeetsPlugin):
 
     def imported(self, task, session):
         for item in task.imported_items():
-            src = item['path'].decode('utf-8')
-            dest = os.path.join(
-                os.path.abspath(os.path.expanduser(config['itunescopy']['dest'].get(unicode))),
-                os.path.basename(src)
-            )
-            shutil.copyfile(src, dest)
-            self._log.info(u'Copying {0.title} - {0.artist} to iTunes', item)
-            print_(u'Copying {0.title} - {0.artist} to iTunes'.format(item))
+            self.copy(item)
+
+    def copy(self, item):
+        src = item['path'].decode('utf-8')
+        dest = os.path.join(
+            os.path.abspath(os.path.expanduser(config['itunescopy']['dest'].get(unicode))),
+            os.path.basename(src)
+        )
+        shutil.copyfile(src, dest)
+        self._log.info(u'Copying {0.title} - {0.artist} to iTunes', item)
+        print_(u'Copying {0.title} - {0.artist} to iTunes'.format(item))
+
+    def commands(self):
+        def func(lib, opts, args):
+            self._log.setLevel(logging.INFO)
+
+            for item in lib.items(ui.decargs(args)):
+                self.copy(item)
+
+        cmd = ui.Subcommand('itunes', help='copy files to itunes')
+        cmd.parser.add_album_option()
+        cmd.func = func
+        return [cmd]
