@@ -20,9 +20,13 @@ NeoBundle 'sorin-ionescu/python.vim.git'
 NeoBundle 'othree/html5.vim.git'
 NeoBundle 'kchmck/vim-coffee-script.git'
 NeoBundle 'pangloss/vim-javascript.git'
+NeoBundle 'isRuslan/vim-es6.git'
 NeoBundle 'tpope/vim-liquid.git'
 NeoBundle 'avakhov/vim-yaml.git'
 NeoBundle 'tpope/vim-rails.git'
+NeoBundle 'mtscout6/vim-cjsx'
+NeoBundle 'mxw/vim-jsx'
+NeoBundle 'lambdatoast/elm.vim'
 
 " Completion
 NeoBundle 'garbas/vim-snipmate.git'
