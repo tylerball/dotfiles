@@ -21,6 +21,11 @@ positions = {
   rightTwoThird = {x=grid.GRIDWIDTH / 3, y=0, w=grid.GRIDWIDTH / 3 * 2, h=grid.GRIDHEIGHT},
   leftTwoThird = {x=0, y=0, w=grid.GRIDWIDTH / 3 * 2, h=grid.GRIDHEIGHT},
   full      =  {x=0, y=0, w=grid.GRIDWIDTH, h=grid.GRIDHEIGHT},
+
+  lowerRight = {x=grid.GRIDWIDTH / 2, y=grid.GRIDWIDTH / 2, w=grid.GRIDWIDTH / 2, h=grid.GRIDWIDTH / 2},
+  upperRight = {x=grid.GRIDWIDTH / 2, y=0, w=grid.GRIDWIDTH / 2, h=grid.GRIDWIDTH / 2},
+  lowerLeft = {x=0, y=grid.GRIDWIDTH / 2, w=grid.GRIDWIDTH / 2, h=grid.GRIDWIDTH / 2},
+  upperLeft = {x=0, y=0, w=grid.GRIDWIDTH / 2, h=grid.GRIDWIDTH / 2},
 }
 
 utils.setGrid('H', positions.leftHalf)
@@ -30,6 +35,11 @@ utils.setGrid('P', positions.rightThird)
 utils.setGrid('U', positions.leftThird)
 utils.setGrid('O', positions.rightTwoThird)
 utils.setGrid('I', positions.leftTwoThird)
+
+utils.setGrid(',', positions.lowerRight)
+utils.setGrid('K', positions.upperRight)
+utils.setGrid('M', positions.lowerRight)
+utils.setGrid('J', positions.upperRight)
 
 hotkey.bind(utils.modifier, '=', function ()
   grid.pushwindow_nextscreen()
@@ -45,7 +55,7 @@ watcher.bind('MacVim',      {
   ['work_one'] = { ['Color LCD'] = positions.full },
 })
 watcher.bind('iTerm',       {
-  ['work_two'] = { ['Color LCD'] = positions.leftHalf },
+  ['work_two'] = { ['Color LCD'] = positions.full },
   ['work_one'] = { ['Color LCD'] = positions.leftHalf },
 })
 watcher.bind('Dash',        { ['work_two'] = { ['Color LCD'] = positions.rightTwoThird }})
@@ -74,9 +84,9 @@ watcher.bind('Rdio', music())
 watcher.bind('iTunes', music())
 watcher.bind('Spotify', music())
 
-watcher.bind('Messages',    { ['work_two'] = {
-  ['Color LCD'] = {x=grid.GRIDWIDTH / 2, y=0, w=grid.GRIDWIDTH / 2, h=grid.GRIDHEIGHT / 2}
-}})
+watcher.bind('Messages',    {
+  ['work_two'] = { ['Color LCD'] = positions.upperRight }
+})
 
 watcher.bind('Google Chrome', {
   ['work_one'] = { ['Color LCD'] = positions.full },
