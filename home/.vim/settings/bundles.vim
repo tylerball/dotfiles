@@ -81,6 +81,7 @@ NeoBundle 'mattn/gist-vim.git'
 if executable('pbcopy')
   NeoBundle  'zerowidth/vim-copy-as-rtf.git'
 endif
+NeoBundle 'itspriddle/vim-marked'
 
 " color schemes
 NeoBundle 'tylerball/vim-hypertint.git'

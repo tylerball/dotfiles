@@ -14,6 +14,7 @@ nnoremap <leader>gl :Glog<cr>:copen<cr>
 " nerdtree
 let g:NERDTreeMouseMode = 2
 let g:NERDTreeWinSize = 40
+let NERDTreeShowHidden=1
 " ignore .pyc files
 let NERDTreeIgnore=['\.pyc$', '\~$']
 let NERDTreeMinimalUI = 1
@@ -39,14 +40,15 @@ call unite#custom#profile('default', 'context', {
 \ })
 " use the_silver_searcher
 if executable('ag')
-  let g:unite_source_rec_async_command= 'ag --nocolor --nogroup --hidden -g ""'
+  let g:unite_source_rec_async_command = 
+        \['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
   let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_default_opts = '-i --vimgrep --hidden'
   let g:unite_source_grep_recursive_opt = ''
 end
 nnoremap <C-p> :Unite -buffer-name=search file_rec/async buffer -resume -start-insert<CR><Esc>GC
 nnoremap <C-b> :Unite -buffer-name=buffers buffer -start-insert<CR><Esc>GC
-nnoremap <leader>a :Unite -buffer-name=grep -no-quit -default-action=above grep:.
+nnoremap <leader>a :Unite -buffer-name=grep -no-quit grep:.<CR>
 nnoremap <C-c> :Unite -buffer-name=yank -default-action=insert history/yank<CR>
 nnoremap <C-f> :Unite -buffer-name=search -start-insert line<CR>
 nnoremap <leader>ur :UniteResume search<CR>
@@ -70,7 +72,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'passive_filetypes': ['htmldjango', 'markdown', 'html'] }
 
 let g:syntastic_python_checker_args='--ignore=E501'
-let g:syntastic_javascript_checkers =['jshint', 'jscs']
+let g:syntastic_javascript_checkers =['eslint', 'jshint']
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_quiet_messages = {
   \ "regex":   '\museless use of a variable in void context' }
@@ -142,3 +144,8 @@ hi SpecialKey ctermfg=red guifg=#CA0908 gui=bold
 
 let autoreadargs={'autoread':1}
 au BufRead,BufNewFile * :silent! execute WatchForChanges("*", autoreadargs)
+
+let g:jsx_ext_required = 0
+
+" vim-marked
+nnoremap <localleader>m :MarkedOpen!<cr>

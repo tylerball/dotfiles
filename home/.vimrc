@@ -215,9 +215,6 @@
     nnoremap <leader>2 :setlocal sw=2<cr> :setlocal ts=2<cr>
     nnoremap <leader>4 :setlocal sw=4<cr> :setlocal ts=4<cr>
 
-    " Marked.app
-    nnoremap <localleader>m :silent !open -a Marked.app "%"<cr>:redraw!<cr>
-
     " copy a file
     nnoremap <localleader>y :silent !cat "%" \| pbcopy<cr>:redraw!<cr>
 
