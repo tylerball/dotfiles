@@ -56,6 +56,10 @@ fi
 # rubby
 alias be="noglob bundle exec"
 alias bi="bundle install"
+alias rt="be ruby -Itest"
+
+# shopify
+alias sr="script/server"
 
 # jekyll
 alias brs="bundle exec rake server"
