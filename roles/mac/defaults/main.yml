@@ -24,6 +24,7 @@ homebrew_apps:
   - mpc
   - ncmpcpp
   - git-annex
+  - fzf
 
 homebrew_cask_apps:
   - 1password

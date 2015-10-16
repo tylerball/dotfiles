@@ -43,6 +43,7 @@ end
 NeoBundle 'sjl/gundo.vim.git'
 
 " Files
+NeoBundle 'junegunn/fzf'
 NeoBundle 'scrooloose/nerdtree.git'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/unite.vim.git'

@@ -41,3 +41,5 @@ if [[ -s "/etc/profile.d/chruby.sh" ]]; then
   # shopify's chruby script
   source /etc/profile.d/chruby.sh
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

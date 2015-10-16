@@ -63,3 +63,5 @@ else
         source /etc/bash_completion.d/git
     fi
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
