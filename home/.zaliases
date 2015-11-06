@@ -66,5 +66,5 @@ alias brs="bundle exec rake server"
 
 # vagrant
 alias vg="vagrant"
-alias vgs="vagrant ssh"
+alias vgs="vagrant ssh -- -R 2224:localhost:2224 -R 2225:localhost:2225"
 alias vgp="vagrant provision"

@@ -78,6 +78,7 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'Lokaltog/vim-easymotion.git'
 NeoBundle 'myusuf3/numbers.vim.git'
 NeoBundle 'tpope/vim-obsession.git'
+NeoBundle 'ConradIrwin/vim-bracketed-paste.git'
 
 " Utilities
 NeoBundle 'mileszs/ack.vim.git'

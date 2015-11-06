@@ -43,6 +43,8 @@
 
     set background=dark
 
+    set clipboard=unnamedplus
+
     au WinEnter * setlocal cursorline
     au WinLeave * setlocal nocursorline
 
@@ -187,9 +189,6 @@
     " keep selection when indenting
     vnoremap > ><CR>gv
     vnoremap < <<CR>gv
-
-    set pastetoggle=<f6>
-
 
     " diffs
     nnoremap <leader>dp :diffput<cr>
