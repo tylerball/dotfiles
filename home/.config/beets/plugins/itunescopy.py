@@ -25,7 +25,7 @@ class iTunesPlugin(BeetsPlugin):
         super(iTunesPlugin, self).__init__()
 
         if self.config['auto'].get():
-            if not all(x in ['-U', '--noitunes'] for x in sys.argv):
+            if not any(x in ['-U', '--noitunes'] for x in sys.argv):
                 self.register_listener('import_task_files', self.imported)
         elif '-T' in sys.argv or '--itunes' in sys.argv:
             self.register_listener('import_task_files', self.imported)
