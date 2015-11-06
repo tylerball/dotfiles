@@ -55,7 +55,7 @@ fi
 
 # rubby
 alias be="noglob bundle exec"
-alias bi="bundle install"
+alias bi="bundle check || bundle install --jobs=4"
 alias rt="be ruby -Itest"
 
 # shopify
