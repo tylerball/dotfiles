@@ -12,6 +12,7 @@ export LOCATION='local'
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
     source $HOME/.zaliases
+    source $HOME/.zfunctions
 fi
 
 # load some custom completions
