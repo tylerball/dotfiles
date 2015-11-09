@@ -55,8 +55,8 @@ watcher.bind('MacVim',      {
   ['work_one'] = { ['Color LCD'] = positions.full },
 })
 watcher.bind('iTerm',       {
-  ['work_two'] = { ['Color LCD'] = positions.full },
-  ['work_one'] = { ['Color LCD'] = positions.leftHalf },
+  ['work_one'] = { ['Color LCD'] = positions.full },
+  ['work_two'] = { ['Thunderbolt Display'] = positions.full },
 })
 watcher.bind('Dash',        { ['work_two'] = { ['Color LCD'] = positions.rightTwoThird }})
 watcher.bind('Mailplane 3', {
@@ -90,32 +90,8 @@ watcher.bind('Messages',    {
 
 watcher.bind('Google Chrome', {
   ['work_one'] = { ['Color LCD'] = positions.full },
-  ['work_two'] = {
-    ['custom'] = function (layout, screen)
-      chromesux('Default Profile')
-      grid.set(window.focusedwindow(), positions.rightTwoThird, watcher.getScreens()[0])
-      chromesux('Shopify')
-      grid.set(window.focusedwindow(), positions.leftHalf, watcher.getScreens()[1])
-    end
-  }
+  ['work_two'] = { ['Color LCD'] = positions.full }
 })
-
--- Chrome profiles are totally inaccessible via applescript so UI scripting it is
-function chromesux(profile)
-  applescript([[tell application "Google Chrome" to activate
-tell application "System Events"
-  tell process "Google Chrome"
-    tell menu bar 1
-      tell menu bar item "People"
-        tell menu "People"
-          click menu item "]] ..profile.. [["
-        end tell
-      end tell
-    end tell
-  end tell
-end tell]])
-end
-
 
 hotkey.bind(utils.modifier, 'e', function ()
   watcher.doChanges()
