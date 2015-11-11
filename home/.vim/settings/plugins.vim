@@ -49,6 +49,7 @@ nnoremap <C-b> :Unite -buffer-name=buffers buffer -start-insert<CR><Esc>GC
 nnoremap <leader>a :Unite -buffer-name=grep -no-quit grep:.<CR>
 nnoremap <C-c> :Unite -buffer-name=yank -default-action=insert history/yank<CR>
 nnoremap <C-f> :Unite -buffer-name=search -start-insert line<CR>
+nnoremap <leader>m :Unite -start-insert neomru/file<CR>
 nnoremap <leader>ur :UniteResume search<CR>
 let g:extra_whitespace_ignored_filetypes = ['unite']
 au FileType unite hi uniteSource__GrepPattern guibg=#791117, ctermbg=52

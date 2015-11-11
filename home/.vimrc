@@ -37,13 +37,16 @@
     endif
 
     set mouse=a
+    if has("mouse_sgr")
+      set ttymouse=sgr
+    endif
     set notimeout           "" don't timeout on command line
     set autowriteall           "" write the damn files!
     set autoread            "" read the damn files
 
     set background=dark
 
-    set clipboard=unnamedplus
+    set clipboard=unnamed
 
     au WinEnter * setlocal cursorline
     au WinLeave * setlocal nocursorline
