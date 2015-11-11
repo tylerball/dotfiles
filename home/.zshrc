@@ -43,4 +43,6 @@ if [[ -s "/etc/profile.d/chruby.sh" ]]; then
   source /etc/profile.d/chruby.sh
 fi
 
+export FZF_COMPLETION_TRIGGER='~~'
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -152,3 +152,6 @@ let g:jsx_ext_required = 0
 
 " vim-marked
 nnoremap <localleader>m :MarkedOpen!<cr>
+
+" dispatch
+nnoremap <localleader>t :Dispatch<cr>

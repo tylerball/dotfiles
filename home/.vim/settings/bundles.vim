@@ -64,6 +64,10 @@ NeoBundle 'tpope/vim-jdaddy.git'
 NeoBundle 'bronson/vim-trailing-whitespace.git'
 NeoBundle 'tpope/vim-endwise.git'
 NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'Shougo/neoyank.vim.git'
+
+" Testing
+NeoBundle 'tpope/vim-dispatch'
 
 " UI
 NeoBundle 'sjl/vitality.vim.git'
@@ -81,7 +85,6 @@ NeoBundle 'tpope/vim-obsession.git'
 NeoBundle 'ConradIrwin/vim-bracketed-paste.git'
 
 " Utilities
-NeoBundle 'mileszs/ack.vim.git'
 NeoBundle 'sjl/clam.vim.git'
 NeoBundle 'mattn/gist-vim.git'
 if executable('pbcopy')
