@@ -1,7 +1,6 @@
 user_interface = alternative
 media_library_primary_tag = album_artist
 ignore_leading_the = yes
-display_remaining_time = yes
 
 main_window_color = white
 browser_sort_format = {%A - }{%t}|{%f} {(%l)}
