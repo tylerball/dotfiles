@@ -1,1 +1,1 @@
-au FileType javascript let b:dispatch = 'bundle exec teaspoon %'
+au FileType coffee let b:dispatch = 'bundle exec teaspoon -f clean %'
