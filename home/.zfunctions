@@ -40,12 +40,16 @@ function ftpane() {
     tmux select-pane -t ${target_window}.${target_pane} &&
     tmux select-window -t $target_window
   fi
+}
 
 # mpc queue album
-function fma () {
+function fma() {
   local album
-  album=$(mpc -f "%file%" search album '' | \
-    sed 's/\(.*\)\/.*/\1/' | uniq | \
+  album=$(mpc -f "%file%" search album '' |
+    sed 's/\(.*\)\/.*/\1/' | uniq |
     fzf-tmux --query="$1" --reverse --select-1 --exit-0) || return 1
-  [ -n "$album" ] && mpc add $album
+  if [ -n "$album" ]
+  then
+    mpc add $album
+  fi
 }
