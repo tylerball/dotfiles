@@ -25,6 +25,7 @@ homebrew_apps:
   - ncmpcpp
   - git-annex
   - fzf
+  - gawk
 
 homebrew_cask_apps:
   - 1password
