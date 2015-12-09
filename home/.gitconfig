@@ -35,6 +35,8 @@
     # see the commits you're going to pull into your repo. Assumes remote is called origin
     incoming = !git fetch && git log ..origin/$(git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3)
 
+    cleanup = !git branch -D `git branch --merged master`
+
     # see when remote branches were last updated
     when = "!for k in `git branch -r|cut -d' ' -f 3`;do echo `git show --pretty=format:'%Cgreen%ci %Cblue%cr%Creset' $k|head -n 1` $k;done|sort -rn"
     prune = remote prune origin

@@ -50,7 +50,7 @@ nnoremap <leader>a :Unite -buffer-name=grep -no-quit grep:.<CR>
 nnoremap <C-c> :Unite -buffer-name=yank -default-action=insert history/yank<CR>
 nnoremap <C-f> :Unite -buffer-name=search -start-insert line<CR>
 nnoremap <leader>m :Unite -start-insert neomru/file<CR>
-nnoremap <leader>ur :UniteResume search<CR>
+nnoremap <leader>ur :UniteResume<CR>
 let g:extra_whitespace_ignored_filetypes = ['unite']
 au FileType unite hi uniteSource__GrepPattern guibg=#791117, ctermbg=52
 
@@ -77,13 +77,27 @@ let g:syntastic_mode_map = { 'mode': 'active',
 
 let g:syntastic_python_checker_args='--ignore=E501'
 let g:syntastic_javascript_checkers =['eslint', 'jshint']
+
 let g:shopify_assets_location = substitute(system("bundle show shopify_assets"), '\n\+$', '', '')
+
+" scss linting
 if filereadable("config/scss-lint.yml")
-  let g:syntastic_scss_scss_lint_args = '--config scss_lint.yml'
+  let g:syntastic_scss_scss_lint_args = '--config config/scss_lint.yml'
+  let g:syntastic_scss_scss_lint_exec = 'bundle exec scss-lint'
 endif
 if filereadable("Gemfile") && g:shopify_assets_location !~ "Could not find gem 'shopify_assets'"
   let g:syntastic_scss_scss_lint_args = '--config ' . g:shopify_assets_location . "/config/scss-lint.yml"
+  let g:syntastic_scss_scss_lint_exec = 'bundle exec scss-lint'
 endif
+
+" coffee linting
+if filereadable("config/coffeelint.json")
+  let g:syntastic_coffee_coffeelint_args = '-f config/coffeelint.json'
+endif
+if filereadable("Gemfile") && g:shopify_assets_location !~ "Could not find gem 'shopify_assets'"
+  let g:syntastic_coffee_coffeelint_args = '-f ' . g:shopify_assets_location . "/config/coffeelint.json"
+endif
+
 let g:syntastic_quiet_messages = {
   \ "regex":   '\museless use of a variable in void context' }
 
