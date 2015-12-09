@@ -81,6 +81,9 @@ fi
 # custom stuff
 fpath=(~/.zsh/functions $fpath)
 autoload ve
+autoload notes
+
+eval "$(fasd --init posix-alias zsh-hook)"
 
 export LEIN_FAST_TRAMPOLINE=y
 alias cljsbuild="lein trampoline cljsbuild $@"
