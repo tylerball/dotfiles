@@ -88,5 +88,7 @@ eval "$(fasd --init posix-alias zsh-hook)"
 export LEIN_FAST_TRAMPOLINE=y
 alias cljsbuild="lein trampoline cljsbuild $@"
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+if (( $+commands[brew] )); then
+  export NVM_DIR=~/.nvm
+  source $(brew --prefix nvm)/nvm.sh
+fi
