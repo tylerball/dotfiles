@@ -30,7 +30,6 @@ class iTunesPlugin(BeetsPlugin):
         elif '-T' in sys.argv or '--itunes' in sys.argv:
             self.register_listener('import_task_files', self.imported)
 
-
     def imported(self, task, session):
         for item in task.imported_items():
             self.copy(item)
@@ -43,7 +42,6 @@ class iTunesPlugin(BeetsPlugin):
         )
         shutil.copyfile(src, dest)
         self._log.info(u'Copying {0.title} - {0.artist} to iTunes', item)
-        print_(u'Copying {0.title} - {0.artist} to iTunes'.format(item))
 
     def commands(self):
         def func(lib, opts, args):
