@@ -242,3 +242,8 @@
 if filereadable(glob("~/.vimrc.local"))
     source ~/.vimrc.local
 endif
+
+" override settings in a project
+if filereadable(glob(".vimrc.local"))
+    source .vimrc.local
+endif
