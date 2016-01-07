@@ -51,6 +51,7 @@ NeoBundle 'djoshea/vim-autoread'
 
 "version control
 NeoBundle 'tpope/vim-fugitive.git'
+NeoBundle 'tpope/vim-rhubarb.git'
 NeoBundle 'sjl/splice.vim.git'
 NeoBundle 'airblade/vim-gitgutter.git'
 
