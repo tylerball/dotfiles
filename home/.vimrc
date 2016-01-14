@@ -19,6 +19,8 @@
 
     set nocompatible          "" Get rid of vi compatibility
 
+    set shell=$SHELL
+
 " Interface
 " ---------
     set shortmess=WatAIT        "" Stifle interruptive prompts http://items.sjbach.com/319/configuring-vim-right
