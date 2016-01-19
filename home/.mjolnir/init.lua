@@ -50,10 +50,6 @@ hotkey.bind(utils.modifier, '-', function ()
 end)
 
 watcher.bind('Path Finder', { ['work_two'] = { ['Thunderbolt Display'] = positions.rightHalf }})
-watcher.bind('MacVim',      {
-  ['work_two'] = { ['Thunderbolt Display'] = positions.rightHalf },
-  ['work_one'] = { ['Color LCD'] = positions.full },
-})
 watcher.bind('iTerm',       {
   ['work_one'] = { ['Color LCD'] = positions.full },
   ['work_two'] = { ['Thunderbolt Display'] = positions.full },
