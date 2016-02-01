@@ -1,0 +1,6 @@
+function notes () {
+  dropbox_dir=~"/Dropbox (Personal)/notes"
+  if [[ -n "$TMUX" ]]; then
+    tmux split-window -h -c $dropbox_dir vim -c ":FZF"
+  fi
+}
