@@ -13,21 +13,14 @@ layouts = {
   ['work_one'] = { 'Color LCD' },
 }
 
+local screens = screen.allscreens()
+
 function length(tbl)
   local count = 0
   for i, b in pairs(tbl) do
     count = count + 1
   end
   return count
-end
-
-function watcher.init()
-  local _watcher = require('mjolnir._asm.watcher.screen').new(function ()
-    if screens ~= screen.allscreens() then
-      require('mjolnir.alert').show('changed', 10)
-      watcher.doChanges()
-    end
-  end):start()
 end
 
 function watcher.bind(app, locations)

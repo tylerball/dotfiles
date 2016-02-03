@@ -3,10 +3,9 @@ application = require 'mjolnir.application'
 hotkey = require 'mjolnir.hotkey'
 window = require 'mjolnir.window'
 grid = require 'mjolnir.bg.grid'
-applescript = require 'mjolnir._asm.hydra.applescript'
 
 local utils = require 'utils'
-local watcher = require 'watcher'
+local watcher = require 'layout'
 
 grid.GRIDHEIGHT = 6
 grid.GRIDWIDTH = 6
@@ -69,16 +68,10 @@ watcher.bind('Tweetbot',    {
   ['work_one'] = { ['Color LCD'] = _.extend({w=grid.GRIDWIDTH / 4}, positions.leftThird) },
 })
 
-function music()
-  return {
-    ['work_two'] = { ['Color LCD'] = positions.full },
-    ['work_one'] = { ['Color LCD'] = positions.full },
-  }
-end
-
-watcher.bind('Rdio', music())
-watcher.bind('iTunes', music())
-watcher.bind('Spotify', music())
+watcher.bind('iTunes', {
+  ['work_two'] = { ['Color LCD'] = positions.full },
+  ['work_one'] = { ['Color LCD'] = positions.full },
+})
 
 watcher.bind('Messages',    {
   ['work_two'] = { ['Color LCD'] = positions.upperRight }
@@ -92,7 +85,3 @@ watcher.bind('Google Chrome', {
 hotkey.bind(utils.modifier, 'e', function ()
   watcher.doChanges()
 end)
-
-function sleep(n)
-  os.execute("sleep " .. tonumber(n))
-end
