@@ -2,7 +2,7 @@
 if [[ "$(uname)" = 'Darwin' ]]; then
   if [[ -x `which brew` ]]; then
     brew update 2>&1
-    brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup 2>&1
+    brew upgrade brew-cask && brew cleanup && brew cask cleanup 2>&1
     brew doctor 2>&1
   else
     echo "Installing homebrew"
