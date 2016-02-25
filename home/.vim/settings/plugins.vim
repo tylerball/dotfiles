@@ -118,17 +118,7 @@ call unite#custom#profile('default', 'context', {
 \   'direction': 'botright',
 \ })
 
-" use the_silver_searcher
-if executable('ag')
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '-i --vimgrep --hidden'
-  let g:unite_source_grep_recursive_opt = ''
-end
-nnoremap <C-b> :Unite -buffer-name=buffers buffer -start-insert<CR><Esc>GC
-nnoremap <leader>a :Unite -buffer-name=grep -no-quit grep:.<CR>
 nnoremap <C-c> :Unite -buffer-name=yank -default-action=insert history/yank<CR>
-nnoremap <C-f> :Unite -buffer-name=search -start-insert line<CR>
-nnoremap <leader>m :Unite -start-insert neomru/file<CR>
 nnoremap <leader>ur :UniteResume<CR>
 let g:extra_whitespace_ignored_filetypes = ['unite']
 au FileType unite hi uniteSource__GrepPattern guibg=#791117, ctermbg=52
@@ -143,11 +133,6 @@ function! s:unite_my_settings()
   " fix conflict with endwise
   silent! iunmap <C-x><CR>
 endfunction
-
-" fzf
-nnoremap <C-p> :FZF<cr>
-let g:fzf_launcher = "in_a_new_term_function %s"
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " Syntastic
 let g:syntastic_auto_loc_list=1
