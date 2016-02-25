@@ -1,0 +1,6 @@
+apt_packages:
+  - software-properties-common
+  - neovim
+
+apt_repositories:
+  - ppa:neovim-ppa/unstable

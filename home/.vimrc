@@ -9,15 +9,11 @@
     endif
 
     syntax on
-
-    set t_Co=256              "" set 256 colors
     set encoding=utf-8        "" set as utf-8 encoding
 
-    filetype plugin indent on
-
-    set nocompatible          "" Get rid of vi compatibility
-
-    set shell=$SHELL
+    if !has('nvim')
+      set shell=$SHELL
+    end
 
 " Interface
 " ---------
@@ -37,7 +33,7 @@
     endif
 
     set mouse=a
-    if has("mouse_sgr")
+    if has("mouse_sgr") && !has('nvim')
       set ttymouse=sgr
     endif
     set notimeout           "" don't timeout on command line

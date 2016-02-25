@@ -26,6 +26,7 @@ homebrew_apps:
   - git-annex
   - fzf
   - gawk
+  - neovim
 
 homebrew_cask_apps:
   - 1password

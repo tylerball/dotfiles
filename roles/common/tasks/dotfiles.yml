@@ -12,3 +12,9 @@
 
 - name: install tpm
   git: repo=https://github.com/tmux-plugins/tpm dest=~/.tmux/plugins/tpm
+
+- name: link neovim dir
+  file: src=~/.vim dest=~/.config/nvim state=link
+
+- name: link neovim config
+  file: src=~/.vimrc dest=~/.config/nvim/init.vim state=link
