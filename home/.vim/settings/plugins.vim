@@ -1,7 +1,86 @@
-" Vim plugin settings
+call plug#begin('~/.vim/bundle')
 
-"Ack
-"nnoremap <leader>a :Ack!<space>
+" Dependencies
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'mattn/webapi-vim'
+
+" Syntaxes
+Plug 'scrooloose/syntastic'
+Plug 'sorin-ionescu/python.vim'
+Plug 'othree/html5.vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'pangloss/vim-javascript'
+Plug 'isRuslan/vim-es6'
+Plug 'tpope/vim-liquid'
+Plug 'avakhov/vim-yaml'
+Plug 'mtscout6/vim-cjsx'
+Plug 'mxw/vim-jsx'
+Plug 'lambdatoast/elm.vim'
+
+" Completion
+Plug 'garbas/vim-snipmate'
+if has('python')
+  Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
+end
+
+" Undo/paste
+Plug 'sjl/gundo.vim'
+
+" Files
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Shougo/unite.vim'
+Plug 'djoshea/vim-autoread'
+
+"version control
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'sjl/splice.vim'
+Plug 'airblade/vim-gitgutter'
+
+" Text manipulation
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'scrooloose/nerdcommenter'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-jdaddy'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-unimpaired'
+Plug 'Shougo/neoyank.vim'
+
+" Testing
+Plug 'tpope/vim-dispatch'
+Plug 'radenling/vim-dispatch-neovim'
+
+" UI
+Plug 'sjl/vitality.vim'
+if system('uname') == 'Darwin\n'
+  Plug 'powerline/fonts', { 'do': './install.sh' }
+endif
+Plug 'bling/vim-airline'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'myusuf3/numbers.vim'
+Plug 'tpope/vim-obsession'
+Plug 'ConradIrwin/vim-bracketed-paste'
+
+" Utilities
+Plug 'sjl/clam.vim'
+Plug 'mattn/gist-vim'
+if executable('pbcopy')
+  Plug  'zerowidth/vim-copy-as-rtf'
+endif
+Plug 'itspriddle/vim-marked'
+
+" color schemes
+Plug 'tylerball/vim-hypertint'
+
+call plug#end()
+
+" Vim plugin settings
 
 " Fugitive
 nnoremap <leader>gs :Gstatus<cr>

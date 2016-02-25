@@ -1,4 +1,5 @@
 home/.vim/bundle/
+home/.vim/autoload/plug.vim
 home/.vim/sessions/
 home/.config/*
 !home/.config/beets

@@ -1,14 +1,14 @@
 ---
 - name: link dotfiles
   file: src={{ playbook_dir }}/home/{{ item }} dest=~/{{ item | basename }} state=link force=yes
-  with_lines: 
+  with_lines:
     - ls -A ../../../home
 
 - name: install prezto
   git: repo=https://github.com/sorin-ionescu/prezto.git dest=~/.zprezto recursive=yes
 
-- name: install NeoBundle
-  git: repo=https://github.com/Shougo/neobundle.vim dest=~/.vim/bundle/neobundle.vim
+- name: install vim-plug
+  shell: curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 - name: install tpm
   git: repo=https://github.com/tmux-plugins/tpm dest=~/.tmux/plugins/tpm

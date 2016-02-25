@@ -5,3 +5,5 @@ settings_local.py
 *.un~
 *npm-debug.log
 **/*.orig
+.byebug_history
+.bundle

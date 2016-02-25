@@ -1,10 +1,8 @@
 " Setup
 " -----
     set nocompatible
-    filetype off
 
-    if isdirectory(expand("~/.vim/bundle/neobundle.vim"))
-        :so $HOME/.vim/settings/bundles.vim
+    if filereadable(expand("~/.vim/autoload/plug.vim"))
         let g:local = 1
     else
         let g:local = 0
