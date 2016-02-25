@@ -5,7 +5,7 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
-stty -ixon # disable terminal halting
+[[ $- == *i* ]] && stty -ixon # disable terminal halting
 
 #
 # Browser

@@ -38,7 +38,7 @@ command! -nargs=+ -complete=file Agd call fzf#run({
 \ })
 
 nnoremap <leader>a :Agd<Space>
-nnoremap <C-b> :Buffers<Space>
+nnoremap <C-b> :Buffers<CR>
 nnoremap <C-f> :Lines<CR>
 nnoremap <leader>m :History<CR>
 nnoremap <C-p> :FZF<cr>
