@@ -2971,6 +2971,13 @@
 	<real>1</real>
 	<key>GlobalKeyMap</key>
 	<dict>
+		<key>0x68-0x40000</key>
+		<dict>
+			<key>Action</key>
+			<integer>10</integer>
+			<key>Text</key>
+			<string>[104;5u</string>
+		</dict>
 		<key>0x74-0x180000</key>
 		<dict>
 			<key>Action</key>
@@ -3106,6 +3113,8 @@
 	<string></string>
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
+	<key>NSScrollViewShouldScrollUnderTitlebar</key>
+	<false/>
 	<key>NSTableView Columns KeyBingingTable</key>
 	<array>
 		<data>
@@ -3117,7 +3126,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>302</string>
+		<string>322</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -3133,7 +3142,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>689 131 702 375 0 0 1680 1027 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>319 808 924 485 0 0 2560 1417 </string>
+	<string>319 837 924 485 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>2560 648 1440 379 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -3718,11 +3727,11 @@
 			<key>Normal Font</key>
 			<string>MesloLGS-RegularForPowerline 10</string>
 			<key>Option Key Sends</key>
-			<integer>2</integer>
+			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
 			<integer>0</integer>
 			<key>Right Option Key Sends</key>
-			<integer>2</integer>
+			<integer>0</integer>
 			<key>Rows</key>
 			<integer>25</integer>
 			<key>Screen</key>
@@ -4625,12 +4634,20 @@
 			<string>/Users/tball</string>
 		</dict>
 	</array>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
+	<integer>0</integer>
+	<key>NoSyncHaveShownPromoWithId_4</key>
+	<true/>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
+	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
+	<real>477845202.80442601</real>
 	<key>NoSyncTimeOfLastPromo</key>
-	<real>453383696.58435798</real>
+	<real>477838029.88927799</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>475541607.23074001</real>
+	<real>477838011.67710203</real>
 	<key>NotFirstRun</key>
 	<true/>
 	<key>OnlyWhenMoreTabs</key>
@@ -4696,12 +4713,14 @@
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
+	<key>SUFeedAlternateAppNameKey</key>
+	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing.xml</string>
+	<string>https://iterm2.com/appcasts/testing3.xml</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-01-26T22:49:45Z</date>
+	<date>2016-02-25T16:37:52Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -4749,6 +4768,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.1.4</string>
+	<string>2.9.20160206</string>
 </dict>
 </plist>
