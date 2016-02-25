@@ -1,6 +1,7 @@
 - include: homebrew.yml
 - include: luarocks.yml
 - include: python.yml
-- copy: src={{ item }} dest=~/Library/LaunchAgents
-  with_fileglob: "*.plist"
-  tags: debug
+
+- file: src={{ item }} dest=~/Library/LaunchAgents/{{ item | basename }} state=link force=true
+  with_items: launch_agents
+  notify: load launchctl

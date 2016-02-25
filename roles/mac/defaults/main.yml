@@ -27,6 +27,7 @@ homebrew_apps:
   - fzf
   - gawk
   - neovim
+  - clipper
 
 homebrew_cask_apps:
   - 1password
@@ -48,3 +49,6 @@ python_packages:
   - discogs-client
   - "git+git://github.com/geigerzaehler/beets-check.git@master#egg=beets-check"
   - pylast
+
+launch_agents:
+  - /usr/local/opt/clipper/homebrew.mxcl.clipper.plist

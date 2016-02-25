@@ -213,9 +213,6 @@
     nnoremap <leader>2 :setlocal sw=2<cr> :setlocal ts=2<cr>
     nnoremap <leader>4 :setlocal sw=4<cr> :setlocal ts=4<cr>
 
-    " copy a file
-    nnoremap <localleader>y :silent !cat "%" \| pbcopy<cr>:redraw!<cr>
-
     " fuck ex
     nmap Q <nop>
 
