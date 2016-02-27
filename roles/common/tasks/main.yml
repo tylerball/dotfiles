@@ -1,2 +1,13 @@
 ---
 - include: dotfiles.yml
+
+- name: install python packages linux
+  pip: name={{ item }}
+  with_items: pip_packages
+  sudo: true
+  when: ansible_os_family == 'Debian'
+
+- name: install python packages mac
+  pip: name={{ item }}
+  with_items: pip_packages
+  when: ansible_os_family != 'Debian'
