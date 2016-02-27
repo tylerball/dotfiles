@@ -17,6 +17,7 @@
 
 " Interface
 " ---------
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1 " truecolor support
     set shortmess=WatAIT        "" Stifle interruptive prompts http://items.sjbach.com/319/configuring-vim-right
     set title                   "" Set the window title
     set number                  "" Show line numbers
