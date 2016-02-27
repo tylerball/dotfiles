@@ -1,6 +1,8 @@
 home/.vim/bundle/
 home/.vim/autoload/plug.vim
 home/.vim/sessions/
+home/.ssh/*
+!home/.ssh/config
 home/.config/*
 !home/.config/beets
 home/.config/beets/state.pickle
