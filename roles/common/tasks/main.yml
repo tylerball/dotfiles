@@ -11,3 +11,7 @@
   pip: name={{ item }}
   with_items: pip_packages
   when: ansible_os_family != 'Debian'
+
+- npm: name={{ item }} global=yes
+  with_items: npm_global_packages
+  tags: debug

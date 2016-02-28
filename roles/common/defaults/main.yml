@@ -1,2 +1,6 @@
 pip_packages:
   - neovim
+
+npm_global_packages:
+  - eslint
+  - eslint-plugin-shopify
