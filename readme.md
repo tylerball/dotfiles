@@ -7,10 +7,6 @@ an [ansible][ansible] playbook that installs them.
 ### What's included
 
 * Homebrew packages and cask apps as defined [here][packages].
-
-* I use a [homebrew formula][homebrew-macvim] to install the latest macvim
-possible, compiled with ruby and python support.
-
 * I also use Sorin Ionescu's [Prezto][prezto] for configuring zsh.
 
 Install
@@ -29,7 +25,6 @@ Thanks to
 
 [ansible]:https://github.com/ansible/ansible
 [packages]:https://github.com/tylerball/dotfiles/blob/master/roles/common/defaults/main.yml
-[homebrew-macvim]: https://github.com/tylerball/homebrew-macvim
 [prezto]: https://github.com/sorin-ionescu/prezto
 [neobundle]: https://github.com/Shougo/neobundle.vim
 [gerardo]: https://github.com/gerardo

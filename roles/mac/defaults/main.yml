@@ -1,5 +1,4 @@
 homebrew_taps:
-  - tylerball/macvim
   - homebrew/versions
   - homebrew/dupes
   - caskroom/cask
