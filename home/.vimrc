@@ -18,12 +18,12 @@
 " Interface
 " ---------
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1 " truecolor support
-    set shortmess=WatAIT        "" Stifle interruptive prompts http://items.sjbach.com/319/configuring-vim-right
+    set shortmess=WatAITo       "" Stifle interruptive prompts http://items.sjbach.com/319/configuring-vim-right
     set number                  "" Show line numbers
     set visualbell              "" visual instead of beep
     set cursorline              "" highlight the current line
     set listchars=tab:>·,trail:·,extends:»,precedes:«
-    set list
+    set list                    "" shows whitespace
     set scrolloff=5             "" adds 5 lines of space to the top and bottom relative to the cursor
 
     set mouse=a
@@ -32,7 +32,7 @@
       set ttymouse=sgr
     endif
     set notimeout           "" don't timeout on command line
-    set autowriteall           "" write the damn files!
+    set autowriteall        "" write the damn files!
     set autoread            "" read the damn files
 
     set clipboard=unnamed
@@ -153,12 +153,6 @@
     inoremap kj <ESC>
     inoremap kJ <ESC>
     inoremap KJ <ESC>
-
-    " can't type
-    :command W w
-    :command Q q
-    :command Wq wq
-    :command WQ wq
 
     " sane movement
     noremap j gj

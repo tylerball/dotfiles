@@ -118,21 +118,6 @@ call unite#custom#profile('default', 'context', {
 \ })
 
 nnoremap <C-c> :Unite -buffer-name=yank -default-action=insert history/yank<CR>
-nnoremap <leader>ur :UniteResume<CR>
-let g:extra_whitespace_ignored_filetypes = ['unite']
-au FileType unite hi uniteSource__GrepPattern guibg=#791117, ctermbg=52
-
-autocmd FileType unite call s:unite_my_settings()
-function! s:unite_my_settings()
-  nmap <buffer> <ESC> <Plug>(unite_exit)
-  nmap <buffer> <C-k> <c-w>k
-  imap <silent><buffer><expr> <C-x> unite#do_action('split')
-  imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
-  imap <silent><buffer><expr> <C-t> unite#do_action('tabopen')
-  " fix conflict with endwise
-  silent! iunmap <C-x><CR>
-endfunction
-
 " Syntastic
 let g:syntastic_auto_loc_list=1
 let g:syntastic_mode_map = { 'mode': 'active',
