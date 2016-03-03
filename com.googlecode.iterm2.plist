@@ -3126,7 +3126,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>322</string>
+		<string>415</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -3144,7 +3144,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>319 837 924 485 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2560 648 1440 379 0 0 1680 1027 </string>
+	<string>0 1038 2560 379 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>760 321 610 776 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -3324,12 +3324,16 @@
 			<true/>
 			<key>Background Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.058549948036670685</real>
+				<real>0.077523812651634216</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.058562498539686203</real>
+				<real>0.077522493898868561</real>
 				<key>Red Component</key>
-				<real>0.058553293347358704</real>
+				<real>0.077524803578853607</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
@@ -4642,6 +4646,8 @@
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
+	<key>NoSyncSuppressAnnyoingBellOffer</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>477845202.80442601</real>
 	<key>NoSyncTimeOfLastPromo</key>
@@ -4720,7 +4726,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-02-25T16:37:52Z</date>
+	<date>2016-02-28T17:09:51Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -4769,5 +4775,9 @@
 	<false/>
 	<key>iTerm Version</key>
 	<string>2.9.20160206</string>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
 </dict>
 </plist>
