@@ -19,29 +19,21 @@
 " ---------
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1 " truecolor support
     set shortmess=WatAIT        "" Stifle interruptive prompts http://items.sjbach.com/319/configuring-vim-right
-    set title                   "" Set the window title
     set number                  "" Show line numbers
-    set showmode                "" indicate mode
-    set showcmd                 "" show current command
     set visualbell              "" visual instead of beep
     set cursorline              "" highlight the current line
     set listchars=tab:>·,trail:·,extends:»,precedes:«
     set list
     set scrolloff=5             "" adds 5 lines of space to the top and bottom relative to the cursor
 
-    if g:local
-        set ttyfast
-    endif
-
     set mouse=a
     if has("mouse_sgr") && !has('nvim')
+      set ttyfast
       set ttymouse=sgr
     endif
     set notimeout           "" don't timeout on command line
     set autowriteall           "" write the damn files!
     set autoread            "" read the damn files
-
-    set background=dark
 
     set clipboard=unnamed
 
@@ -57,7 +49,6 @@
 
     set splitbelow                         "" split windows below current
     set splitright                         "" split windows to the right
-    set fillchars=vert:\│                  "" fancy splits for diff windows
     set diffopt=filler,vertical
 
     " resize splits when window is resized
@@ -105,9 +96,6 @@
     set incsearch
     set showmatch
     set hlsearch
-
-    " Ack for the last search
-    nnoremap <silent> <localleader>? :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<","\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
 
     " Open a Quickfix window for the last search.
     nnoremap <localleader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
@@ -204,15 +192,8 @@
     nnoremap <C-k> <C-w>k
     nnoremap <C-l> <C-w>l
 
-    "tabs
-    nnoremap <C-t> :tabnew<CR>
-
     " Sudo to write
     cmap w!! w !sudo tee % >/dev/null
-
-    " Switch indentations
-    nnoremap <leader>2 :setlocal sw=2<cr> :setlocal ts=2<cr>
-    nnoremap <leader>4 :setlocal sw=4<cr> :setlocal ts=4<cr>
 
     " fuck ex
     nmap Q <nop>
@@ -221,9 +202,6 @@
 " -----
     set dictionary=/usr/share/dict/words
 
-    au BufWinEnter * call matchadd('Todo', 'TODOF')
-    au BufWinEnter * call matchadd('Todo', 'TODOB')
-    au BufWinEnter * call matchadd('Todo', 'TODO')
 
 " Plugins
 " -------

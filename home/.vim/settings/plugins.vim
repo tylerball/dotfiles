@@ -57,7 +57,6 @@ Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 
 " UI
-Plug 'sjl/vitality.vim'
 if system('uname') == 'Darwin\n'
   Plug 'powerline/fonts', { 'do': './install.sh' }
 endif
@@ -191,15 +190,6 @@ let g:NERDCustomDelimiters = {
 
 let g:splice_initial_mode = "grid"
 let g:splice_initial_layout_grid = 1
-
-" vitality.vim
-let g:vitality_fix_cursor = 1
-let g:vitality_fix_focus = 1
-let g:vitality_always_assume_iterm = 1
-
-au InsertLeave * redraw!
-
-nmap <leader>r :redraw!<cr>
 
 " airline
 let g:airline_powerline_fonts = 1
