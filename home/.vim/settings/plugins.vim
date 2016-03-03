@@ -226,11 +226,6 @@ nnoremap <F3> :NumbersToggle<CR>
 " Gitgutter
 let g:gitgutter_on_bufenter = 0
 
-colorscheme hypertint
-
-hi NonText ctermfg=red guifg=#CA0908 gui=bold
-hi SpecialKey ctermfg=red guifg=#CA0908 gui=bold
-
 let autoreadargs={'autoread':1}
 au BufRead,BufNewFile * :silent! execute WatchForChanges("*", autoreadargs)
 
