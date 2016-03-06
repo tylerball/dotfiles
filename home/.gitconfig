@@ -62,3 +62,5 @@
 	smudge = git-media-smudge %f
 [pull]
 	rebase = true
+[credential]
+	helper = osxkeychain
