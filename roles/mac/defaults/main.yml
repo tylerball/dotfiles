@@ -3,6 +3,7 @@ homebrew_taps:
   - homebrew/versions
   - homebrew/dupes
   - caskroom/cask
+  - neovim/neovim
 
 homebrew_apps:
   - brew-cask
