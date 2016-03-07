@@ -24,21 +24,14 @@ zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \
-    'tmux' \
     'environment' \
-    'terminal' \
     'editor' \
     'history' \
-    'directory' \
-    'spectrum' \
     'utility' \
-    'completion' \
     'git' \
-    'osx' \
     'ssh' \
+    'spectrum' \
     'prompt' \
-    'history-substring-search' \
-    'syntax-highlighting' \
     'python' \
     'ruby'
 
@@ -104,10 +97,3 @@ zstyle ':prezto:module:ssh-agent' identities 'id_rsa'
 #   'pattern' \
 #   'cursor' \
 #   'root'
-
-#
-# Terminal
-#
-
-# Auto set the tab and window titles.
-zstyle ':prezto:module:terminal' auto-title 'yes'

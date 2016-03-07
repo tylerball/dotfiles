@@ -4,6 +4,9 @@
   with_lines:
     - ls -A ../../../home
 
+- name: install zplug
+  git: repo=https://github.com/b4b4r07/zplug dest=~/.zplug
+
 - name: install prezto
   git: repo=https://github.com/sorin-ionescu/prezto.git dest=~/.zprezto recursive=yes
 
