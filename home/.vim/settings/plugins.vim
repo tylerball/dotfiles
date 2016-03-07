@@ -7,15 +7,14 @@ Plug 'mattn/webapi-vim'
 
 " Syntaxes
 Plug 'scrooloose/syntastic'
-Plug 'sorin-ionescu/python.vim'
+Plug 'sorin-ionescu/python.vim', { 'for': 'python' }
 Plug 'othree/html5.vim'
-Plug 'kchmck/vim-coffee-script'
-Plug 'pangloss/vim-javascript'
-Plug 'isRuslan/vim-es6'
-Plug 'tpope/vim-liquid'
-Plug 'avakhov/vim-yaml'
-Plug 'mtscout6/vim-cjsx'
-Plug 'mxw/vim-jsx'
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
+Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
+Plug 'mtscout6/vim-cjsx', { 'for': 'jsx' }
+Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
 
 " Completion
@@ -72,7 +71,7 @@ Plug 'mattn/gist-vim'
 if executable('pbcopy')
   Plug  'zerowidth/vim-copy-as-rtf'
 endif
-Plug 'itspriddle/vim-marked'
+Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 
 " color schemes
 Plug 'tylerball/vim-hypertint'
