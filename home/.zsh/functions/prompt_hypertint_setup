@@ -48,7 +48,7 @@ function prompt_hypertint_setup {
     zstyle ':prezto:module:git:info:added' format ' %%B%F{green}●%f%%b'
     zstyle ':prezto:module:git:info:ahead' format ' %%B%F{yellow}⬆%f%%b'
     zstyle ':prezto:module:git:info:behind' format ' %%B%F{yellow}⬇%f%%b'
-    zstyle ':prezto:module:git:info:branch' format '%%B%F{75}%b%f'
+    zstyle ':prezto:module:git:info:branch' format '%%B%F{4}%b%f'
     zstyle ':prezto:module:git:info:deleted' format ' %%B%F{red}●%f%%b'
     zstyle ':prezto:module:git:info:modified' format ' %%B%F{yellow}●%f%%b'
     zstyle ':prezto:module:git:info:renamed' format ' %%B%F{199}●%f%%b'

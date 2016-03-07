@@ -80,3 +80,6 @@ if [[ -s "/etc/profile.d/chruby.sh" ]]; then
 fi
 
 export FZF_COMPLETION_TRIGGER='~~'
+
+BASE16_SHELL="$HOME/.zplug/repos/chriskempson/base16-shell/base16-default.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL

@@ -76,6 +76,7 @@ Plug 'itspriddle/vim-marked'
 
 " color schemes
 Plug 'tylerball/vim-hypertint'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
