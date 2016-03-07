@@ -4,3 +4,4 @@ pip_packages:
 npm_global_packages:
   - eslint
   - eslint-plugin-shopify
+  - elm-oracle

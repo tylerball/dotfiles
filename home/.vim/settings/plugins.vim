@@ -16,7 +16,7 @@ Plug 'tpope/vim-liquid'
 Plug 'avakhov/vim-yaml'
 Plug 'mtscout6/vim-cjsx'
 Plug 'mxw/vim-jsx'
-Plug 'lambdatoast/elm.vim'
+Plug 'elmcast/elm-vim', { 'for': 'elm' }
 
 " Completion
 Plug 'garbas/vim-snipmate'
