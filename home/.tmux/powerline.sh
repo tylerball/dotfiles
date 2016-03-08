@@ -13,7 +13,4 @@ TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
   "load 237 167" \
   "battery 17 19" \
   "weather 4 0" \
-  "date_day 235 16" \
-  "date 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
-  "time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
 )

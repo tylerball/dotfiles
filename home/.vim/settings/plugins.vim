@@ -142,6 +142,7 @@ let g:NERDCustomDelimiters = {
     \ 'scss': { 'left': '// ' },
 \ }
 
+" splice
 let g:splice_initial_mode = "grid"
 let g:splice_initial_layout_grid = 1
 
@@ -163,6 +164,7 @@ let g:airline_mode_map = {
     \ '' : 'S',
     \ }
 let g:airline_section_y = ''
+let g:airline_theme='dark'
 
 " Numbers.vim
 nnoremap <F3> :NumbersToggle<CR>
@@ -181,3 +183,5 @@ nnoremap <localleader>m :MarkedOpen!<cr>
 
 " dispatch
 nnoremap <localleader>t :Dispatch<cr>
+
+nnoremap <localleader>w :FixWhitespace<cr>
