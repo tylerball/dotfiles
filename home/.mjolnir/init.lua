@@ -1,7 +1,8 @@
 _ = require 'underscore'
 application = require 'mjolnir.application'
 hotkey = require 'mjolnir.hotkey'
-window = require 'mjolnir.window'
+local window = require 'mjolnir.window'
+local alert = require 'mjolnir.alert'
 grid = require 'mjolnir.bg.grid'
 
 local utils = require 'utils'
@@ -9,8 +10,8 @@ local watcher = require 'layout'
 
 grid.GRIDHEIGHT = 6
 grid.GRIDWIDTH = 6
-grid.MARGINX = 0
-grid.MARGINY = 0
+grid.MARGINX = 10
+grid.MARGINY = 10
 
 positions = {
   leftHalf  =  {x=0, y=0, w=grid.GRIDWIDTH / 2, h=grid.GRIDHEIGHT},
@@ -27,9 +28,20 @@ positions = {
   upperLeft = {x=0, y=0, w=grid.GRIDWIDTH / 2, h=grid.GRIDWIDTH / 2},
 }
 
+hotkey.bind(utils.modifier, 'return', function ()
+  utils.setGrid('return', positions.full)
+  local win = window.focusedwindow()
+  local app = win:application()
+  if string.match(app:title(), "iTerm") then
+    win:movetounit({x=0, y=0, w=1, h=1})
+  else
+    local frame = win:screen():frame()
+    win:setframe({x=frame.x + grid.MARGINX, y=frame.y + grid.MARGINY, w=frame.w - grid.MARGINX, h=frame.h - grid.MARGINY})
+  end
+end)
+
 utils.setGrid('H', positions.leftHalf)
 utils.setGrid('L', positions.rightHalf)
-utils.setGrid('return', positions.full)
 utils.setGrid('P', positions.rightThird)
 utils.setGrid('U', positions.leftThird)
 utils.setGrid('O', positions.rightTwoThird)
@@ -74,12 +86,23 @@ watcher.bind('iTunes', {
 })
 
 watcher.bind('Messages',    {
-  ['work_two'] = { ['Color LCD'] = positions.upperRight }
+  ['work_two'] = { ['Color LCD'] = positions.upperRight },
+  ['work_one'] = { ['Thunderbolt Display'] = positions.upperRight },
+})
+
+watcher.bind('Dash',    {
+  ['work_two'] = { ['Color LCD'] = positions.rightTwoThird },
+  ['work_one'] = { ['Thunderbolt Display'] = positions.rightHalf },
 })
 
 watcher.bind('Google Chrome', {
   ['work_one'] = { ['Color LCD'] = positions.full },
   ['work_two'] = { ['Color LCD'] = positions.full }
+})
+
+watcher.bind('Adobe Lightroom', {
+  ['work_one'] = { ['Color LCD'] = positions.full },
+  ['work_two'] = { ['Thunderbolt Display'] = positions.full }
 })
 
 hotkey.bind(utils.modifier, 'e', function ()
