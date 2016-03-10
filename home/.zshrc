@@ -59,6 +59,9 @@ bindkey -M viins 'kj' vi-cmd-mode
 bindkey '^O' edit-command-line
 bindkey -M vicmd "k" history-substring-search-up
 bindkey -M vicmd "j" history-substring-search-down
+bindkey '^ ' autosuggest-accept # ctl-space
+bindkey -M vicmd "H" beginning-of-line
+bindkey -M vicmd "L" end-of-line
 
 rename-tmux-window() {
   if [[ $PWD == $HOME ]]; then
@@ -83,5 +86,7 @@ export FZF_COMPLETION_TRIGGER='~~'
 
 BASE16_SHELL="$HOME/.zplug/repos/chriskempson/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+export NVM_DIR='' # wtf
 
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh

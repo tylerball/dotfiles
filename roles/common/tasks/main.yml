@@ -14,4 +14,3 @@
 
 - npm: name={{ item }} global=yes
   with_items: npm_global_packages
-  tags: debug
