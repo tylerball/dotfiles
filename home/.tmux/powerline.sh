@@ -13,4 +13,5 @@ TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
   "load 237 167" \
   "battery 17 19" \
   "weather 4 0" \
+  "time 18 11" \
 )
