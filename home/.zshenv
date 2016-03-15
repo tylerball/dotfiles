@@ -84,6 +84,8 @@ fi
 fpath=(~/.zsh/functions $fpath)
 autoload ve
 autoload notes
+autoload light
+autoload dark
 
 eval "$(fasd --init posix-alias zsh-hook)"
 

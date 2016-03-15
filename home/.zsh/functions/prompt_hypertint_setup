@@ -57,10 +57,10 @@ function prompt_hypertint_setup {
     zstyle ':prezto:module:git:info:untracked' format ' %%B%F{blue}●%f%%b'
     zstyle ':prezto:module:git:info:commit' format '  %F{238}%.7c'
     zstyle ':prezto:module:git:info:keys' format \
-        'prompt' '( %b%s %F{238})%a%d%m%r%u' \
+        'prompt' '( %b%s %F{8})%a%d%m%r%u' \
         'rprompt' '%A%B%S%U%c'
 
-    PROMPT='%F{red}${SSH_TTY:+[ %n@%m ] }%B%F{154}$python_info[virtualenv]%b%F{254}${PWD/#$HOME/~}%F{238} %B${git_info:+${(e)git_info[prompt]}}%b $git_info[thaw]
+    PROMPT='%F{red}${SSH_TTY:+[ %n@%m ] }%B%F{154}$python_info[virtualenv]%b%F{07}${PWD/#$HOME/~}%F{8} %B${git_info:+${(e)git_info[prompt]}}%b $git_info[thaw]
 %(?.%F{238}❯%f.%B%F{124}❯%f%b) '
     RPROMPT='${editor_info[keymap]}${editor_info[overwrite]}%B%F{green}%V%f%b$ruby_info[version]${git_info[rprompt]} ${VIM:+" %B%F{green}V%f%b"}${git_info[commit]}%F{238}[ %F{252}%t %F{238}]'
     SPROMPT='zsh: correct %F{124}%R%f to %F{green}%r%f [nyae]? '

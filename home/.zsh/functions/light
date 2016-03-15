@@ -1,0 +1,6 @@
+function light() {
+  echo -en "\033]50;SetProfile=light\a"
+  export BASE16_SHELL="$HOME/.zplug/repos/chriskempson/base16-shell/base16-default.light.sh"
+  [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+  echo 'light' >! ~/.colourscheme
+}

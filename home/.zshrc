@@ -84,8 +84,11 @@ fi
 
 export FZF_COMPLETION_TRIGGER='~~'
 
-BASE16_SHELL="$HOME/.zplug/repos/chriskempson/base16-shell/base16-default.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+local colourscheme=`cat ~/.colourscheme`
+eval "dark"
+
+# custom stuff
+eval "$(fasd --init posix-alias zsh-hook)"
 
 export NVM_DIR='' # wtf
 
