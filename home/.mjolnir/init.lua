@@ -33,10 +33,10 @@ hotkey.bind(utils.modifier, 'return', function ()
   local win = window.focusedwindow()
   local app = win:application()
   if string.match(app:title(), "iTerm") then
-    win:movetounit({x=0, y=0, w=1, h=1})
+    win:maximize()
   else
     local frame = win:screen():frame()
-    win:setframe({x=frame.x + grid.MARGINX, y=frame.y + grid.MARGINY, w=frame.w - grid.MARGINX, h=frame.h - grid.MARGINY})
+    win:setframe({x=frame.x + grid.MARGINX, y=frame.y + grid.MARGINY, w=frame.w - grid.MARGINX * 2, h=frame.h - grid.MARGINY * 2})
   end
 end)
 
@@ -60,11 +60,16 @@ hotkey.bind(utils.modifier, '-', function ()
   grid.pushwindow_prevscreen()
 end)
 
-watcher.bind('Path Finder', { ['work_two'] = { ['Thunderbolt Display'] = positions.rightHalf }})
+watcher.bind('Path Finder', {
+  ['work_two'] = { ['Thunderbolt Display'] = positions.rightHalf },
+  ['work_one'] = { ['Thunderbolt Display'] = positions.rightTwoThird },
+})
+
 watcher.bind('iTerm',       {
   ['work_one'] = { ['Color LCD'] = positions.full },
   ['work_two'] = { ['Thunderbolt Display'] = positions.full },
 })
+
 watcher.bind('Dash',        { ['work_two'] = { ['Color LCD'] = positions.rightTwoThird }})
 watcher.bind('Mailplane 3', {
   ['work_two'] = { ['Thunderbolt Display'] = positions.rightHalf },
@@ -100,7 +105,7 @@ watcher.bind('Google Chrome', {
   ['work_two'] = { ['Color LCD'] = positions.full }
 })
 
-watcher.bind('Adobe Lightroom', {
+watcher.bind('Lightroom', {
   ['work_one'] = { ['Color LCD'] = positions.full },
   ['work_two'] = { ['Thunderbolt Display'] = positions.full }
 })
