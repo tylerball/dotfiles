@@ -25,6 +25,7 @@ class GitAnnexPlugin(BeetsPlugin):
         self.unlock_db()
         self.register_listener('write', self.write)
         self.register_listener('item_removed', self.delete)
+        self.register_listener('import', self.on_import)
 
     def relpath(self, path):
         if self.override:
@@ -40,8 +41,11 @@ class GitAnnexPlugin(BeetsPlugin):
         except IOError:
             self.unlock(self.db_loc)
 
+    def on_import(self):
+        return call(['mpc', 'update'])
+
     def get(self, path):
-        return call(["git-annex", "get", self.relpath(path)],
+        call(["git-annex", "get", self.relpath(path)],
             cwd=os.path.expanduser(self.annex_loc)
         )
 
@@ -76,6 +80,7 @@ class GitAnnexPlugin(BeetsPlugin):
 
             for item in lib.items(ui.decargs(args)):
                 self.get(item.path)
+            call(['mpc', 'update'])
 
         get = ui.Subcommand('get', help='get files from git-annex')
         get.parser.add_album_option()

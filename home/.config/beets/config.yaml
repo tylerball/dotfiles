@@ -15,6 +15,7 @@ plugins: [
   duplicates,
   mbsync,
   git_annex,
+  edit,
 ]
 
 import:
@@ -56,3 +57,6 @@ duplicates:
 
 git_annex:
   directory: ~/tunes
+
+edit:
+  move: no
