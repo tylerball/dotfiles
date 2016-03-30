@@ -85,7 +85,7 @@ fi
 export FZF_COMPLETION_TRIGGER='~~'
 
 local colourscheme=`cat ~/.colourscheme`
-eval "dark"
+eval ${colourscheme}
 
 # custom stuff
 eval "$(fasd --init posix-alias zsh-hook)"

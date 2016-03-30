@@ -42,3 +42,8 @@ nnoremap <C-b> :Buffers<CR>
 nnoremap <C-f> :Lines<CR>
 nnoremap <leader>m :History<CR>
 nnoremap <C-p> :FZF<cr>
+
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'botright vnew' }

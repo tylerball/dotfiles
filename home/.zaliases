@@ -59,7 +59,7 @@ alias bi="bundle check || bundle install --jobs=4"
 alias rt="be ruby -Itest"
 
 # shopify
-alias sr="script/server"
+alias sr="dev server"
 
 # jekyll
 alias brs="bundle exec rake server"
