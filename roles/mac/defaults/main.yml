@@ -34,7 +34,7 @@ homebrew_cask_apps:
   - alfred
   - google-chrome
   - karabiner
-  - mjolnir
+  - hammerspoon
   - path-finder
   - iterm2
   - slack

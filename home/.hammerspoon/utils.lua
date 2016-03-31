@@ -1,16 +1,12 @@
-local window = require 'mjolnir.window'
-local hotkey = require 'mjolnir.hotkey'
-local grid = require 'mjolnir.bg.grid'
-
 utils = {}
 
 utils.modifier = {'cmd', 'shift', 'ctrl'}
 
 function utils.setGrid(key, cell)
-  hotkey.bind(utils.modifier, key, function ()
-    local win = window.focusedwindow()
+  hs.hotkey.bind(utils.modifier, key, function ()
+    local win = hs.window.focusedWindow()
     local screen = win:screen()
-    grid.set(win, cell, screen)
+    layout.setWindow(win, cell, screen)
   end)
 end
 
