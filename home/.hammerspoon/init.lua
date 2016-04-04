@@ -67,7 +67,7 @@ layout.bind('Path Finder', {
 
 layout.bind('iTerm2',       {
   one = {
-    ['custom'] = function (layout, screen, windows)
+    ['custom'] = function (_layout, screen, windows)
       _.each(windows, function(win)
         utils.setWindow(win, positions.full, layout.getScreens()[1].screen)
         win:maximize()

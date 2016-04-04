@@ -60,6 +60,8 @@ alias rt="be ruby -Itest"
 
 # shopify
 alias sr="dev server"
+alias dvs="dev server"
+alias dvu="dev up"
 
 # jekyll
 alias brs="bundle exec rake server"
