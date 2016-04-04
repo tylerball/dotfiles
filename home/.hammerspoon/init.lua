@@ -69,7 +69,7 @@ layout.bind('iTerm2',       {
   one = {
     ['custom'] = function (_layout, screen, windows)
       _.each(windows, function(win)
-        utils.setWindow(win, positions.full, layout.getScreens()[1].screen)
+        layout.setWindow(win, positions.full, layout.getScreens()[1].screen)
         win:maximize()
       end)
     end
