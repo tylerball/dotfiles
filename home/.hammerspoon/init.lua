@@ -2,6 +2,7 @@ package.path = "/usr/local/share/lua/5.2/?.lua;"..package.path
 _ = require 'underscore'
 utils = require 'utils'
 layout = require 'layout'
+urls = require 'urls'
 
 hs.grid.setGrid('6x6')
 hs.grid.setMargins(hs.geometry.new(10,10))
@@ -107,7 +108,7 @@ layout.bind('Messages',    {
 })
 
 layout.bind('Dash',    {
-  one = { main = positions.rightHalf },
+  one = { main = positions.rightTwoThird },
   two = { alt1 = positions.rightTwoThird },
 })
 
@@ -124,3 +125,10 @@ layout.bind('Lightroom', {
 hs.hotkey.bind(utils.modifier, 'e', function ()
   layout.doChanges()
 end)
+
+local watcher = hs.screen.watcher.new(layout.doChanges):start()
+
+hs.urlevent.httpCallback = urls.handler
+hs.urlevent.setDefaultHandler('http')
+
+local configFileWatcher = hs.pathwatcher.new(hs.configdir, hs.reload):start()

@@ -81,10 +81,13 @@ end
 
 function layout.setWindow(win, cell, screen)
   local active = layout.getLayout()
-  --local itermscreen = find.app_from_name('iTerm2'):allwindows()[1]:screen()
-  --if layout.screens[screen:name()] == itermscreen:name() and cell.h == 6 then
-    --cell.h = cell.h - 10
-  --end
+  local itermscreen = hs.application.find('iTerm2'):allWindows()[1]:screen()
+  if screen:name() == itermscreen:name() and cell.h == 6 then
+    if layout.screens[screen:name()] == 'main' then
+      cell.h = cell.h - 0.1
+    end
+    cell.h = cell.h - 0.05
+  end
   hs.grid.set(win, cell, screen)
 end
 
