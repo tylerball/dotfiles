@@ -1,15 +1,50 @@
 urls = {}
 
 urls.handler = function (scheme, host, params, fullURL)
-  if string.find(fullURL, 'github.com/Shopify') 
-    or string.find(fullURL, 'myshopify.com')
-    or string.find(fullURL, 'myshopify.io')
-    or string.find(fullURL, 'docs.google.com.*shopify.com')
+  if string.find(fullURL, 'docs.google.com')
+    or string.find(fullURL, 'goo.gl')
+    then
+    return urls.chooser(fullURL)
+  end
+
+  if string.find(fullURL, 'github.com/Shopify')
+    or string.find(fullURL, 'shopify')
+    or string.find(fullURL, 'lever.co')
     then
       urls.openWork(fullURL)
   else
     urls.openHome(fullURL)
   end
+end
+
+urls.chooser = function (url)
+  chooser = hs.chooser.new(function (choice)
+    if choice then
+      urls._open(url, choice.text)
+    end
+  end)
+
+  chooser:width(20)
+  chooser:rows(3)
+  chooser:choices({
+    {
+      ['text'] = "Shopify",
+      ['subText'] = '',
+      ['name'] = "Shopify",
+    },
+    {
+      ['text'] = "Tyler",
+      ['subText'] = '',
+      ['name'] = "Tyler",
+    },
+    {
+      ['text'] = "Apps",
+      ['subText'] = '',
+      ['name'] = "Apps",
+    }
+  })
+
+  chooser:show()
 end
 
 urls.openHome = function (url)

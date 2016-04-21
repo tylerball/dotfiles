@@ -132,3 +132,20 @@ hs.urlevent.httpCallback = urls.handler
 hs.urlevent.setDefaultHandler('http')
 
 local configFileWatcher = hs.pathwatcher.new(hs.configdir, hs.reload):start()
+
+local audioWatcher = hs.audiodevice.watcher.setCallback(function ()
+  -- NEVER USE DISPLAY AUDIO
+  if hs.audiodevice.current().name == 'Display Audio' and string.find(hs.wifi.currentNetwork(), 'Shopify') then
+    hs.audiodevice.findDeviceByName('Built-in Output'):setDefaultOutputDevice()
+    print('display audio prevented')
+  end
+end)
+hs.audiodevice.watcher.start()
+
+local wifiWatcher = hs.wifi.watcher.new(function ()
+  if hs.wifi.currentNetwork() == 'DATA_5G' then
+    os.execute("mount_afp afp://tball@klein.local/photos /Volumes/photos")
+    print('wifi and mounted')
+  end
+end)
+wifiWatcher:start()
