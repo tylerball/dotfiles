@@ -62,6 +62,8 @@ bindkey -M vicmd "j" history-substring-search-down
 bindkey '^ ' autosuggest-accept # ctl-space
 bindkey -M vicmd "H" beginning-of-line
 bindkey -M vicmd "L" end-of-line
+bindkey "$key_info[Up]" history-substring-search-up
+bindkey "$key_info[Down]" history-substring-search-down
 
 rename-tmux-window() {
   if [[ $PWD == $HOME ]]; then
