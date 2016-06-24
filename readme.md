@@ -24,8 +24,5 @@ Thanks to
 * [Mnemonikk](http://mnemonikk.org/2009/03/23/finally-putting-my-personal-configuration-files-under-version-control/)
 
 [ansible]:https://github.com/ansible/ansible
-[packages]:https://github.com/tylerball/dotfiles/blob/master/roles/common/defaults/main.yml
+[packages]:https://github.com/tylerball/dotfiles/blob/master/roles/mac/defaults/main.yml
 [prezto]: https://github.com/sorin-ionescu/prezto
-[neobundle]: https://github.com/Shougo/neobundle.vim
-[gerardo]: https://github.com/gerardo
-[gers]: https://github.com/gerardo/dotfiles/blob/master/install.sh
