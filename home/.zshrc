@@ -95,3 +95,6 @@ eval "$(fasd --init posix-alias zsh-hook)"
 export NVM_DIR='' # wtf
 
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+
+BASE16_SHELL="$HOME/.zplug/repos/chriskempson/base16-shell/scripts/base16-default-dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
