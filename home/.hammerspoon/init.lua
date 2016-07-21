@@ -5,13 +5,10 @@ layout = require 'layout'
 urls = require 'urls'
 
 hs.grid.setGrid('6x6')
-hs.grid.setMargins(hs.geometry.new(10,10))
 
 grid = {}
 grid.GRIDHEIGHT = 6
 grid.GRIDWIDTH = 6
-grid.MARGINX = 10
-grid.MARGINY = 10
 
 positions = {
   leftHalf  =  {x=0, y=0, w=grid.GRIDWIDTH / 2, h=grid.GRIDHEIGHT},
