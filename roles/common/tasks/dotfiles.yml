@@ -2,7 +2,7 @@
 - name: link dotfiles
   file: src={{ playbook_dir }}/home/{{ item }} dest=~/{{ item | basename }} state=link force=yes
   with_lines:
-    - ls -A ../../../home
+    - ls -A {{ playbook_dir }}/home
 
 - name: install zplug
   git: repo=https://github.com/b4b4r07/zplug dest=~/.zplug

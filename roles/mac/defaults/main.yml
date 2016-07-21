@@ -10,8 +10,6 @@ homebrew_apps:
   - lua
   - node
   - python
-  - rbenv
-  - ruby-build
   - the_silver_searcher
   - tmux
   - tree
@@ -30,19 +28,11 @@ homebrew_apps:
   - clipper
 
 homebrew_cask_apps:
-  - 1password
-  - alfred
-  - google-chrome
   - karabiner
   - hammerspoon
   - path-finder
-  - iterm2
-  - slack
   - mailplane
-  - dropbox
   - flux
-  - xquartz
-  - haskell-platform
 
 python_packages:
   - beets
