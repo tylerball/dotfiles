@@ -42,6 +42,7 @@ class GitAnnexPlugin(BeetsPlugin):
             self.unlock(self.db_loc)
 
     def on_import(self):
+        self.unlock_db()
         return call(['mpc', 'update'])
 
     def get(self, path):
@@ -70,9 +71,10 @@ class GitAnnexPlugin(BeetsPlugin):
                 self.unlock(path)
 
     def delete(self, item):
-        call(["git", "rm", self.relpath(item.path)],
-            cwd=os.path.expanduser(self.annex_loc)
-        )
+        if not 'import' in sys.argv:
+            call(["git", "rm", self.relpath(item.path)],
+                cwd=os.path.expanduser(self.annex_loc)
+            )
 
     def commands(self):
         def get_func(lib, opts, args):
