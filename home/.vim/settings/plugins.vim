@@ -1,8 +1,6 @@
 call plug#begin('~/.vim/bundle')
 
 " Dependencies
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
 Plug 'mattn/webapi-vim'
 
 " Syntaxes
@@ -54,13 +52,14 @@ Plug 'Shougo/neoyank.vim'
 " Testing
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
+Plug 'janko-m/vim-test'
 
 " UI
 if system('uname') == 'Darwin\n'
   Plug 'powerline/fonts', { 'do': './install.sh' }
 endif
 Plug 'bling/vim-airline'
-Plug 'Lokaltog/vim-easymotion'
+Plug 'justinmk/vim-sneak'
 Plug 'myusuf3/numbers.vim'
 Plug 'tpope/vim-obsession'
 Plug 'ConradIrwin/vim-bracketed-paste'
@@ -130,9 +129,6 @@ vnoremap ! :ClamVisual<space>
 " Tabularize
 nnoremap <localleader>u :Tabularize /
 vnoremap <localleader>u :Tabularize /
-
-" easymotion
-let g:EasyMotion_leader_key = '<Leader>'
 
 " gundo.vim shortcut
 nnoremap <F5> :GundoToggle<CR>
