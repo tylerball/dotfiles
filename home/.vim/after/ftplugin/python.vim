@@ -22,3 +22,5 @@ for p in sys.path:
     if os.path.isdir(p):
         vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
 EOF
+
+let g:syntastic_python_checker_args='--ignore=E501'

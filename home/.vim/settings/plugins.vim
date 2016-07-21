@@ -12,7 +12,7 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
 Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
 Plug 'mtscout6/vim-cjsx', { 'for': 'jsx' }
-Plug 'mxw/vim-jsx', { 'for': 'jsx' }
+"Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
 
 " Completion
@@ -130,11 +130,6 @@ vnoremap <localleader>u :Tabularize /
 " gundo.vim shortcut
 nnoremap <F5> :GundoToggle<CR>
 
-" nerd commenter
-let g:NERDCustomDelimiters = {
-    \ 'scss': { 'left': '// ' },
-\ }
-
 " splice
 let g:splice_initial_mode = "grid"
 let g:splice_initial_layout_grid = 1
@@ -169,18 +164,12 @@ let g:gitgutter_on_bufenter = 0
 let autoreadargs={'autoread':1}
 au BufRead,BufNewFile * :silent! execute WatchForChanges("*", autoreadargs)
 
-let g:jsx_ext_required = 0
-
-" vim-marked
-nnoremap <localleader>m :MarkedOpen<cr>
-
 nmap <silent> <localleader>t :TestNearest<CR>
 nmap <silent> <localleader>T :TestFile<CR>
 nmap <silent> <localleader>a :TestSuite<CR>
 nmap <silent> <localleader>l :TestLast<CR>
 nmap <silent> <localleader>g :TestVisit<CR>
 let test#strategy = "dispatch"
-let test#ruby#minitest#executable = 'bundle exec ruby -Itest'
 
 nnoremap <localleader>w :FixWhitespace<cr>
 

@@ -9,3 +9,6 @@ let g:syntastic_quiet_warnings=1
 setlocal spell
 
 setl tw=80
+
+" vim-marked
+nnoremap <localleader>m :MarkedOpen<cr>
