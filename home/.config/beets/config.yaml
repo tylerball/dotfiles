@@ -60,3 +60,16 @@ git_annex:
 
 edit:
   move: no
+
+format_item: '$artist - $year-$month-$day - $album - $title'
+format_album: '$albumartist - $year-$month-$day - $album'
+
+replace:
+  '[\\/]': _
+  '^\.': _
+  '[\x00-\x1f]': _
+  '[<>:"\?\*\|]': _
+  '\.$': _
+  '\s+$': ''
+  '^\s+': ''
+  '\!': ''
