@@ -1,6 +1,10 @@
 urls = {}
 
 urls.handler = function (scheme, host, params, fullURL)
+  if hs.eventtap.checkKeyboardModifiers()['cmd'] then
+    return urls.chooser(fullURL)
+  end
+
   if string.find(fullURL, 'docs.google.com')
     or string.find(fullURL, 'goo.gl')
     then
@@ -10,6 +14,9 @@ urls.handler = function (scheme, host, params, fullURL)
   if string.find(fullURL, 'github.com/Shopify')
     or string.find(fullURL, 'shopify')
     or string.find(fullURL, 'lever.co')
+    or string.find(fullURL, 'invisionapp.com')
+    or string.find(fullURL, 'invis.io')
+    or string.find(fullURL, 'datadoghq.com')
     then
       urls.openWork(fullURL)
   else

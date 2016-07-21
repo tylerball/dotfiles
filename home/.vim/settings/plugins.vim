@@ -16,7 +16,8 @@ Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
 
 " Completion
-Plug 'garbas/vim-snipmate'
+Plug 'ervandew/supertab'
+Plug 'SirVer/ultisnips'
 if has('python')
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
 end
@@ -38,7 +39,7 @@ Plug 'sjl/splice.vim'
 Plug 'airblade/vim-gitgutter'
 
 " Text manipulation
-Plug 'godlygeek/tabular'
+Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'scrooloose/nerdcommenter'
@@ -118,10 +119,6 @@ call unite#custom#profile('default', 'context', {
 
 nnoremap <C-c> :Unite -buffer-name=yank -default-action=insert history/yank<CR>
 
-" Snipmate
-imap <C-\> <esc>a<Plug>snipMateNextOrTrigger
-smap <C-\> <Plug>snipMateNextOrTrigger
-
 " Clam
 nnoremap ! :Clam<space>
 vnoremap ! :ClamVisual<space>
@@ -175,9 +172,22 @@ au BufRead,BufNewFile * :silent! execute WatchForChanges("*", autoreadargs)
 let g:jsx_ext_required = 0
 
 " vim-marked
-nnoremap <localleader>m :MarkedOpen!<cr>
+nnoremap <localleader>m :MarkedOpen<cr>
 
-" dispatch
-nnoremap <localleader>t :Dispatch<cr>
+nmap <silent> <localleader>t :TestNearest<CR>
+nmap <silent> <localleader>T :TestFile<CR>
+nmap <silent> <localleader>a :TestSuite<CR>
+nmap <silent> <localleader>l :TestLast<CR>
+nmap <silent> <localleader>g :TestVisit<CR>
+let test#strategy = "dispatch"
+let test#ruby#minitest#executable = 'bundle exec ruby -Itest'
 
 nnoremap <localleader>w :FixWhitespace<cr>
+
+" ultisnips
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:UltiSnipsExpandTrigger="<c-l>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
