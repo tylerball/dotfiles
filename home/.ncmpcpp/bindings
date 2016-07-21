@@ -34,3 +34,6 @@ def_key "ctrl_d"
 
 def_key "ctrl_u"
   page_up
+
+def_key "N"
+  remove_selection

@@ -93,6 +93,7 @@ eval ${colourscheme}
 eval "$(fasd --init posix-alias zsh-hook)"
 
 export NVM_DIR='' # wtf
+export PATH=$PATH:./node_modules/.bin
 
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 
