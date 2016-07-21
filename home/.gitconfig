@@ -4,7 +4,6 @@
 [color]
     ui = auto
 [core]
-    editor = "vim"
     excludesfile = ~/.gitignore
     autocrlf = false
 [svn]
