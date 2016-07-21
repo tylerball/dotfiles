@@ -43,10 +43,4 @@ launch_agents:
   - /usr/local/opt/clipper/homebrew.mxcl.clipper.plist
 
 npm_global_packages:
-  - eslint
-  - eslint-plugin-shopify
-  - eslint-plugin-babel
-  - eslint-plugin-promise
-  - eslint-plugin-sort-class-members
-  - eslint-plugin-import
   - elm-oracle

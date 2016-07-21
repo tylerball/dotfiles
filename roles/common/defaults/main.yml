@@ -1,5 +1,2 @@
 pip_packages:
   - neovim
-
-npm_global_packages:
-  - elm-oracle
