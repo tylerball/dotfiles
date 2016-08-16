@@ -3,6 +3,7 @@ _ = require 'underscore'
 utils = require 'utils'
 layout = require 'layout'
 urls = require 'urls'
+require 'apps'
 
 hs.grid.setGrid('6x6')
 
@@ -128,7 +129,7 @@ local watcher = hs.screen.watcher.new(layout.doChanges):start()
 hs.urlevent.httpCallback = urls.handler
 hs.urlevent.setDefaultHandler('http')
 
-local configFileWatcher = hs.pathwatcher.new(hs.configdir, hs.reload):start()
+hs.pathwatcher.new(hs.configdir .. '/', hs.reload):start()
 
 local audioWatcher = hs.audiodevice.watcher.setCallback(function ()
   -- NEVER USE DISPLAY AUDIO
