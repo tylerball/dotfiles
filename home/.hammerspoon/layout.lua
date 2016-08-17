@@ -2,8 +2,6 @@ layout = {}
 -- contains a table indexed by screen name and grid instructions
 layout.apps = {}
 
-local screens = hs.screen.allScreens()
-
 function length(tbl)
   local count = 0
   for i, b in pairs(tbl) do
@@ -83,7 +81,7 @@ function layout.setWindow(win, cell, screen)
   local active = layout.getLayout()
   local itermscreen = hs.application.find('iTerm2'):allWindows()[1]:screen()
   if screen:name() == itermscreen:name() and cell.h == 6 then
-    if layout.screens[screen:name()] == 'main' then
+    if hs.screen.allScreens()[screen:name()] == 'main' then
       --cell.h = cell.h - 0.2
     end
     --cell.h = cell.h - 0.05

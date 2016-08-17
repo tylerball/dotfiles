@@ -26,14 +26,20 @@ hs.hotkey.bind(modifier, 'w', function ()
   hs.application.get('Google Chrome'):selectMenuItem({'People', 'Shopify'})
 end)
 
+-- prevent window closes in Chrome
 hs.hotkey.bind({'cmd', 'shift'}, 'w', function ()
   if hs.application.get('Google Chrome'):isFrontmost() then
     return
+  else
+    hs.application.frontmostApplication():selectMenuItem({'File', 'Close Window'})
   end
 end)
 
+-- prevent quits in Chrome
 hs.hotkey.bind({'cmd',}, 'q', function ()
   if hs.application.get('Google Chrome'):isFrontmost() then
     return
+  else
+    hs.application.frontmostApplication():kill()
   end
 end)
