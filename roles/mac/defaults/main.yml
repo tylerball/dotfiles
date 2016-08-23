@@ -5,7 +5,6 @@ homebrew_taps:
   - neovim/neovim
 
 homebrew_apps:
-  - brew-cask
   - git
   - lua
   - node
