@@ -10,7 +10,7 @@ export LOCATION='local'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-[ -f "${ZDOTDIR:-$HOME}/.zplug/zplug" ] && source ~/.zplugs
+[ -f "${ZDOTDIR:-$HOME}/.zplug/init.zsh" ] && source ~/.zplugs
 
 unsetopt ignoreeof          # allow exiting from shell with ctrl+d
 setopt AUTO_CD              # Auto changes to a directory without typing cd.
