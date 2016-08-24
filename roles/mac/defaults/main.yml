@@ -25,6 +25,7 @@ homebrew_apps:
   - gawk
   - neovim
   - clipper
+  - ansiweather
 
 homebrew_cask_apps:
   - karabiner
