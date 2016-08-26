@@ -63,23 +63,12 @@ urls.openWork = function (url)
 end
 
 urls._open = function (url, profile)
-  local bool, result = hs.applescript.applescript([[
-    tell application "Google Chrome" to activate
-    tell application "System Events"
-      tell process "Google Chrome"
-        tell menu bar 1
-          tell menu bar item "People"
-            tell menu "People"
-              click menu item "]] .. profile .. [["
-            end tell
-          end tell
-        end tell
-      end tell
-    end tell
+  hs.application.get('Google Chrome'):selectMenuItem({'People', profile})
+  local bool, result = hs.osascript.applescript([[
     tell application "Google Chrome" to open location "]] .. url .. '"'
   )
   if not bool then
-    print(result.NSAppleScriptErrorMessage)
+    print(result)
   end
 end
 
