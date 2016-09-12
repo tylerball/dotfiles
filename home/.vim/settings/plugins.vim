@@ -28,9 +28,9 @@ Plug 'sjl/gundo.vim'
 " Files
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree'
 Plug 'Shougo/unite.vim'
 Plug 'djoshea/vim-autoread'
+Plug 'tpope/vim-vinegar'
 
 "version control
 Plug 'tpope/vim-fugitive'
@@ -89,21 +89,10 @@ nnoremap <leader>gc :Gcommit
 nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gl :Glog<cr>:copen<cr>
 
-" nerdtree
-let g:NERDTreeMouseMode = 2
-let g:NERDTreeWinSize = 40
-let NERDTreeShowHidden=1
-" ignore .pyc files
-let NERDTreeIgnore=['\.pyc$', '\~$']
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-" open nerdtree
-nnoremap <C-n> :NERDTreeToggle<CR>
-
-map <localleader>f :NERDTreeFind<cr>
-
-" don't open nerdtree by default
-let g:nerdtree_tabs_open_on_gui_startup=0
+" vim-vinegar
+map <localleader>f <Plug>VinegarVerticalSplitUp
+autocmd FileType netrw nmap <buffer> s .split<CR>
+autocmd FileType netrw nmap <buffer> v .vsplit<CR>
 
 " unite
 let g:unite_source_history_yank_enable = 1
