@@ -3475,6 +3475,8 @@
 	<false/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
+	<key>DisableWindowSizeSnap</key>
+	<true/>
 	<key>EnableRendezvous</key>
 	<false/>
 	<key>FocusFollowsMouse</key>
@@ -3640,7 +3642,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>322</string>
+		<string>307</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -3656,11 +3658,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>689 131 702 375 0 0 1680 1027 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>194 719 606 456 0 0 1920 1200 </string>
+	<string>318 979 606 456 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
 	<string>654 769 616 174 0 0 1920 1200 </string>
+	<key>NSWindow Frame SharedPreferences</key>
+	<string>264 325 796 473 0 0 1440 900 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>99 316 592 584 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 696 1680 354 0 0 1680 1050 </string>
+	<string>-236 546 490 354 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>8 3 832 409 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -6165,6 +6171,8 @@
 			<string>/Users/tball</string>
 		</dict>
 	</array>
+	<key>NoSyncConfirmBeta</key>
+	<true/>
 	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
 	<true/>
 	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
@@ -6257,11 +6265,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing3.xml?shard=8</string>
+	<string>https://iterm2.com/appcasts/testing.xml?shard=8</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-05-25T03:11:40Z</date>
+	<date>2016-09-13T14:28:38Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -6290,6 +6298,8 @@
 	<integer>10</integer>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1473776896</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseBorder</key>
@@ -6313,7 +6323,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20160426</string>
+	<string>3.0.8</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>1</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
