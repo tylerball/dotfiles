@@ -1,15 +1,15 @@
 ---
 - name: Tap Brews
   homebrew_tap: tap={{ item }} state=present
-  with_items: homebrew_taps
+  with_items: ['{{homebrew_taps}}']
 
 - name: Install brew apps
   homebrew: name={{ item }} state=present
-  with_items: homebrew_apps
+  with_items: ['{{homebrew_apps}}']
 
 - name: Install brew cask apps
   homebrew_cask: name={{ item }} state=present
-  with_items: homebrew_cask_apps
+  with_items: ['{{homebrew_cask_apps}}']
 
 - name: Import karabiner settings
   script: karabiner.sh

@@ -11,7 +11,9 @@
   git: repo=https://github.com/sorin-ionescu/prezto.git dest=~/.zprezto recursive=yes
 
 - name: install vim-plug
-  shell: curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: ~/.vim/autoload/plug.vim
 
 - name: install tpm
   git: repo=https://github.com/tmux-plugins/tpm dest=~/.tmux/plugins/tpm

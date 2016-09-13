@@ -4,5 +4,5 @@
 - include: npm.yml
 
 - file: src={{ item }} dest=~/Library/LaunchAgents/{{ item | basename }} state=link force=true
-  with_items: launch_agents
+  with_items: ['{{launch_agents}}']
   notify: load launchctl
