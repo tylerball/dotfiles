@@ -1,8 +1,5 @@
 call plug#begin('~/.vim/bundle')
 
-" Dependencies
-Plug 'mattn/webapi-vim'
-
 " Syntaxes
 Plug 'neomake/neomake'
 Plug 'sorin-ionescu/python.vim', { 'for': 'python' }
@@ -12,7 +9,6 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
 Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
 Plug 'mtscout6/vim-cjsx', { 'for': 'jsx' }
-"Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
 
 " Completion
@@ -34,7 +30,6 @@ Plug 'tpope/vim-vinegar'
 "version control
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'sjl/splice.vim'
 Plug 'airblade/vim-gitgutter'
 
 " Text manipulation
@@ -43,7 +38,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-jdaddy'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-unimpaired'
@@ -65,11 +59,10 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 
 " Utilities
 Plug 'sjl/clam.vim'
-Plug 'mattn/gist-vim'
 if executable('pbcopy')
   Plug  'zerowidth/vim-copy-as-rtf'
 endif
-Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
+Plug 'itspriddle/vim-marked'
 
 " color schemes
 Plug 'tylerball/vim-hypertint'
@@ -99,16 +92,8 @@ autocmd FileType netrw nmap <buffer> v .vsplit<CR>
 nnoremap ! :Clam<space>
 vnoremap ! :ClamVisual<space>
 
-" Tabularize
-nnoremap <localleader>u :Tabularize /
-vnoremap <localleader>u :Tabularize /
-
 " gundo.vim shortcut
 nnoremap <F5> :GundoToggle<CR>
-
-" splice
-let g:splice_initial_mode = "grid"
-let g:splice_initial_layout_grid = 1
 
 " airline
 let g:airline_powerline_fonts = 1
@@ -140,6 +125,7 @@ let g:gitgutter_on_bufenter = 0
 let autoreadargs={'autoread':1}
 au BufRead,BufNewFile * :silent! execute WatchForChanges("*", autoreadargs)
 
+" vim-test
 nmap <silent> <localleader>t :TestNearest<CR>
 nmap <silent> <localleader>T :TestFile<CR>
 nmap <silent> <localleader>a :TestSuite<CR>
@@ -147,6 +133,7 @@ nmap <silent> <localleader>l :TestLast<CR>
 nmap <silent> <localleader>g :TestVisit<CR>
 let test#strategy = "dispatch"
 
+" vim-trailing-whitespace
 nnoremap <localleader>w :FixWhitespace<cr>
 
 " ultisnips
