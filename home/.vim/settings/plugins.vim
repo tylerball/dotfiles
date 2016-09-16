@@ -4,7 +4,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'mattn/webapi-vim'
 
 " Syntaxes
-Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake'
 Plug 'sorin-ionescu/python.vim', { 'for': 'python' }
 Plug 'othree/html5.vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
@@ -80,6 +80,9 @@ Plug 'chriskempson/base16-vim'
 call plug#end()
 
 " Vim plugin settings
+"
+" neomake
+autocmd! BufWritePost * Neomake
 
 " Fugitive
 nnoremap <leader>gs :Gstatus<cr>

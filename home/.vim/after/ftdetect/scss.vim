@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.scss setlocal filetype=scss.css
+au BufNewFile,BufRead *.scss setlocal filetype=scss
