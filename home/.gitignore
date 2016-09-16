@@ -7,3 +7,4 @@ settings_local.py
 **/*.orig
 .byebug_history
 .bundle
+**/Session.vim
