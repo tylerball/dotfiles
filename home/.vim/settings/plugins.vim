@@ -28,7 +28,6 @@ Plug 'sjl/gundo.vim'
 " Files
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'Shougo/unite.vim'
 Plug 'djoshea/vim-autoread'
 Plug 'tpope/vim-vinegar'
 
@@ -48,7 +47,6 @@ Plug 'tpope/vim-jdaddy'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-unimpaired'
-Plug 'Shougo/neoyank.vim'
 
 " Testing
 Plug 'tpope/vim-dispatch'
@@ -96,20 +94,6 @@ nnoremap <leader>gl :Glog<cr>:copen<cr>
 map <localleader>f <Plug>VinegarVerticalSplitUp
 autocmd FileType netrw nmap <buffer> s .split<CR>
 autocmd FileType netrw nmap <buffer> v .vsplit<CR>
-
-" unite
-let g:unite_source_history_yank_enable = 1
-" Use the fuzzy matcher for everything
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-" Use the rank sorter for everything
-call unite#filters#sorter_default#use(['sorter_rank'])
-" Like ctrlp.vim settings.
-call unite#custom#profile('default', 'context', {
-\   'winheight': 15,
-\   'direction': 'botright',
-\ })
-
-nnoremap <C-c> :Unite -buffer-name=yank -default-action=insert history/yank<CR>
 
 " Clam
 nnoremap ! :Clam<space>
