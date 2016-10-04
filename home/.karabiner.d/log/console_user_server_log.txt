@@ -1,0 +1,4 @@
+[2016-10-04 01:34:38.213] [console_user_server] [info] version 0.90.46
+[2016-10-04 01:34:39.674] [console_user_server] [info] grabber_client_ is connected
+[2016-10-04 01:34:39.677] [console_user_server] [info] configuration_core_ was loaded.
+[2016-10-04 01:34:40.753] [console_user_server] [info] system_preferences::values is updated.
