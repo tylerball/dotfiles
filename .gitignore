@@ -15,3 +15,4 @@ home/.mpd/*
 home/.tmux/plugins
 home/.tmux/resurrect
 home/.vim/.netrwhist
+home/.karabiner.d/log
