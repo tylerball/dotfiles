@@ -85,8 +85,6 @@ nnoremap <leader>gl :Glog<cr>:copen<cr>
 
 " vim-vinegar
 map <localleader>f <Plug>VinegarVerticalSplitUp
-autocmd FileType netrw nmap <buffer> s .split<CR>
-autocmd FileType netrw nmap <buffer> v .vsplit<CR>
 
 " Clam
 nnoremap ! :Clam<space>
