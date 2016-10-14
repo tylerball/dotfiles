@@ -26,6 +26,7 @@ class GitAnnexPlugin(BeetsPlugin):
         self.register_listener('write', self.write)
         self.register_listener('item_removed', self.delete)
         self.register_listener('import', self.on_import)
+        self.unlock_db()
 
     def relpath(self, path):
         if self.override:
@@ -39,6 +40,7 @@ class GitAnnexPlugin(BeetsPlugin):
             file = open(self.db_loc, 'a')
             file.close()
         except IOError:
+            self.get(self.db_loc)
             self.unlock(self.db_loc)
 
     def on_import(self):
