@@ -3642,7 +3642,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>307</string>
+		<string>322</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -3661,12 +3661,14 @@
 	<string>318 979 606 456 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
 	<string>654 769 616 174 0 0 1920 1200 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>2829 139 606 456 2560 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>264 325 796 473 0 0 1440 900 </string>
+	<string>723 809 770 381 0 0 2560 1440 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
-	<string>99 316 592 584 0 0 1440 900 </string>
+	<string>155 616 592 584 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-236 546 490 354 0 0 1440 900 </string>
+	<string>0 546 1440 354 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>8 3 832 409 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -6269,7 +6271,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-09-13T14:28:38Z</date>
+	<date>2016-09-19T03:51:41Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -6277,6 +6279,8 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
+	<false/>
+	<key>ShowNewOutputIndicator</key>
 	<false/>
 	<key>ShowPaneTitles</key>
 	<true/>
@@ -6299,7 +6303,7 @@
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
 	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1473776896</real>
+	<real>1474257152</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseBorder</key>

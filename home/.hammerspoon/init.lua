@@ -24,6 +24,7 @@ positions = {
   upperRight = {x=grid.GRIDWIDTH / 2, y=0, w=grid.GRIDWIDTH / 2, h=grid.GRIDWIDTH / 2},
   lowerLeft = {x=0, y=grid.GRIDWIDTH / 2, w=grid.GRIDWIDTH / 2, h=grid.GRIDWIDTH / 2},
   upperLeft = {x=0, y=0, w=grid.GRIDWIDTH / 2, h=grid.GRIDWIDTH / 2},
+  upperThird = {x=0, y=0, w=.grid.GRIDWIDTH, h=grid.GRIDHEIGHT / 3},
 }
 
 hs.hotkey.bind(utils.modifier, 'return', function ()
@@ -64,15 +65,8 @@ layout.bind('Path Finder', {
   two = { main = positions.rightHalf },
 })
 
-layout.bind('iTerm2',       {
-  one = {
-    ['custom'] = function (_layout, screen, windows)
-      _.each(windows, function(win)
-        layout.setWindow(win, positions.full, layout.getScreens()[1].screen)
-        win:maximize()
-      end)
-    end
- },
+layout.bind('iTerm', {
+  one = { main = positions.full },
 })
 
 layout.bind('Dash',        {
