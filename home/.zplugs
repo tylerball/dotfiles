@@ -6,7 +6,7 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "Tarrasch/zsh-autoenv"
 zplug "supercrabtree/k"
 zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-completions", do:"compinit"
+zplug "zsh-users/zsh-completions", hook-build:"compinit"
 zplug "chriskempson/base16-shell"
 
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
