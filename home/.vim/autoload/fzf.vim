@@ -12,5 +12,5 @@ let g:fzf_action = {
 " https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2#.7tq6fyynl
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep("rg --column --line-number --no-heading --fixed-strings "
-  \ ."--ignore-case --hidden --glob '!.git/*' ".shellescape(<q-args>).'| tr -d "\017"',
+  \ ."--ignore-case --hidden --glob '!.git/*' --color=always ".shellescape(<q-args>).'| tr -d "\017"',
   \ 0, <bang>0)

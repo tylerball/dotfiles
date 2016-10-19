@@ -8,7 +8,6 @@ syntax on
 
 " Interface
 " ---------
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1 " truecolor support
     set shortmess=WatAITo       "" Stifle interruptive prompts http://items.sjbach.com/319/configuring-vim-right
     set number                  "" Show line numbers
     set visualbell              "" visual instead of beep

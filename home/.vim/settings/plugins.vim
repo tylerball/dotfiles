@@ -51,7 +51,8 @@ Plug 'janko-m/vim-test'
 if system('uname') == 'Darwin\n'
   Plug 'powerline/fonts', { 'do': './install.sh' }
 endif
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'justinmk/vim-sneak'
 Plug 'myusuf3/numbers.vim'
 Plug 'tpope/vim-obsession'
@@ -92,26 +93,6 @@ vnoremap ! :ClamVisual<space>
 
 " gundo.vim shortcut
 nnoremap <F5> :GundoToggle<CR>
-
-" airline
-let g:airline_powerline_fonts = 1
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline_mode_map = {
-    \ '__' : '-',
-    \ 'n'  : '',
-    \ 'i'  : '',
-    \ 'R'  : 'R',
-    \ 'c'  : 'C',
-    \ 'v'  : 'V',
-    \ 'V'  : 'VL',
-    \ '' : 'VB',
-    \ 's'  : 'S',
-    \ 'S'  : 'S',
-    \ '' : 'S',
-    \ }
-let g:airline_section_y = ''
-let g:airline_theme='dark'
 
 " Numbers.vim
 nnoremap <F3> :NumbersToggle<CR>
