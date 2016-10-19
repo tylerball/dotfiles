@@ -1,19 +1,10 @@
-" Setup
-" -----
-    set nocompatible
+if filereadable(expand("~/.vim/autoload/plug.vim"))
+    let g:local = 1
+else
+    let g:local = 0
+endif
 
-    if filereadable(expand("~/.vim/autoload/plug.vim"))
-        let g:local = 1
-    else
-        let g:local = 0
-    endif
-
-    syntax on
-    set encoding=utf-8        "" set as utf-8 encoding
-
-    if !has('nvim')
-      set shell=$SHELL
-    end
+syntax on
 
 " Interface
 " ---------
@@ -31,10 +22,9 @@
       set ttyfast
       set ttymouse=sgr
     endif
-    set notimeout           "" don't timeout on command line
     set autowriteall        "" write the damn files!
     set autoread            "" read the damn files
-
+    :let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
     set clipboard=unnamed
 
     au WinEnter * setlocal cursorline
@@ -127,8 +117,6 @@
     nnoremap <F8> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
                         \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
                         \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-" }}}
 " Formatting
 " ----------
     set expandtab        "" converts tab keypresses to spaces
