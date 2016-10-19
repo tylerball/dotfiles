@@ -25,7 +25,3 @@ else
 fi
 
 ansible-playbook -c local site.yml
-
-if [[ "$(uname)" = 'Darwin' ]]; then
-  mackup backup
-fi
