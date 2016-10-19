@@ -31,7 +31,7 @@ homebrew_apps:
   - ripgrep
 
 homebrew_cask_apps:
-  - karabiner
+  - karabiner-elements
   - hammerspoon
   - path-finder
   - mailplane
