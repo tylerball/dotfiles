@@ -1,6 +1,7 @@
 # vim:ft=zsh
 
 export FZF_DEFAULT_OPTS='--bind ctrl-d:page-down,ctrl-u:page-up'
+export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/*'"
 
 function j() {
   local dir

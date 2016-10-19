@@ -28,6 +28,7 @@ homebrew_apps:
   - ansiweather
   - exif
   - mackup
+  - ripgrep
 
 homebrew_cask_apps:
   - karabiner
