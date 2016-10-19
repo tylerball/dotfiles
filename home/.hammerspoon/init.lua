@@ -24,7 +24,7 @@ positions = {
   upperRight = {x=grid.GRIDWIDTH / 2, y=0, w=grid.GRIDWIDTH / 2, h=grid.GRIDWIDTH / 2},
   lowerLeft = {x=0, y=grid.GRIDWIDTH / 2, w=grid.GRIDWIDTH / 2, h=grid.GRIDWIDTH / 2},
   upperLeft = {x=0, y=0, w=grid.GRIDWIDTH / 2, h=grid.GRIDWIDTH / 2},
-  upperThird = {x=0, y=0, w=.grid.GRIDWIDTH, h=grid.GRIDHEIGHT / 3},
+  upperThird = {x=0, y=0, w=grid.GRIDWIDTH, h=grid.GRIDHEIGHT / 3},
 }
 
 hs.hotkey.bind(utils.modifier, 'return', function ()
