@@ -25,3 +25,6 @@ else
 fi
 
 ansible-playbook -c local site.yml
+
+$HOME/.tmux/plugins/tpm/bin/update_plugins all
+zplug update
