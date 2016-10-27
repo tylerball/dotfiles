@@ -11,12 +11,12 @@ from beets.ui import print_
 from beets.ui.commands import import_cmd, default_commands
 
 default_commands[default_commands.index(import_cmd)].parser.add_option(
-    '-u', '--itunes', help='copy to itunes', default=False, dest='itunes',
+    '-u', '--itunes', help='copy to itunes', default=False, dest='copyitunes',
     action='store_true'
 )
 
 default_commands[default_commands.index(import_cmd)].parser.add_option(
-    '-U', '--noitunes', help='don\'t copy to itunes', default=False, dest='itunes',
+    '-U', '--noitunes', help='don\'t copy to itunes', default=False, dest='nocopyitunes',
     action='store_true'
 )
 
@@ -24,11 +24,11 @@ class iTunesPlugin(BeetsPlugin):
     def __init__(self):
         super(iTunesPlugin, self).__init__()
 
-        if self.config['auto'].get():
-            if not any(x in ['-U', '--noitunes'] for x in sys.argv):
+        (options, args) = default_commands[default_commands.index(import_cmd)].parser.parse_args()
+        auto = self.config['auto'].get()
+        if auto or options.copyitunes:
+            if not options.nocopyitunes:
                 self.register_listener('import_task_files', self.imported)
-        elif '-T' in sys.argv or '--itunes' in sys.argv:
-            self.register_listener('import_task_files', self.imported)
 
     def imported(self, task, session):
         for item in task.imported_items():
