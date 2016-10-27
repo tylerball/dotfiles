@@ -5,7 +5,9 @@ import os
 import sys
 import argparse
 import shutil
-from subprocess import call
+import json
+import pipes
+from subprocess import call, check_call, check_output, CalledProcessError
 from beets import config, ui, logging
 from beets.plugins import BeetsPlugin
 from beets.util import command_output
@@ -26,6 +28,7 @@ class GitAnnexPlugin(BeetsPlugin):
         self.register_listener('write', self.write)
         self.register_listener('item_removed', self.delete)
         self.register_listener('import', self.on_import)
+        self.register_listener('item_copied', self.on_copied)
         self.unlock_db()
 
     def relpath(self, path):
@@ -47,8 +50,12 @@ class GitAnnexPlugin(BeetsPlugin):
         self.unlock_db()
         return call(['mpc', 'update'])
 
+    def on_copied(self, item, source, destination):
+        self.get(source)
+        self.unlock(source)
+
     def get(self, path):
-        call(["git-annex", "get", self.relpath(path)],
+        return check_call(["git-annex", "get", self.relpath(path)],
             cwd=os.path.expanduser(self.annex_loc)
         )
 
@@ -61,6 +68,16 @@ class GitAnnexPlugin(BeetsPlugin):
         return call(["git-annex", "unlock", self.relpath(path)],
             cwd=os.path.expanduser(self.annex_loc)
         )
+
+    def copy(self, path):
+        info = json.loads(check_output(["git-annex", "info", "--json", self.relpath(path)]))
+        if 'present' in info and info['present']:
+            source = os.path.realpath(path)
+            destination = os.path.join(self.config['destination'].get(), self.relpath(path))
+            call(['mkdir', '-p', os.path.dirname(destination)])
+            call(["cp", "-v", source, destination],
+                cwd=os.path.expanduser(self.annex_loc)
+            )
 
     def write(self, path, tags):
         try:
@@ -100,4 +117,27 @@ class GitAnnexPlugin(BeetsPlugin):
         drop.parser.add_album_option()
         drop.func = drop_func
 
-        return [get, drop]
+        def unlock_func(lib, opts, args):
+            self._log.setLevel(logging.INFO)
+
+            for item in lib.items(ui.decargs(args)):
+                self.unlock(item.path)
+
+        unlock = ui.Subcommand('unlock', help='unlock files from git-annex')
+        unlock.parser.add_album_option()
+        unlock.func = unlock_func
+
+        def copy_func(lib, opts, args):
+            self._log.setLevel(logging.INFO)
+
+            self.config.set_args(opts)
+            for item in lib.items(ui.decargs(args)):
+                self.copy(item.path)
+
+        copy = ui.Subcommand('copy', help='copy files from git-annex to a directory')
+        copy.parser.add_option('-d', '--destination', dest="destination",
+            help="destination to copy")
+        copy.parser.add_album_option()
+        copy.func = copy_func
+
+        return [get, drop, unlock, copy]
