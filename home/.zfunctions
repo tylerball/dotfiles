@@ -69,7 +69,7 @@ function ftm() {
 }
 
 function fgr() {
-  local commit=$(git log --pretty=pretty | fzf --ansi | cut -d' ' -f 1)
+  local commit=$(git log --pretty=oneline | fzf --ansi | cut -d' ' -f 1)
   if [ -n "$commit" ]
   then
     git rebase -i $commit~

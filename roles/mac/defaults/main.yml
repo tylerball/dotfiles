@@ -9,7 +9,6 @@ homebrew_apps:
   - lua
   - node
   - python
-  - the_silver_searcher
   - tmux
   - tree
   - zsh
@@ -30,6 +29,8 @@ homebrew_apps:
   - mackup
   - ripgrep
   - reattach-to-user-namespace
+  - google-chrome
+  - mas
 
 homebrew_cask_apps:
   - karabiner-elements
