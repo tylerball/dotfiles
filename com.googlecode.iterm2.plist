@@ -3617,6 +3617,8 @@
 	<false/>
 	<key>NSColorPanelMode</key>
 	<string>3</string>
+	<key>NSColorPickerPreferredRGBEntryMode</key>
+	<integer>2</integer>
 	<key>NSColorPickerSlidersDefaults</key>
 	<string>3</string>
 	<key>NSNavLastRootDirectory</key>
@@ -3662,13 +3664,13 @@
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
 	<string>654 769 616 174 0 0 1920 1200 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>2829 139 606 456 2560 0 1440 900 </string>
+	<string>630 308 606 456 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>723 809 770 381 0 0 2560 1440 </string>
+	<string>723 833 796 473 0 0 2560 1440 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 616 592 584 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 546 1440 354 0 0 1440 900 </string>
+	<string>0 1086 2560 354 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>8 3 832 409 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -3700,16 +3702,14 @@
 			<false/>
 			<key>Ansi 0 Color</key>
 			<dict>
-				<key>Alpha Component</key>
-				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.073626056313514709</real>
+				<real>0.094117647058823528</real>
 				<key>Color Space</key>
-				<string>Calibrated</string>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.07362481951713562</real>
+				<real>0.094117647058823528</real>
 				<key>Red Component</key>
-				<real>0.073627009987831116</real>
+				<real>0.094117647058823528</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
@@ -3882,16 +3882,14 @@
 			<true/>
 			<key>Background Color</key>
 			<dict>
-				<key>Alpha Component</key>
-				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.084523499011993408</real>
+				<real>0.094117647058823528</real>
 				<key>Color Space</key>
-				<string>Calibrated</string>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.084522061049938202</real>
+				<real>0.094117647058823528</real>
 				<key>Red Component</key>
-				<real>0.084524594247341156</real>
+				<real>0.094117647058823528</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
@@ -3943,16 +3941,14 @@
 			<real>0.0</real>
 			<key>Cursor Color</key>
 			<dict>
-				<key>Alpha Component</key>
-				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.81039333343505859</real>
+				<real>0.84705882352941175</real>
 				<key>Color Space</key>
-				<string>Calibrated</string>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.52081626653671265</real>
+				<real>0.84705882352941175</real>
 				<key>Red Component</key>
-				<real>0.064200587570667267</real>
+				<real>0.84705882352941175</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -4079,6 +4075,13 @@
 					<integer>11</integer>
 					<key>Text</key>
 					<string>0x7f</string>
+				</dict>
+				<key>0x4c-0x60000</key>
+				<dict>
+					<key>Action</key>
+					<integer>40</integer>
+					<key>Text</key>
+					<string>base16-default.light.256</string>
 				</dict>
 				<key>0x9-0x40000</key>
 				<dict>
@@ -4496,7 +4499,14 @@
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
-			<array/>
+			<array>
+				<dict>
+					<key>action</key>
+					<string>BounceTrigger</string>
+					<key>regex</key>
+					<string></string>
+				</dict>
+			</array>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -6273,7 +6283,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-10-18T18:31:02Z</date>
+	<date>2016-10-24T05:07:13Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
