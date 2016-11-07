@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/local/bin/zsh
 if [[ "$(uname)" = 'Darwin' ]]; then
   if [[ -x `which brew` ]]; then
     brew update 2>&1
@@ -27,4 +27,5 @@ fi
 ansible-playbook -c local site.yml
 
 $HOME/.tmux/plugins/tpm/bin/update_plugins all
+source ~/.zplug/init.zsh
 zplug update
