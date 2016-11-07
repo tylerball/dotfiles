@@ -61,9 +61,10 @@ git_annex:
 edit:
   move: no
 
-format_item: '$artist - $year-$month-$day - $album - $title'
+format_item: '$artist - $year-$month-$day - $album - $track/$tracktotal - $title'
 format_album: '$albumartist - $year-$month-$day - $album'
 
+asciify_paths: true
 replace:
   '[\\/]': _
   '^\.': _

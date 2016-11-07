@@ -23,16 +23,15 @@ default_commands[default_commands.index(import_cmd)].parser.add_option(
 class iTunesPlugin(BeetsPlugin):
     def __init__(self):
         super(iTunesPlugin, self).__init__()
+        self.register_listener('import_task_files', self.imported)
 
+    def imported(self, task, session):
         (options, args) = default_commands[default_commands.index(import_cmd)].parser.parse_args()
         auto = self.config['auto'].get()
         if auto or options.copyitunes:
             if not options.nocopyitunes:
-                self.register_listener('import_task_files', self.imported)
-
-    def imported(self, task, session):
-        for item in task.imported_items():
-            self.copy(item)
+                for item in task.imported_items():
+                    self.copy(item)
 
     def copy(self, item):
         src = item['path'].decode('utf-8')

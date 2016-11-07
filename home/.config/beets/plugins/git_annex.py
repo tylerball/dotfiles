@@ -29,7 +29,6 @@ class GitAnnexPlugin(BeetsPlugin):
         self.register_listener('item_removed', self.delete)
         self.register_listener('import', self.on_import)
         self.register_listener('item_copied', self.on_copied)
-        self.unlock_db()
 
     def relpath(self, path):
         if self.override:
@@ -39,12 +38,7 @@ class GitAnnexPlugin(BeetsPlugin):
             return os.path.relpath(path, self.annex_loc)
 
     def unlock_db(self):
-        try:
-            file = open(self.db_loc, 'a')
-            file.close()
-        except IOError:
-            self.get(self.db_loc)
-            self.unlock(self.db_loc)
+        self.unlock_file(self.db_loc)
 
     def on_import(self):
         self.unlock_db()
@@ -70,24 +64,24 @@ class GitAnnexPlugin(BeetsPlugin):
         )
 
     def copy(self, path):
-        info = json.loads(check_output(["git-annex", "info", "--json", self.relpath(path)]))
-        if 'present' in info and info['present']:
-            source = os.path.realpath(path)
-            destination = os.path.join(self.config['destination'].get(), self.relpath(path))
-            call(['mkdir', '-p', os.path.dirname(destination)])
-            call(["cp", "-v", source, destination],
-                cwd=os.path.expanduser(self.annex_loc)
-            )
+        self.unlock_file(path)
+        source = os.path.realpath(path)
+        destination = os.path.join(self.config['destination'].get(), self.relpath(path))
+        call(['mkdir', '-p', os.path.dirname(destination)])
+        call(["cp", "-v", source, destination],
+            cwd=os.path.expanduser(self.annex_loc)
+        )
+
+    def unlock_file(self, path):
+        info = json.loads(check_output(["git-annex", "info", "--json", self.relpath(path)],
+            cwd=os.path.expanduser(self.annex_loc)
+        ))
+        if 'present' in info and not info['present']:
+            self.get(path)
+        self.unlock(path)
 
     def write(self, path, tags):
-        try:
-            file = open(path, 'a')
-            file.close()
-        except IOError:
-            ret = self.unlock(path)
-            if ret != 0:
-                self.get(path)
-                self.unlock(path)
+        self.unlock_file(path)
 
     def delete(self, item):
         if not 'import' in sys.argv:
