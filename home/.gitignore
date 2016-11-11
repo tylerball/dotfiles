@@ -7,4 +7,6 @@ settings_local.py
 **/*.orig
 .byebug_history
 .bundle
-**/Session.vim
+Session.vim
+.vimrc.local
+site.retry

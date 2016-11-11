@@ -101,3 +101,9 @@ BASE16_SHELL="$HOME/.zplug/repos/chriskempson/base16-shell/scripts/base16-defaul
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 export PATH="$HOME/.yarn/bin:$PATH"
+
+outdated=`mas outdated`
+if [[ -n $outdated ]]; then
+  echo "outdated apps:"
+  echo $outdated
+fi
