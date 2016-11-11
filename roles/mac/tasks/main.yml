@@ -1,5 +1,4 @@
 - include: homebrew.yml
-- include: luarocks.yml
 - include: python.yml
 - include: npm.yml
 

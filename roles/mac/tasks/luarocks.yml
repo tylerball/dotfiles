@@ -1,9 +1,0 @@
----
-- command: luarocks list
-  register: installed_luarocks
-
-- name: Install LuaRocks
-  shell: luarocks install "{{ item }}"
-  when: installed_luarocks.stdout.find(item) == -1
-  with_items:
-    - underscore

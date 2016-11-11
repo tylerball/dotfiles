@@ -1,20 +1,20 @@
 local modifier = {'shift', 'ctrl'}
 local apps = {
-  {'i', 'iTerm'},
-  {'m', 'Mailplane 3'},
-  {'o', 'Tweetbot'},
-  {'d', 'Dash'},
-  {'e', 'Messages'},
-  {'s', 'Slack'},
-  {'f', 'Path Finder'},
-  {'u', 'iTunes'},
+  i = 'iTerm',
+  m = 'Mailplane 3',
+  o = 'Tweetbot',
+  d = 'Dash',
+  e = 'Messages',
+  s = 'Slack',
+  f = 'Path Finder',
+  u = 'iTunes',
 }
 
-hs.fnutils.each(apps, function (app)
-  hs.hotkey.bind(modifier, app[1], function ()
-    hs.application.launchOrFocus(app[2])
+for key, app in pairs(apps) do
+  hs.hotkey.bind(modifier, key, function ()
+    hs.application.launchOrFocus(app)
   end)
-end)
+end
 
 hs.hotkey.bind(modifier, 't', function ()
   hs.application.launchOrFocus('Google Chrome')

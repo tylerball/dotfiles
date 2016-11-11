@@ -1,4 +1,27 @@
+utils = require 'utils'
+
+hs.grid.setGrid('6x6')
+
 layout = {}
+layout.GRIDHEIGHT = 6
+layout.GRIDWIDTH = 6
+
+positions = {
+  leftHalf  =  {x=0, y=0, w=layout.GRIDWIDTH / 2, h=layout.GRIDHEIGHT},
+  rightHalf =  {x=layout.GRIDWIDTH / 2, y=0, w=layout.GRIDWIDTH / 2, h=layout.GRIDHEIGHT},
+  rightThird = {x=layout.GRIDWIDTH / 3 * 2, y=0, w=layout.GRIDWIDTH / 3, h=layout.GRIDHEIGHT},
+  leftThird = {x=0, y=0, w=layout.GRIDWIDTH / 3, h=layout.GRIDHEIGHT},
+  rightTwoThird = {x=layout.GRIDWIDTH / 3, y=0, w=layout.GRIDWIDTH / 3 * 2, h=layout.GRIDHEIGHT},
+  leftTwoThird = {x=0, y=0, w=layout.GRIDWIDTH / 3 * 2, h=layout.GRIDHEIGHT},
+  full      =  {x=0, y=0, w=layout.GRIDWIDTH, h=layout.GRIDHEIGHT},
+
+  lowerRight = {x=layout.GRIDWIDTH / 2, y=layout.GRIDWIDTH / 2, w=layout.GRIDWIDTH / 2, h=layout.GRIDWIDTH / 2},
+  upperRight = {x=layout.GRIDWIDTH / 2, y=0, w=layout.GRIDWIDTH / 2, h=layout.GRIDWIDTH / 2},
+  lowerLeft = {x=0, y=layout.GRIDWIDTH / 2, w=layout.GRIDWIDTH / 2, h=layout.GRIDWIDTH / 2},
+  upperLeft = {x=0, y=0, w=layout.GRIDWIDTH / 2, h=layout.GRIDWIDTH / 2},
+  upperThird = {x=0, y=0, w=layout.GRIDWIDTH, h=layout.GRIDHEIGHT / 3},
+}
+
 -- contains a table indexed by screen name and grid instructions
 layout.apps = {}
 
@@ -11,7 +34,7 @@ function length(tbl)
 end
 
 function layout.bind(app, locations)
-  layout.apps[app] = _.extend(locations, { name = app })
+  layout.apps[app] = utils.extend(locations, { name = app })
 end
 
 function layout.getScreens()
@@ -93,4 +116,103 @@ function layout.changeWindow(value, _layout, screen, window)
   end
 end
 
-return layout
+function layout.setGrid(key, cell)
+  hs.hotkey.bind(hs.settings.get('modifier'), key, function ()
+    local win = hs.window.focusedWindow()
+    local screen = win:screen()
+    layout.setWindow(win, cell, screen)
+  end)
+end
+
+layout.setGrid('H', positions.leftHalf)
+layout.setGrid('L', positions.rightHalf)
+layout.setGrid('P', positions.rightThird)
+layout.setGrid('U', positions.leftThird)
+layout.setGrid('O', positions.rightTwoThird)
+layout.setGrid('I', positions.leftTwoThird)
+
+layout.setGrid(',', positions.lowerRight)
+layout.setGrid('K', positions.upperRight)
+layout.setGrid('M', positions.lowerRight)
+layout.setGrid('J', positions.upperRight)
+
+hs.hotkey.bind(hs.settings.get('modifier'), '=', function ()
+  local win = hs.window.focusedWindow()
+  hs.grid.set(win, hs.grid.get(win), win:screen():next())
+end)
+
+hs.hotkey.bind(hs.settings.get('modifier'), '-', function ()
+  local win = hs.window.focusedWindow()
+  hs.grid.set(win, hs.grid.get(win), win:screen():previous())
+end)
+
+layout.bind('Path Finder', {
+  one = { main = positions.rightTwoThird },
+  two = { main = positions.rightHalf },
+})
+
+layout.bind('iTerm', {
+  one = { main = positions.full },
+})
+
+layout.bind('Dash',        {
+  one = { main = positions.rightTwoThird },
+  two = { alt1 = positions.rightTwoThird },
+})
+
+layout.bind('Mailplane 3', {
+  one = { main = positions.rightTwoThird },
+  two = { main = positions.rightHalf },
+})
+
+layout.bind('Slack', {
+  one = { main = positions.rightTwoThird },
+  two = { alt1 = positions.rightTwoThird },
+})
+
+layout.bind('Tweetbot',    {
+  one = { main = {x=0, y=0, w=layout.GRIDWIDTH / 3, h=layout.GRIDHEIGHT - 0.1} },
+  two = { alt1 = positions.leftThird },
+})
+
+layout.bind('iTunes', {
+  one = { main = positions.full },
+  two = { alt1 = positions.full },
+})
+
+layout.bind('Messages',    {
+  one = { main = positions.upperRight },
+  two = { alt1 = positions.upperRight },
+})
+
+layout.bind('Dash',    {
+  one = { main = positions.rightTwoThird },
+  two = { alt1 = positions.rightTwoThird },
+})
+
+layout.bind('Google Chrome', {
+  one = { main = positions.full },
+  two = { alt1 = positions.full },
+})
+
+layout.bind('Lightroom', {
+  one = { main = positions.full },
+  two = { alt1 = positions.full },
+})
+
+hs.hotkey.bind(hs.settings.get('modifier'), 'e', function ()
+  layout.doChanges()
+end)
+
+hs.hotkey.bind(hs.settings.get('modifier'), 'return', function ()
+  local win = hs.window.focusedWindow()
+  local app = win:application()
+  if string.match(app:title(), "iTerm") then
+    win:maximize()
+  else
+    local frame = win:screen():frame()
+    layout.setWindow(win, positions.full, win:screen())
+  end
+end)
+
+hs.screen.watcher.new(layout.doChanges):start()

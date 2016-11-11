@@ -72,4 +72,5 @@ urls._open = function (url, profile)
   end
 end
 
-return urls
+hs.urlevent.httpCallback = urls.handler
+hs.urlevent.setDefaultHandler('http')
