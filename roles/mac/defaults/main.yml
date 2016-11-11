@@ -40,6 +40,15 @@ homebrew_cask_apps:
   - google-chrome
   - 1password
   - java
+  - hazel
+
+mas_apps:
+  - 449589707 # Dash
+  - 890031187 # Marked 2
+  - 411643860 # DaisyDisk
+  - 557168941 # Tweetbot
+  - 413965349 # Soulver
+  - 803453959 # Slack
 
 python_packages:
   - beets

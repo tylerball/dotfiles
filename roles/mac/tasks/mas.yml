@@ -1,0 +1,8 @@
+- name: gather installed mac app store apps
+  shell: mas list
+  register: installed_mas_apps
+
+- name: install apps from mac app store
+  shell: mas install {{ item }}
+  when: installed_mas_apps.stdout.find('{{ item }}') == -1
+  with_items: ['{{mas_apps}}']
