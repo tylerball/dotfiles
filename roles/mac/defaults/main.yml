@@ -29,7 +29,6 @@ homebrew_apps:
   - mackup
   - ripgrep
   - reattach-to-user-namespace
-  - google-chrome
   - mas
 
 homebrew_cask_apps:
@@ -37,7 +36,10 @@ homebrew_cask_apps:
   - hammerspoon
   - path-finder
   - mailplane
-  - flux
+  - dropbox
+  - google-chrome
+  - 1password
+  - java
 
 python_packages:
   - beets
