@@ -5,6 +5,8 @@ require 'apps'
 require 'redshift'
 require 'music'
 require 'locations'
+require 'caffeine'
+require 'battery'
 
 hs.settings.set('modifier', {'cmd', 'shift', 'ctrl'})
 hs.settings.set('Redshift.temperature', 2700)
