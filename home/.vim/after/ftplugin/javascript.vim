@@ -3,5 +3,5 @@ setlocal foldmarker={,}
 setlocal omnifunc=javascriptcomplete#CompleteJS
 setlocal commentstring=//\ %s
 
-let test#javascript#mocha#executable = 'bundle exec teaspoon'
+let test#runners = {'JavaScript': ['Teaspoon']}
 let g:jsx_ext_required = 0
