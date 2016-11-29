@@ -1,2 +1,0 @@
-#compdef ve
-compdef "_files -W ~/code/vagrant/src/" ve

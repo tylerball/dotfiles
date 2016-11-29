@@ -1,15 +1,25 @@
 export ZPLUG_HOME=~/.zplug
 source ~/.zplug/init.zsh
 
-zplug "zsh-users/zsh-history-substring-search"
-
+zplugs=()
+zplug "modules/environment", from:prezto
+zplug "modules/editor", from:prezto
+zplug "modules/history", from:prezto
+zplug "modules/utility", from:prezto
+zplug "modules/git", from:prezto
+zplug "modules/prompt", from:prezto
+source ~/.zpreztorc
 zplug "Tarrasch/zsh-autoenv"
 zplug "supercrabtree/k"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions", hook-build:"compinit"
-zplug "chriskempson/base16-shell"
-
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
+BASE16_SCHEME="default-dark"
+zplug "chriskempson/base16-shell", use:"scripts/base16-$BASE16_SCHEME.sh", nice:-19
+zplug "Code-Hex/battery", as:command, from:gh-r
+zplug "b4b4r07/enhancd", use:init.sh, nice:10
+zplug "djui/alias-tips"
+zplug "zsh-users/zsh-syntax-highlighting", nice:18
+zplug "zsh-users/zsh-history-substring-search", nice:19
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
