@@ -47,8 +47,7 @@ export ENHANCD_DOT_SHOW_FULLPATH=1
 
 export NVM_DIR='' # wtf
 
-BASE16_SHELL=${ZDOTDIR:-$HOME}/src/base16-shell/
-# BASE16_SHELL=${ZDOTDIR:-$HOME}/.zplug/repos/chriskempson/base16-shell/
+BASE16_SHELL=${ZDOTDIR:-$HOME}/.zplug/repos/chriskempson/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 export FZF_DEFAULT_OPTS='--bind ctrl-d:page-down,ctrl-u:page-up'
