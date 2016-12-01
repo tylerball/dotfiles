@@ -1,11 +1,12 @@
-function! s:Light()
-  set background=light
-  colorscheme base16-default
+function! s:setup_color()
+  source ~/.vimrc_background
+  hi VertSplit ctermfg=18 ctermbg=18 guifg=#282828 guibg=#282828
+  hi diffText   guibg=#1D3163 guifg=#7cafc2
+  hi diffChange guibg=#1D3163 guifg=#585858
 endfunction
-command! -range=% Light call <SID>Light()
 
-function! s:Dark()
-  set background=dark
-  colorscheme base16-default
-endfunction
-command! -range=% Dark call <SID>Dark()
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  call s:setup_color()
+  autocmd FocusGained * nested call s:setup_color()
+endif

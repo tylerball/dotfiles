@@ -38,3 +38,6 @@ alias rt="be ruby -Itest"
 alias sr="dev server"
 alias dvs="dev server"
 alias dvu="dev up"
+
+alias light='base16_default-light'
+alias dark='base16_default-dark'
