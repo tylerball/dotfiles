@@ -1,0 +1,11 @@
+function ftm() {
+  choice=$(tmux ls | fzf | cut -d':' -f 1)
+
+  case "$choice" in
+    *)
+      tmux att -dt $choice
+      exit
+      ;;
+  esac
+}
+# vim:ft=zsh

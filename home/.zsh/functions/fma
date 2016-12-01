@@ -1,0 +1,12 @@
+# mpc queue album
+function fma() {
+  local album
+  album=$(mpc -f "%file%" search album '' |
+    sed 's/\(.*\)\/.*/\1/' | grep -v '.git' | uniq |
+    fzf-tmux --query="$1" --reverse --select-1 --exit-0) || return 1
+  if [ -n "$album" ]
+  then
+    mpc add $album
+  fi
+}
+# vim:ft=zsh

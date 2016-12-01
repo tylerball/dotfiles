@@ -1,6 +1,0 @@
-function ve () {
-  last_pwd=$PWD
-  cd ~/code/vagrant/src/$1
-  m
-  cd $last_pwd
-}

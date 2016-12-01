@@ -1,11 +1,9 @@
 # if we're using zsh, were local
-export LOCATION='local'
-
+export LOCATION='local' 
 unsetopt ignoreeof          # allow exiting from shell with ctrl+d
 
 [ -f "${ZDOTDIR:-$HOME}/.zplug/init.zsh" ] && source ~/.zplugs
 source $HOME/.zaliases
-source $HOME/.zfunctions
 
 zmodload zsh/terminfo
 bindkey '^R' history-incremental-search-backward
@@ -49,8 +47,13 @@ export ENHANCD_DOT_SHOW_FULLPATH=1
 
 export NVM_DIR='' # wtf
 
-BASE16_SHELL=${ZDOTDIR:-$HOME}/.zplug/repos/chriskempson/base16-shell/
+BASE16_SHELL=${ZDOTDIR:-$HOME}/src/base16-shell/
+# BASE16_SHELL=${ZDOTDIR:-$HOME}/.zplug/repos/chriskempson/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+export FZF_DEFAULT_OPTS='--bind ctrl-d:page-down,ctrl-u:page-up'
+export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/*'"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
