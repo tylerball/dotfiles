@@ -8,9 +8,10 @@ local Redshift = {
   fade = hs.settings.get('Redshift.fade'),
 }
 
-local ignoredApps = hs.window.filter.new(true)
-ignoredApps:setAppFilter('Lightroom', {focused=true})
-ignoredApps:setAppFilter('Adobe Premiere Pro CC 2015', {focused=true})
+local ignoredApps = {
+  'Lightroom',
+  'Adobe Premiere Pro CC 2015',
+}
 
 local function getTimezoneOffset()
   local now = os.time()
@@ -78,6 +79,18 @@ function Redshift:update()
   self:loadSunrise()
 end
 
+local appwatcher = hs.application.watcher.new(function (name, eventtype)
+  if hs.settings.get('Redshift.active') then
+    if eventtype == hs.application.watcher.activated then
+      if hs.fnutils.contains(ignoredApps, name) then
+        Redshift:disable()
+      end
+    else
+      Redshift:enable()
+    end
+  end
+end)
+
 hs.timer.doAfter(3, function()
   print("init redshift")
   Redshift:update()
@@ -85,8 +98,10 @@ hs.timer.doAfter(3, function()
 
   hs.hotkey.bind(hs.settings.get('modifier'), 'r', function()
     Redshift:toggle()
-    hs.timer.doAfter(hs.timer.hours(1), function () Redshift:enable() end)
+    hs.timer.doAfter(hs.timer.hours(1), function () Redshift:on() end)
   end)
+
+  appwatcher:start()
 
   if hs.settings.get('Redshift.active') then Redshift:enable() else Redshift:disable() end
 end)
