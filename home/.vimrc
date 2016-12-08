@@ -50,6 +50,7 @@ syntax on
 
 " Files
 " -----
+set exrc
     if has('undofile')
         set undofile                   ""  keep a record of all undos
     endif
@@ -189,13 +190,3 @@ syntax on
     if g:local
         :so $HOME/.vim/settings/plugins.vim
     :endif
-
-" override settings locally if necessary
-if filereadable(glob("~/.vimrc.local"))
-    source ~/.vimrc.local
-endif
-
-" override settings in a project
-if filereadable(glob(".vimrc.local"))
-    source .vimrc.local
-endif

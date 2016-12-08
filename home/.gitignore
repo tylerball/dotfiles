@@ -8,5 +8,5 @@ settings_local.py
 .byebug_history
 .bundle
 Session.vim
-.vimrc.local
+.nvimrc
 site.retry
