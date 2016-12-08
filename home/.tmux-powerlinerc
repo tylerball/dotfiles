@@ -6,14 +6,9 @@
   export TMUX_POWERLINE_DEBUG_MODE_ENABLED="false"
   export TMUX_POWERLINE_PATCHED_FONT_IN_USE="true"
   export TMUX_POWERLINE_THEME="powerline"
-  export TMUX_POWERLINE_DEFAULT_BACKGROUND_COLOR=${TMUX_POWERLINE_DEFAULT_BACKGROUND_COLOR:-'15'}
   # Overlay directory to look for segments. There you can put your own segments outside the repo. Fallback will still be the "segments" directory in the repo.
   export TMUX_POWERLINE_DIR_USER_SEGMENTS=""
   export TMUX_POWERLINE_DIR_USER_THEMES="~/.tmux"
-# }
-
-# battery.sh {
-  export TMUX_POWERLINE_SEG_BATTERY_TYPE="percentage"
 # }
 
 # date.sh {
