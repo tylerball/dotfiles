@@ -43,7 +43,7 @@ function prompt_hypertint_setup {
   zstyle ':prezto:module:git:info:untracked' format ' %%B%F{blue}●%f%%b'
   zstyle ':prezto:module:git:info:keys' format \
       'prompt' '%b%s%a%d%m%r%u' \
-      'rprompt' '%A%B '
+      'rprompt' '%A%B  '
 
   PROMPT='%F{red}${SSH_TTY:+[ %n@%m ] }%f${PWD/#$HOME/~} ${git_info:+${(e)git_info[prompt]}} $git_info[thaw]
 %(?.%F{238}❯%f.%B%F{124}❯%f%b) '

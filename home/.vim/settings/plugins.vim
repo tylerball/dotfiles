@@ -26,6 +26,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'djoshea/vim-autoread'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-eunuch'
 
 "version control
 Plug 'tpope/vim-fugitive'
@@ -41,6 +42,7 @@ Plug 'mattn/emmet-vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-unimpaired'
+Plug 'michaeljsmith/vim-indent-object'
 
 " Testing
 Plug 'tpope/vim-dispatch'

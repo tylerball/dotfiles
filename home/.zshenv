@@ -41,7 +41,3 @@ if [[ ! -d "$TMPPREFIX" ]]; then
 fi
 
 fpath=(~/.zsh/functions $fpath)
-autoload ve
-autoload notes
-autoload light
-autoload dark

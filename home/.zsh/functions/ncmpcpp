@@ -1,0 +1,11 @@
+function ncmpcpp {
+  if [[ -z `pgrep mpd` ]]; then
+    mpd
+  fi
+  if [[ -z `pgrep ncmpcpp` ]]; then
+    /usr/local/bin/ncmpcpp
+  else
+    killall ncmpcpp && /usr/local/bin/ncmpcpp
+  fi
+}
+# vim:ft=zsh

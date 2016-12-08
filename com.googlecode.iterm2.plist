@@ -3492,6 +3492,13 @@
 			<key>Text</key>
 			<string>[104;5u</string>
 		</dict>
+		<key>0x72-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>13</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
 		<key>0x74-0x180000</key>
 		<dict>
 			<key>Action</key>
@@ -3674,11 +3681,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>630 308 606 456 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>723 841 796 473 0 0 2560 1440 </string>
+	<string>723 849 937 465 0 0 2560 1440 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 616 592 584 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 546 2560 354 0 0 2560 1440 </string>
+	<string>0 1086 2560 354 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>8 3 832 409 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -6295,7 +6302,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-11-13T15:52:54Z</date>
+	<date>2016-11-18T20:15:11Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -6303,7 +6310,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<false/>
 	<key>ShowPaneTitles</key>

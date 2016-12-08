@@ -1,5 +1,3 @@
-# if we're using zsh, were local
-export LOCATION='local' 
 unsetopt ignoreeof          # allow exiting from shell with ctrl+d
 
 [ -f "${ZDOTDIR:-$HOME}/.zplug/init.zsh" ] && source ~/.zplugs
@@ -56,5 +54,13 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/*'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+
+function {
+  setopt LOCAL_OPTIONS EXTENDED_GLOB
+  local func_glob='^(.*|prompt_*_setup)(-.N:t)'
+  for func in ${ZDOTDIR:-$HOME}/.zsh/functions/$~func_glob; do
+    autoload -Uz "$func"
+  done
+}
 
 export PATH="$HOME/.yarn/bin:$PATH"

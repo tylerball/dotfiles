@@ -41,9 +41,10 @@ homebrew_cask_apps:
   - 1password
   - java
   - hazel
+  - resilio-sync
+  - dash
 
 mas_apps:
-  - 449589707 # Dash
   - 890031187 # Marked 2
   - 411643860 # DaisyDisk
   - 557168941 # Tweetbot
