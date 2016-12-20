@@ -14,12 +14,12 @@ zplug "supercrabtree/k"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions", hook-build:"compinit"
 BASE16_SCHEME="default-dark"
-zplug "chriskempson/base16-shell", use:"scripts/base16-$BASE16_SCHEME.sh", nice:-19
+zplug "chriskempson/base16-shell"
 zplug "Code-Hex/battery", as:command, from:gh-r
-zplug "b4b4r07/enhancd", use:init.sh, nice:10
+zplug "b4b4r07/enhancd", use:init.sh, defer:2
 zplug "djui/alias-tips"
-zplug "zsh-users/zsh-syntax-highlighting", nice:18
-zplug "zsh-users/zsh-history-substring-search", nice:19
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search", defer:2
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
