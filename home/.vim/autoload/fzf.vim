@@ -10,7 +10,11 @@ let g:fzf_action = {
   \ 'ctrl-v': 'botright vnew' }
 
 " https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2#.7tq6fyynl
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep("rg --column --line-number --no-heading --fixed-strings "
-  \ ."--ignore-case --hidden --glob '!.git/*' --color=always ".shellescape(<q-args>).'| tr -d "\017"',
-  \ 0, <bang>0)
+command! -bang -nargs=* -complete=dir Rg call Rg(<q-args>)
+
+function! Rg(args)
+  let l:escaped_args = escape(a:args, '|#%')
+  call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings '
+        \ .'--ignore-case --hidden --glob "!.git/*" --color=always "'.l:escaped_args.'"| tr -d "\017"',
+        \ 0, 0)
+endfunction
