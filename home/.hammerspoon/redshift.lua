@@ -8,6 +8,8 @@ local Redshift = {
   fade = hs.settings.get('Redshift.fade'),
 }
 
+local bind = hs.hotkey.bind
+
 local ignoredApps = {
   'Lightroom',
   'Adobe Premiere Pro CC 2015',
@@ -29,19 +31,25 @@ function Redshift:disable()
 end
 
 function Redshift:on()
-  hs.settings.set('Redshift.active', true)
-  self:enable()
-  hs.alert.show('Redshift on', 1)
+  if not Redshift.enabled then
+    Redshift.enabled = true
+    hs.settings.set('Redshift.active', true)
+    self:enable()
+    hs.alert.show('Redshift on', 1)
+  end
 end
 
 function Redshift:off()
-  hs.settings.set('Redshift.active', false)
-  self:disable()
-  hs.alert.show('Redshift off', 1)
+  if Redshift.enabled then
+    Redshift.enabled = false
+    hs.settings.set('Redshift.active', false)
+    self:disable()
+    hs.alert.show('Redshift off', 1)
+  end
 end
 
 function Redshift:toggle()
-  if hs.settings.get('Redshift.active') then
+  if Redshift.enabled then
     self:off()
   else
     self:on()
@@ -96,7 +104,7 @@ hs.timer.doAfter(3, function()
   Redshift:update()
   hs.timer.doAt('12:00', '1d', function() Redshift:update() end)
 
-  hs.hotkey.bind(hs.settings.get('modifier'), 'r', function()
+  bind(hs.settings.get('modifier'), 'r', function()
     Redshift:toggle()
     hs.timer.doAfter(hs.timer.hours(1), function () Redshift:on() end)
   end)
