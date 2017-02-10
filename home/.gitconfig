@@ -43,3 +43,5 @@
   smudge = git-media-smudge %f
 [credential]
   helper = osxkeychain
+[init]
+  templatedir = ~/.git_template

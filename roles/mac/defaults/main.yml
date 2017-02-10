@@ -30,6 +30,7 @@ homebrew_apps:
   - ripgrep
   - reattach-to-user-namespace
   - mas
+  - cscope
 
 homebrew_cask_apps:
   - karabiner-elements

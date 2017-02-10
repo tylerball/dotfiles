@@ -50,7 +50,12 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/*'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+if [[ -f /opt/dev/dev.sh ]]; then
+  source /opt/dev/dev.sh
+else
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+  source /usr/local/share/chruby/auto.sh
+fi
 
 function {
   setopt LOCAL_OPTIONS EXTENDED_GLOB
