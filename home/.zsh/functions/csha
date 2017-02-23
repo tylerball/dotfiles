@@ -1,0 +1,4 @@
+function csha() {
+  git rev-parse HEAD | tr -d '\n' | pbcopy
+}
+# vim:ft=zsh
