@@ -3485,13 +3485,6 @@
 	<real>1</real>
 	<key>GlobalKeyMap</key>
 	<dict>
-		<key>0x68-0x40000</key>
-		<dict>
-			<key>Action</key>
-			<integer>10</integer>
-			<key>Text</key>
-			<string>[104;5u</string>
-		</dict>
 		<key>0x72-0x100000</key>
 		<dict>
 			<key>Action</key>
@@ -3630,6 +3623,8 @@
 	<integer>2</integer>
 	<key>NSColorPickerSlidersDefaults</key>
 	<string>3</string>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/dotfiles</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -3649,7 +3644,7 @@
 	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
 	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
 	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAdCAAAAAAANIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+	DIAIgAlRMSNAczAAAAAAANIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
 	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
 	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
 	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
@@ -3673,19 +3668,19 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>1390 378 231 329 0 0 2560 1417 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>689 131 702 375 0 0 1680 1027 </string>
+	<string>1309 196 702 241 0 0 2560 1440 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>318 979 606 456 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>654 769 616 174 0 0 1920 1200 </string>
+	<string>974 949 616 174 0 0 2560 1440 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>630 308 606 456 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>723 849 937 465 0 0 2560 1440 </string>
+	<string>9 430 937 465 0 0 1440 900 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
-	<string>155 616 592 584 0 0 1920 1200 </string>
+	<string>230 856 592 584 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 1086 2560 354 0 0 2560 1440 </string>
+	<string>0 521 1440 379 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>8 3 832 409 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -6302,7 +6297,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-11-18T20:15:11Z</date>
+	<date>2017-01-09T04:17:45Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -6334,7 +6329,7 @@
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
 	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1474257152</real>
+	<real>1480450816</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseBorder</key>
