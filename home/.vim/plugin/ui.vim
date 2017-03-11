@@ -14,6 +14,7 @@ set equalalways
 set splitbelow
 set splitright
 set diffopt=filler,vertical
+set foldlevelstart=999
 
 au WinEnter * setlocal cursorline
 au WinLeave * setlocal nocursorline

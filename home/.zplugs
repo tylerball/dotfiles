@@ -2,6 +2,7 @@ export ZPLUG_HOME=~/.zplug
 source ~/.zplug/init.zsh
 
 zplugs=()
+zplug "modules/helper", from:prezto
 zplug "modules/environment", from:prezto
 zplug "modules/editor", from:prezto
 zplug "modules/history", from:prezto
