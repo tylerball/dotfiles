@@ -1,0 +1,80 @@
+# basic colors ---------------------------------------------------------
+color error         color160        color0
+color tilde         color235        color0
+color message       color37         color0
+color markers       color160        color254
+color attachment    color254        color0
+color search        color61         color0
+#color status        J_black         J_status
+color status        color241        color235
+color indicator     color0        color136
+color tree          color136        color0                                    # arrow in threads
+
+# basic monocolor screen
+mono  bold          bold
+mono  underline     underline
+mono  indicator     reverse
+mono  error         bold
+
+color index         color160        color0        "~A"                        # all messages
+color index         color166        color0        "~E"                        # expired messages
+color index         color33         color0        "~N"                        # new messages
+color index         color33         color0        "~O"                        # old messages
+color index         color61         color0        "~Q"                        # messages that have been replied to
+color index         color240        color0        "~R"                        # read messages
+color index         color33         color0        "~U"                        # unread messages
+color index         color33         color0        "~U~$"                      # unread, unreferenced messages
+color index         color241        color0        "~v"                        # messages part of a collapsed thread
+color index         color241        color0        "~P"                        # messages from me
+color index         color37         color0        "~p!~F"                     # messages to me
+color index         color37         color0        "~N~p!~F"                   # new messages to me
+color index         color37         color0        "~U~p!~F"                   # unread messages to me
+color index         color240        color0        "~R~p!~F"                   # messages to me
+color index         color160        color0        "~F"                        # flagged messages
+color index         color160        color0        "~F~p"                      # flagged messages to me
+color index         color160        color0        "~N~F"                      # new flagged messages
+color index         color160        color0        "~N~F~p"                    # new flagged messages to me
+color index         color160        color0        "~U~F~p"                    # new flagged messages to me
+color index         color235        color160        "~D"                        # deleted messages
+color index         color245        color0        "~v~(!~N)"                  # collapsed thread with no unread
+color index         color136        color0        "~v~(~N)"                   # collapsed thread with some unread
+color index         color64         color0        "~N~v~(~N)"                 # collapsed thread with unread parent
+# statusbg used to indicated flagged when foreground color shows other status
+# for collapsed thread
+color index         color160        color235        "~v~(~F)!~N"                # collapsed thread with flagged, no unread
+color index         color136        color235        "~v~(~F~N)"                 # collapsed thread with some unread & flagged
+color index         color64         color235        "~N~v~(~F~N)"               # collapsed thread with unread parent & flagged
+color index         color64         color235        "~N~v~(~F)"                 # collapsed thread with unread parent, no unread inside, but some flagged
+color index         color37         color235        "~v~(~p)"                   # collapsed thread with unread parent, no unread inside, some to me directly
+color index         color136        color160        "~v~(~D)"                   # thread with deleted (doesn't differentiate between all or partial)
+
+# message headers ------------------------------------------------------
+
+color hdrdefault    color240        color0
+color header        color241        color0        "^(From)"
+color header        color33         color0        "^(Subject)"
+
+# body -----------------------------------------------------------------
+
+color quoted        color33         color0
+color quoted1       color37         color0
+color quoted2       color136        color0
+color quoted3       color160        color0
+color quoted4       color166        color0
+
+color signature     color240        color0
+color bold          color235        color0
+color underline     color235        color0
+color normal        white           color0
+color body          color245        color0        "[;:][-o][)/(|]"    # emoticons
+color body          color245        color0        "[;:][)(|]"         # emoticons
+color body          color245        color0        "[*]?((N)?ACK|CU|LOL|SCNR|BRB|BTW|CWYL|\
+                                                     |FWIW|vbg|GD&R|HTH|HTHBE|IMHO|IMNSHO|\
+                                                     |IRL|RTFM|ROTFL|ROFL|YMMV)[*]?"
+color body          color245        color0        "[ ][*][^*]*[*][ ]?" # more emoticon?
+color body          color245        color0        "[ ]?[*][^*]*[*][ ]" # more emoticon?
+
+color sidebar_new color221 color233
+color sidebar_highlight brightcolor39 color233
+color sidebar_indicator brightcolor7 color233
+

@@ -30,6 +30,9 @@ homebrew_apps:
   - ripgrep
   - reattach-to-user-namespace
   - mas
+  - mutt
+  - offlineimap
+  - urlview
 
 homebrew_cask_apps:
   - karabiner-elements
@@ -57,6 +60,7 @@ python_packages:
   - pylast
 
 launch_agents:
+  - mailsync.plist
   - /usr/local/opt/clipper/homebrew.mxcl.clipper.plist
 
 npm_global_packages:

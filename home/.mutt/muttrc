@@ -1,0 +1,43 @@
+set from="tyler@tylerball.net"
+set smtp_pass=`cat ~/.mutt/passwords/main`
+set realname="Tyler Ball"
+set folder="~/mail"
+set mbox_type = Maildir
+set spoolfile = "+tyler@tylerball.net/INBOX"
+set mbox="+tyler@tylerball.net/Archive"
+set record="+tyler@tylerball.net/Sent"
+set postponed="+tyler@tylerball.net/Drafts"
+set mail_check = 5
+set editor="nvim"
+
+# Mailboxes to show in the sidebar.
+mailboxes +tyler@tylerball.net/INBOX \
+          +tyler@tylerball.net/Sent \
+          +tyler@tylerball.net/Drafts \
+          +tyler@tylerball.net/Archive \
+
+# Use the OS X address book
+set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
+bind editor <Tab> complete-query
+bind editor ^T    complete
+
+set sidebar_visible = yes
+set sort = threads
+set sort_aux = reverse-last-date-received
+set pager_index_lines = 10
+set pager_context = 3
+set pager_stop
+
+bind index gg       first-entry
+bind index G        last-entry
+
+macro index,pager gl "<change-folder>"
+
+macro index,pager o "<sync-mailbox><shell-escape>offlineimap -q<enter>" "run offlineimap to sync inbox"
+
+macro index c "<change-folder>?<toggle-mailboxes>"     "change folder"
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+macro index,pager y "<save-message>+tyler@tylerball.net/Archive<enter><enter>" "Archive"
+
+source ~/.mutt/colors

@@ -160,11 +160,6 @@ layout.bind('Dash',        {
   two = { alt1 = positions.rightTwoThird },
 })
 
-layout.bind('Mailplane 3', {
-  one = { main = positions.rightTwoThird },
-  two = { main = positions.rightHalf },
-})
-
 layout.bind('Slack', {
   one = { main = positions.rightTwoThird },
   two = { alt1 = positions.rightTwoThird },

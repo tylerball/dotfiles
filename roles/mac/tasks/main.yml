@@ -1,8 +1,15 @@
+- include_vars: vault.yml
 - include: homebrew.yml
 - include: python.yml
 - include: npm.yml
 - include: mas.yml
 
-- file: src={{ item }} dest=~/Library/LaunchAgents/{{ item | basename }} state=link force=true
-  with_items: ['{{launch_agents}}']
+- copy: src={{ item }} dest=~/Library/LaunchAgents
+  with_fileglob: "*.plist"
   notify: load launchctl
+
+- file: dest=~/mail state=directory
+
+- template:
+    src: imap_pass
+    dest: ~/.mutt/passwords/main

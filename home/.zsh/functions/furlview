@@ -1,0 +1,53 @@
+function __x_web_browser {
+    setsidw x-web-browser "$1";
+};
+
+function __fzf {
+    fzf --tac -e -i -m;
+};
+
+function __ugrep {
+    #grep -P -e '(((http|https|ftp|gopher)|mailto):(//)?[^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t>">\):]';
+    # ((http|https|gopher|ftp|ftps|webdav|webdavs|dav|davs):(//)?[^ <>"\t]*|(www|ftp)[0-9]?\.[-a-z0-9.]+)[^ .,;\t\n\r<">\):]?[^, <>"\t]*[^ .,;\t\n\r<">\):]
+    # (((http|https|ftp|gopher)|mailto):(//)?[^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t>">\):]
+    # (((http|https|ftp|gopher)|mailto)[.:][^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t>">\):]
+
+    urlscan -n;
+};
+
+function __select {
+    __ugrep |
+    __fzf;
+};
+
+if [[ -p /dev/stdin ]]; then
+  mapfile -t furls < <(__select);
+else
+    (($#)) || {
+        printf %s\\n aaarg? 1>&2;
+        exit 1;
+    };
+    mapfile -t furls < <(
+        for a; do
+            if [[ -p "$a" ]]; then
+              cat -- "$a";
+            else
+                printf 'File %s is neather a regular file nor a named pipe, that is executable' "$a" 1>&2;
+                exit 1;
+            fi
+        done |
+        __select;
+    );
+fi;
+
+((${#furls[@]})) && {
+    case $DISPLAY in
+        ('')
+            ! :;;
+        (*)
+            for u in "${furls[@]}"; do
+                __x_web_browser "$u" &
+            done;
+    esac;
+    wait;
+};

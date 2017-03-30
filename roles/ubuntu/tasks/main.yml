@@ -1,4 +1,1 @@
 - include: apt.yml
-- copy: src={{ item }} dest=~/Library/LaunchAgents
-  with_fileglob: "*.plist"
-  tags: debug
