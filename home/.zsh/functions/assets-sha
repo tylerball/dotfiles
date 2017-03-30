@@ -1,0 +1,5 @@
+function assets-sha() {
+  gsed -i -E -- "s/(git\+ssh:\/\/git@github.com\/Shopify\/assets.git#)[a-f0-9]+(.*)$/\1$1\2/" **/package.json
+  gsed -i -E -- "s/(gem.*shopify_assets.*ref: ?['\"])[a-f0-9]+(.*)$/\1$1\2/" Gemfile
+}
+# vim:ft=zsh
