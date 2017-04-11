@@ -7,6 +7,8 @@ else
     alias tmux='tmux -2'
 fi
 
+alias tm='tmux attach || { (while ! tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh; do sleep 0.2; done)& tmux ; }'
+
 alias rmempty="find . -type d -empty -exec rmdir {} \;"
 
 # adds chmod numerical values to ls
