@@ -13,7 +13,7 @@ homebrew_apps:
   - tree
   - zsh
   - fasd
-  - gst-python010
+  - gst-python
   - mp3val
   - mp3gain
   - mpd
@@ -23,7 +23,6 @@ homebrew_apps:
   - fzf
   - gawk
   - neovim
-  - clipper
   - ansiweather
   - exif
   - mackup
@@ -61,7 +60,6 @@ python_packages:
 
 launch_agents:
   - mailsync.plist
-  - /usr/local/opt/clipper/homebrew.mxcl.clipper.plist
 
 npm_global_packages:
   - elm-oracle

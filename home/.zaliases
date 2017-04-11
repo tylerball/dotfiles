@@ -18,7 +18,6 @@ alias gpl="git pull"
 alias gl="git l"
 alias gd="git diff"
 alias gdc="git diff --cached"
-alias gu="git stash && git svn dcommit && git stash pop"
 alias ga="git add"
 alias gs="git stash -u"
 alias gcA="git commit --all --amend"
@@ -35,7 +34,6 @@ alias bi="bundle check || bundle install --jobs=4"
 alias rt="be ruby -Itest"
 
 # shopify
-alias sr="dev server"
 alias dvs="dev server"
 alias dvu="dev up"
 

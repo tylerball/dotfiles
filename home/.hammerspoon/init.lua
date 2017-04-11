@@ -1,4 +1,3 @@
-package.path = "/usr/local/share/lua/5.2/?.lua;"..package.path
 require 'layout'
 require 'urls'
 require 'apps'

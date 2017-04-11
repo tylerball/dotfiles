@@ -42,10 +42,3 @@ hs.hotkey.bind({'cmd',}, 'q', function ()
     hs.application.frontmostApplication():kill()
   end
 end)
-
-hs.hotkey.bind(modifier, 'm', function ()
-  hs.application.launchOrFocus('iTerm')
-  hs.eventtap.keyStroke({'cmd'}, '1')
-  hs.eventtap.keyStroke({'ctrl'}, 's')
-  hs.eventtap.keyStroke({}, '1')
-end)
