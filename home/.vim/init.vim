@@ -34,7 +34,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-eunuch'
 
 "version control
-Plug 'tpope/vim-fugitive'
+Plug 'lambdalisue/gina.vim'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
@@ -83,12 +83,14 @@ call plug#end()
 autocmd! BufWritePost * Neomake
 
 " Fugitive
-nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>gd :Gdiff<cr>
-nnoremap <leader>ga :Gwrite<cr>
-nnoremap <leader>gc :Gcommit
-nnoremap <leader>gb :Gblame<cr>
-nnoremap <leader>gl :Glog<cr>:copen<cr>
+nnoremap <leader>gs :Gina status<cr>
+nnoremap <leader>gd :Gina compare :<cr>
+nnoremap <leader>ga :Gina add %<cr>
+nnoremap <leader>gc :Gina commit
+nnoremap <leader>gb :Gina blame :<cr>
+nnoremap <leader>gl :Gina log :<cr>
+nnoremap <leader>gb :Gina browse :%<CR>
+vnoremap <leader>gb :Gina browse :%<CR>
 
 " vim-vinegar
 map <localleader>f <Plug>VinegarVerticalSplitUp
