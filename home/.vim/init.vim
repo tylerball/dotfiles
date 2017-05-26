@@ -3,6 +3,8 @@ syntax on
 let mapleader = ","
 let maplocalleader = "\\"
 
+let g:python3_host_prog = $HOME."/.vim/virtualenv/bin/python3"
+
 call plug#begin('~/.vim/bundle')
 
 " Syntaxes

@@ -17,3 +17,4 @@ home/.tmux/resurrect
 home/.vim/.netrwhist
 home/.karabiner.d/log
 home/.mutt/passwords
+home/.vim/virtualenv

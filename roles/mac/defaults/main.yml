@@ -57,6 +57,7 @@ python_packages:
   - beets
   - discogs-client
   - pylast
+  - neovim
 
 launch_agents:
   - mailsync.plist
