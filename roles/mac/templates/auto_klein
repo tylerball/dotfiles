@@ -1,0 +1,3 @@
+photos -fstype=afp afp://{{klein_user}}:{{klein_password}}@{{klein_ip}}/photos
+media -fstype=afp afp://{{klein_user}}:{{klein_password}}@{{klein_ip}}/media
+archive -fstype=afp afp://{{klein_user}}:{{klein_password}}@{{klein_ip}}/archive

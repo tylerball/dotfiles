@@ -2,7 +2,6 @@ require 'layout'
 require 'urls'
 require 'apps'
 require 'music'
-require 'locations'
 require 'caffeine'
 require 'battery'
 

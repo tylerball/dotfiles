@@ -13,3 +13,14 @@
 - template:
     src: imap_pass
     dest: ~/.mutt/passwords/main
+
+- copy:
+    src: auto_master
+    dest: /etc/auto_master
+  become: true
+
+- template:
+    src: auto_klein
+    dest: /etc/auto_klein
+    mode: '600'
+  become: true
