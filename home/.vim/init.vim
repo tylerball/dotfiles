@@ -8,7 +8,7 @@ let g:python3_host_prog = $HOME."/.vim/virtualenv/bin/python3"
 call plug#begin('~/.vim/bundle')
 
 " Syntaxes
-Plug 'neomake/neomake'
+Plug 'w0rp/ale'
 Plug 'sorin-ionescu/python.vim', { 'for': 'python' }
 Plug 'othree/html5.vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
@@ -80,9 +80,6 @@ Plug 'tylerball/vim-hypertint'
 Plug 'chriskempson/base16-vim'
 
 call plug#end()
-
-" neomake
-autocmd! BufWritePost * Neomake
 
 " Fugitive
 nnoremap <leader>gs :Gina status<cr>
