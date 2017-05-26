@@ -1,7 +1,6 @@
 require 'layout'
 require 'urls'
 require 'apps'
-require 'redshift'
 require 'music'
 require 'locations'
 require 'caffeine'
