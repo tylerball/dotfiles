@@ -3,6 +3,7 @@
 - include: python.yml
 - include: npm.yml
 - include: mas.yml
+- include: osx_defaults.yml
 
 - copy: src={{ item }} dest=~/Library/LaunchAgents
   with_fileglob: "*.plist"

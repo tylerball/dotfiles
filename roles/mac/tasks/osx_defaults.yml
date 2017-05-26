@@ -1,0 +1,72 @@
+- osx_defaults:
+    domain: NSGlobalDomain
+    key: "{{ item.key }}"
+    type: bool
+    value: "{{ item.value }}"
+    state: present
+  with_items:
+    # auto show/hide menu bar
+    - { key: _hihidemenubar, value: true }
+    # Expand save panel by default
+    - { key: NSNavPanelExpandedStateForSaveMode, value: true }
+    - { key: NSNavPanelExpandedStateForSaveMode2, value: true }
+    # Expand print panel by default
+    - { key: PMPrintingExpandedStateForPrint, value: true }
+    - { key: PMPrintingExpandedStateForPrint2, value: true }
+    # Disable press-and-hold for keys in favor of key repeat
+    - { key: ApplePressAndHoldEnabled, value: true }
+    # Finder: show all filename extensions
+    - { key: AppleShowAllExtensions, value: true }
+
+# dark theme
+- osx_defaults:
+    domain: /Library/Preferences/.GlobalPreferences
+    key: AppleInterfaceTheme
+    type: string
+    value: Dark
+    state: present
+
+- osx_defaults:
+    domain: com.apple.universalaccess
+    key: reduceTransparency
+    type: bool
+    value: true
+    state: present
+  with_items:
+    # Disable transparency in the menu bar and elsewhere
+    - reduceTransparency
+
+- name: disable chrome's stupid print dialog
+  osx_defaults:
+    domain: com.google.Chrome
+    key: DisablePrintPreview
+    type: bool
+    value: true
+    state: present
+
+- name: Disable the “Are you sure you want to open this application?” dialog
+  osx_defaults:
+    domain: com.apple.LaunchServices
+    key: LSQuarantine
+    type: bool
+    value: false
+    state: present
+
+- name: Enable subpixel font rendering on non-Apple LCDs
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleFontSmoothing
+    type: int
+    value: 2
+    state: present
+
+- name: Require password immediately after sleep or screen saver begins
+  osx_defaults:
+    domain: com.apple.screensaver
+    key: "{{ item.key }}"
+    type: int
+    value: "{{ item.value }}"
+  with_items:
+    - { key: askForPassword, value: 1 }
+    - { key: askForPasswordDelay, value: 0 }
+
