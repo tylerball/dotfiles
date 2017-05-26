@@ -17,13 +17,14 @@ Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
 Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
 Plug 'mtscout6/vim-cjsx', { 'for': 'jsx' }
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
+Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
 
 " Completion
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
-if has('python')
-  Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
-end
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
+Plug 'carlitux/deoplete-ternjs', { 'do': 'yarn global add tern' }
 
 " Undo/paste
 Plug 'sjl/gundo.vim'

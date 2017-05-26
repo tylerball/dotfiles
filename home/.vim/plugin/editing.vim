@@ -48,3 +48,5 @@ nnoremap N Nzzzv
 set formatoptions=clt " see http://vimdoc.sourceforge.net/htmldoc/change.html#fo-table
 
 set dictionary=/usr/share/dict/words
+
+let g:deoplete#enable_at_startup = 1
