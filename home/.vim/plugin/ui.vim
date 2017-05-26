@@ -1,5 +1,3 @@
-:let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
 set shortmess=WatAITo " Stifle interruptive prompts http://items.sjbach.com/319/configuring-vim-right
 set number
 set visualbell
@@ -15,6 +13,8 @@ set splitbelow
 set splitright
 set diffopt=filler,vertical
 set foldlevelstart=999
+set noswapfile
+set mouse=a
 
 au WinEnter * setlocal cursorline
 au WinLeave * setlocal nocursorline

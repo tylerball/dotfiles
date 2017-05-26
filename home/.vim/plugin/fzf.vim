@@ -12,19 +12,6 @@ let g:fzf_action = {
 " https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2#.7tq6fyynl
 command! -bang -nargs=* -complete=dir Rg call Rg(<q-args>)
 
-let g:fzf_colors = {
-\ 'fg': ['fg', 'Normal'],
-\ 'fg+': ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-\ 'hl': ['fg', 'Comment'],
-\ 'hl+': ['fg', 'Statement'],
-\ 'info': ['fg', 'PreProc'],
-\ 'prompt': ['fg', 'Conditional'],
-\ 'pointer': ['fg', 'Exception'],
-\ 'marker': ['fg', 'Keyword'],
-\ 'spinner': ['fg', 'Label'],
-\ 'header': ['fg', 'Identifier'],
-\ }
-
 function! Rg(args)
   let l:escaped_args = escape(a:args, '|#%')
   call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings '
