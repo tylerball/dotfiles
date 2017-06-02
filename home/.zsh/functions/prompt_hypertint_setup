@@ -47,7 +47,7 @@ function prompt_hypertint_setup {
 
   PROMPT='%F{red}${SSH_TTY:+[ %n@%m ] }%f${PWD/#$HOME/~} ${git_info:+${(e)git_info[prompt]}} $git_info[thaw]
 %(?.%F{238}❯%f.%B%F{124}❯%f%b) '
-  RPROMPT='${editor_info[keymap]}${git_info[rprompt]}%F{8}%t'
+  RPROMPT='${editor_info[keymap]}${git_info[rprompt]}'
   SPROMPT='zsh: correct %F{124}%R%f to %F{green}%r%f [nyae]? '
 }
 

@@ -7,6 +7,8 @@ local apps = {
   s = 'Slack',
   f = 'Path Finder',
   u = 'iTunes',
+  c = 'Calendar',
+  r = 'Reminders',
 }
 
 for key, app in pairs(apps) do
@@ -31,14 +33,5 @@ hs.hotkey.bind({'cmd', 'shift'}, 'w', function ()
     return
   else
     hs.application.frontmostApplication():selectMenuItem({'File', 'Close Window'})
-  end
-end)
-
--- prevent quits in Chrome
-hs.hotkey.bind({'cmd',}, 'q', function ()
-  if hs.application.get('Google Chrome'):isFrontmost() then
-    return
-  else
-    hs.application.frontmostApplication():kill()
   end
 end)

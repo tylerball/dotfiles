@@ -195,6 +195,16 @@ layout.bind('Lightroom', {
   two = { alt1 = positions.full },
 })
 
+layout.bind('Calendar', {
+  one = { main = positions.full },
+  two = { alt1 = positions.full },
+})
+
+layout.bind('Reminders', {
+  one = { main = positions.lowerRight },
+  two = { alt1 = positions.lowerRight },
+})
+
 hs.hotkey.bind(hs.settings.get('modifier'), 'e', function ()
   layout.doChanges()
 end)
