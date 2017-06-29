@@ -9,7 +9,6 @@ plugins: [
   missing,
   mpdstats,
   smartplaylist,
-  timedelta,
   itunescopy,
   lastgenre,
   duplicates,
@@ -41,9 +40,9 @@ smartplaylist:
   playlist_dir: ~/.mpd/playlists
   playlists:
     - name: "1-added_this_week.m3u"
-      album_query: added:@{1w}..
+      album_query: added:-1w..
     - name: "2-added_this_month.m3u"
-      album_query: added:@{1m}..
+      album_query: added:-1m..
 
 itunescopy:
   auto: yes
@@ -61,7 +60,7 @@ git_annex:
 edit:
   move: no
 
-format_item: '$artist - $year-$month-$day - $album - $track/$tracktotal - $title'
+format_item: '$artist - $year-$month-$day - $album - $track/$tracktotal - $title - $dj'
 format_album: '$albumartist - $year-$month-$day - $album'
 
 asciify_paths: true
