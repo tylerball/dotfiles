@@ -32,3 +32,5 @@ nnoremap gp V`]
 cmap w!! w !sudo tee % >/dev/null
 
 nmap Q <nop>
+
+cnoremap <C-a> <Home>

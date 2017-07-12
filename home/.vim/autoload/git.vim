@@ -6,7 +6,7 @@ nnoremap <leader>gc :Gina commit
 nnoremap <leader>gb :Gina blame :<cr>
 nnoremap <leader>gl :Gina log :<cr>
 nnoremap <leader>gB :Gina blame :%<CR>
-nnoremap <leader>gp :Gina patch<CR>
+nnoremap <leader>gP :Gina patch<CR>
 nnoremap <leader>gb :Gina browse :%<CR>
 vnoremap <leader>gb :Gina browse :%<CR>
 

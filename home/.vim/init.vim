@@ -18,6 +18,7 @@ Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
 Plug 'mtscout6/vim-cjsx', { 'for': 'jsx' }
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
 Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
+Plug 'vim-ruby/vim-ruby'
 
 " Completion
 Plug 'ervandew/supertab'
@@ -38,7 +39,6 @@ Plug 'tpope/vim-eunuch'
 
 "version control
 Plug 'lambdalisue/gina.vim'
-Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
 " Text manipulation
@@ -70,14 +70,12 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Utilities
-Plug 'sjl/clam.vim'
 if executable('pbcopy')
   Plug  'zerowidth/vim-copy-as-rtf'
 endif
 Plug 'itspriddle/vim-marked'
 
 " color schemes
-Plug 'tylerball/vim-hypertint'
 Plug 'chriskempson/base16-vim'
 
 call plug#end()
