@@ -1,7 +1,7 @@
 unsetopt ignoreeof          # allow exiting from shell with ctrl+d
 
 [ -f "${ZDOTDIR:-$HOME}/.zplug/init.zsh" ] && source ~/.zplugs
-source $HOME/.zaliases
+[ -f "${ZDOTDIR:-$HOME}/.zaliases" ] && source $HOME/.zaliases
 
 zmodload zsh/terminfo
 bindkey '^R' history-incremental-search-backward
