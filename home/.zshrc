@@ -1,9 +1,15 @@
 unsetopt ignoreeof          # allow exiting from shell with ctrl+d
 
+zmodload zsh/attr
+zmodload zsh/stat
+zmodload zsh/terminfo
+autoload -U promptinit
+promptinit
+prompt adam1
+
 [ -f "${ZDOTDIR:-$HOME}/.zplug/init.zsh" ] && source ~/.zplugs
 [ -f "${ZDOTDIR:-$HOME}/.zaliases" ] && source $HOME/.zaliases
 
-zmodload zsh/terminfo
 bindkey '^R' history-incremental-search-backward
 bindkey -M viins 'kj' vi-cmd-mode
 bindkey -M viins '\e' vi-cmd-mode
