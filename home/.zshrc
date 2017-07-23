@@ -13,14 +13,8 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_VERIFY
 unsetopt ignoreeof # allow exiting from shell with ctrl+d
 
-if [[ -f "${ZDOTDIR:-$HOME}/.zplug/init.zsh" ]]; then
-  source ~/.zplugs
-else
-  autoload -Uz promptinit
-  promptinit
-  prompt adam1
-fi
-[ -f "${ZDOTDIR:-$HOME}/.zaliases" ] && source $HOME/.zaliases
+source ~/.zplugs
+source $HOME/.zaliases
 alias config='git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 
 bindkey '^R' history-incremental-search-backward
