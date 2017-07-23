@@ -1,9 +1,4 @@
 ---
-- name: link dotfiles
-  file: src={{ playbook_dir }}/home/{{ item }} dest=~/{{ item | basename }} state=link force=yes
-  with_lines:
-    - ls -A {{ playbook_dir }}/home
-
 - name: install vim-plug
   get_url:
     url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -11,6 +6,3 @@
 
 - name: install tpm
   git: repo=https://github.com/tmux-plugins/tpm dest=~/.tmux/plugins/tpm
-
-- name: link neovim dir
-  file: src=~/.vim dest=~/.config/nvim state=link
