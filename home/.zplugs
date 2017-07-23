@@ -1,4 +1,8 @@
 export ZPLUG_HOME=~/.zplug
+
+if [[ ! -f "${ZDOTDIR:-$HOME}/.zplug/init.zsh" ]]; then
+  git clone https://github.com/zplug/zplug $ZPLUG_HOME
+fi
 source ~/.zplug/init.zsh
 
 zplugs=()

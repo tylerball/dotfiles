@@ -4,9 +4,6 @@
   with_lines:
     - ls -A {{ playbook_dir }}/home
 
-- name: install zplug
-  git: repo=https://github.com/b4b4r07/zplug dest=~/.zplug
-
 - name: install vim-plug
   get_url:
     url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

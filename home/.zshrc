@@ -14,7 +14,7 @@ setopt HIST_VERIFY
 unsetopt ignoreeof # allow exiting from shell with ctrl+d
 
 source ~/.zplugs
-source $HOME/.zaliases
+source ~/.zaliases
 alias c='git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 
 bindkey '^R' history-incremental-search-backward
