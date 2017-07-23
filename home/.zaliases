@@ -7,7 +7,7 @@ else
     alias tmux='tmux -2'
 fi
 
-alias tm='tmux attach || { (while ! tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh; do sleep 0.2; done)& tmux ; }'
+alias tm='tmux attach || { (while ! tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh; do sleep 0.2; done) & tmux ; }'
 
 alias rmempty="find . -type d -empty -exec rmdir {} \;"
 
@@ -16,15 +16,38 @@ alias lsc="ls -l | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^
 
 # git
 alias gt="git st"
-alias gpl="git pull"
 alias gl="git l"
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias ga="git add"
 alias gs="git stash -u"
-alias gcA="git commit --all --amend"
-alias gC="git commit --amend"
 alias gx="git-annex"
+alias gRp='git remote prune'
+
+# Branch (b)
+alias gb='git branch'
+alias gbc='git checkout -b'
+
+# Commit (c)
+alias gc='git commit --verbose'
+alias gC="git commit --amend"
+alias gca='git commit --verbose --all'
+alias gcA="git commit --all --amend"
+
+# Fetch (f)
+alias gf='git fetch'
+
+# Push (p)
+alias gp='git push'
+alias gpf='git push --force-with-lease'
+alias gpl="git pull"
+
+# Rebase (r)
+alias gr='git rebase'
+alias gra='git rebase --abort'
+alias grc='git rebase --continue'
+alias gri='git rebase --interactive'
+alias grs='git rebase --skip'
 
 alias hb="hub browse"
 
@@ -41,3 +64,11 @@ alias dvu="dev up"
 
 alias light='base16_default-light'
 alias dark='base16_default-dark'
+
+# utilities
+alias ln="${aliases[ln]:-ln} -i"
+
+alias l='ls -1A'
+alias ll='ls -lh'
+
+# vim:ft=zsh

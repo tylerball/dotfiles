@@ -4,11 +4,6 @@ dotfiles
 This is a collection of configuration files that I use on all my computers and
 an [ansible][ansible] playbook that installs them.
 
-### What's included
-
-* Homebrew packages and cask apps as defined [here][packages].
-* I also use Sorin Ionescu's [Prezto][prezto] for configuring zsh.
-
 Install
 -------
 
@@ -25,4 +20,3 @@ Thanks to
 
 [ansible]:https://github.com/ansible/ansible
 [packages]:https://github.com/tylerball/dotfiles/blob/master/roles/mac/defaults/main.yml
-[prezto]: https://github.com/sorin-ionescu/prezto
