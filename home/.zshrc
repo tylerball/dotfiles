@@ -13,15 +13,9 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_VERIFY
 unsetopt ignoreeof # allow exiting from shell with ctrl+d
 
-if [[ -f "${ZDOTDIR:-$HOME}/.zplug/init.zsh" ]]; then 
-  source ~/.zplugs
-else
-  autoload -Uz promptinit
-  promptinit
-  prompt adam1
-fi
-[ -f "${ZDOTDIR:-$HOME}/.zaliases" ] && source $HOME/.zaliases
-alias config='git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+source ~/.zplugs
+source $HOME/.zaliases
+alias c='git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 
 bindkey '^R' history-incremental-search-backward
 bindkey -M viins 'kj' vi-cmd-mode
@@ -58,11 +52,27 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/*'"
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 
 function {
+#   for func in ${ZDOTDIR:-$HOME}/.zsh/functions/*; do
+#     autoload -Uz "$func"
+#   done
   setopt LOCAL_OPTIONS EXTENDED_GLOB
-  local func_glob='^(.*|prompt_*_setup)(-.N:t)'
+  local func_glob='^(.*)(-.N:t)'
   for func in ${ZDOTDIR:-$HOME}/.zsh/functions/$~func_glob; do
     autoload -Uz "$func"
   done
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd dotfiles-git
+
+function dotfiles-git () {
+  if [[ "$PWD" == "$HOME" ]]; then
+    export GIT_DIR=$HOME/dotfiles/
+    export GIT_WORK_TREE=$HOME
+  else
+    unset GIT_DIR
+    unset GIT_WORK_TREE
+  fi
 }
 
 export PATH="$HOME/.yarn/bin:$PATH"

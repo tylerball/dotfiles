@@ -4,10 +4,13 @@ dotfiles
 This is a collection of configuration files that I use on all my computers and
 an [ansible][ansible] playbook that installs them.
 
+I use [this ingenious method][genius] for using my home directory like a git
+repository.
+
 Install
 -------
 
-1. git clone this repo somewhere __other than your home directory__.
+curl -Lks https://raw.githubusercontent.com/tylerball/dotfiles/master/clone | zsh
 2. `./install.sh`
 
 ----
@@ -20,3 +23,4 @@ Thanks to
 
 [ansible]:https://github.com/ansible/ansible
 [packages]:https://github.com/tylerball/dotfiles/blob/master/roles/mac/defaults/main.yml
+[genius]:https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
