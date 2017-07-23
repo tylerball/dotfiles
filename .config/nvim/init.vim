@@ -8,6 +8,7 @@ let g:python3_host_prog = $HOME."/.vim/virtualenv/bin/python3"
 call plug#begin('~/.vim/bundle')
 
 " Syntaxes
+Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
 Plug 'sorin-ionescu/python.vim', { 'for': 'python' }
 Plug 'othree/html5.vim'
@@ -51,6 +52,8 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-unimpaired'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'reedes/vim-pencil'
+Plug 'junegunn/goyo.vim'
 
 " Testing
 Plug 'tpope/vim-dispatch'
