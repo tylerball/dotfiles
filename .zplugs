@@ -12,13 +12,16 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions", hook-build:"compinit"
 BASE16_SCHEME="default-dark"
 zplug "chriskempson/base16-shell"
-zplug "Code-Hex/battery", as:command, from:gh-r
+if [[ `uname` == 'Darwin' ]]; then
+  zplug "Code-Hex/battery", as:command, from:gh-r
+fi
 zplug "b4b4r07/enhancd", use:init.sh, defer:2
 zplug "djui/alias-tips"
 zplug "sharat87/zsh-vim-mode"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:2
 zplug "sindresorhus/pure", use:pure.zsh, as:theme
+# zplug "~/src/pure", use:pure.zsh, as:theme, from:local
 zplug "mafredri/zsh-async", on:"sindresorhus/pure"
 
 if ! zplug check --verbose; then

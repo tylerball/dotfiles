@@ -13,6 +13,9 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_VERIFY
 unsetopt ignoreeof # allow exiting from shell with ctrl+d
 
+export PURE_GIT_DOWN_ARROW='⬇'
+export PURE_GIT_UP_ARROW='⬆'
+
 source ~/.zplugs
 source ~/.zaliases
 alias c='git --git-dir=$HOME/dotfiles --work-tree=$HOME'
@@ -62,17 +65,19 @@ function {
   done
 }
 
-autoload -Uz add-zsh-hook
-add-zsh-hook precmd dotfiles-git
-
-function dotfiles-git () {
-  if [[ "$PWD" == "$HOME" ]]; then
+function git() {
+  if [[ "${PWD}" == "${HOME}" ]]; then
+    if [[ "$1" == "clean" ]]; then
+      >&2 echo "Do NOT run git clean in this repository."
+      return
+    fi
     export GIT_DIR=$HOME/dotfiles/
     export GIT_WORK_TREE=$HOME
   else
     unset GIT_DIR
     unset GIT_WORK_TREE
   fi
+  command git "$@"
 }
 
 export PATH="$HOME/.yarn/bin:$PATH"

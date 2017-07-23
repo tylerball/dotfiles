@@ -13,3 +13,6 @@ site.retry
 .config/**
 !.config/nvim/**
 .config/nvim/bundle
+/.gem
+/.yarn-cache
+/.zcompdump*

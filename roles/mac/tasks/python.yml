@@ -1,5 +1,5 @@
 - name: Install python packages
   pip:
     name: "{{ item }}"
-    virtualenv: "{{ playbook_dir }}/home/.vim/virtualenv"
+    virtualenv: "{{ playbook_dir }}/home/.config/nvim/virtualenv"
   with_items: ['{{python_packages}}']

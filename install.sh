@@ -1,4 +1,6 @@
 #!/usr/local/bin/zsh
+unset GIT_WORK_DIR
+
 if [[ "$(uname)" = 'Darwin' ]]; then
   if [[ -x `which brew` ]]; then
     brew update 2>&1

@@ -3,9 +3,9 @@ syntax on
 let mapleader = ","
 let maplocalleader = "\\"
 
-let g:python3_host_prog = $HOME."/.vim/virtualenv/bin/python3"
+let g:python3_host_prog = $HOME."/.config/nvim/virtualenv/bin/python3"
 
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.config/nvim/bundle')
 
 " Syntaxes
 Plug 'editorconfig/editorconfig-vim'

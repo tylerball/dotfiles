@@ -6,7 +6,5 @@ setl expandtab ts=4 shiftwidth=4 softtabstop=4
 
 setlocal spell
 
-setl tw=80
-
 " vim-marked
 nnoremap <localleader>m :MarkedOpen<cr>
