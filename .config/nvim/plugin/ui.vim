@@ -44,3 +44,18 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 nnoremap <F8> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+function! s:goyo_leave()
+  NumbersEnable
+endfunction
+
+autocmd! User GoyoLeave call <SID>goyo_leave()
+
+function! s:goyo_enable()
+  NumbersDisable
+  Goyo
+endfunction
+
+command! Write call <SID>goyo_enable()
+
+let g:goyo_width = '40%'
