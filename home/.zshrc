@@ -13,7 +13,7 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_VERIFY
 unsetopt ignoreeof # allow exiting from shell with ctrl+d
 
-if [[ -f "${ZDOTDIR:-$HOME}/.zplug/init.zsh" ]]; then 
+if [[ -f "${ZDOTDIR:-$HOME}/.zplug/init.zsh" ]]; then
   source ~/.zplugs
 else
   autoload -Uz promptinit
