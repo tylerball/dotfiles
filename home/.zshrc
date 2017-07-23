@@ -21,6 +21,7 @@ else
   prompt adam1
 fi
 [ -f "${ZDOTDIR:-$HOME}/.zaliases" ] && source $HOME/.zaliases
+alias config='git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 
 bindkey '^R' history-incremental-search-backward
 bindkey -M viins 'kj' vi-cmd-mode
@@ -54,7 +55,6 @@ export FZF_DEFAULT_OPTS='--bind ctrl-d:page-down,ctrl-u:page-up'
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/*'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 
 function {
