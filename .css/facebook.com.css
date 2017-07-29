@@ -1,5 +1,0 @@
-*[id*="topnews_main"], /* newsfeed */
-#pagelet_trending_tags_and_topics, /* sidebar trending bullshit */
-#pagelet_ego_pane { /* more sidebar bullshit */
-    display: none;
-}
