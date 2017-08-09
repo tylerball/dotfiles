@@ -10,8 +10,10 @@ repository.
 Install
 -------
 
+```sh
 curl -Lks https://raw.githubusercontent.com/tylerball/dotfiles/master/clone | zsh
-2. `./install.sh`
+./install.sh
+```
 
 ----
 
