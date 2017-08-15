@@ -1,5 +1,10 @@
 export ZPLUG_HOME=~/.zplug
 
+export ENHANCD_FILTER='fzf'
+export ENHANCD_DOT_SHOW_FULLPATH=1
+export PURE_GIT_DOWN_ARROW='⬇'
+export PURE_GIT_UP_ARROW='⬆'
+
 if [[ ! -f "${ZDOTDIR:-$HOME}/.zplug/init.zsh" ]]; then
   git clone https://github.com/zplug/zplug $ZPLUG_HOME
 fi

@@ -13,6 +13,8 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_VERIFY
 unsetopt ignoreeof # allow exiting from shell with ctrl+d
 
+export ENHANCD_FILTER='fzf'
+export ENHANCD_DOT_SHOW_FULLPATH=1
 export PURE_GIT_DOWN_ARROW='⬇'
 export PURE_GIT_UP_ARROW='⬆'
 
@@ -30,8 +32,9 @@ bindkey -M vicmd "j" history-substring-search-down
 bindkey '^ ' autosuggest-accept # ctl-space
 bindkey -M vicmd "H" beginning-of-line
 bindkey -M vicmd "L" end-of-line
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcub1]" history-substring-search-down
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -v '^?' backward-delete-char
 
 if [[ -s "/etc/profile.d/chruby.sh" ]]; then
   # shopify's chruby script
@@ -39,9 +42,6 @@ if [[ -s "/etc/profile.d/chruby.sh" ]]; then
 fi
 
 export FZF_COMPLETION_TRIGGER='~~'
-
-export ENHANCD_FILTER='fzf'
-export ENHANCD_DOT_SHOW_FULLPATH=1
 
 export NVM_DIR='' # wtf
 
@@ -55,9 +55,6 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/*'"
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 
 function {
-#   for func in ${ZDOTDIR:-$HOME}/.zsh/functions/*; do
-#     autoload -Uz "$func"
-#   done
   setopt LOCAL_OPTIONS EXTENDED_GLOB
   local func_glob='^(.*)(-.N:t)'
   for func in ${ZDOTDIR:-$HOME}/.zsh/functions/$~func_glob; do

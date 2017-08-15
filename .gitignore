@@ -10,9 +10,15 @@ settings_local.py
 Session.vim
 .nvimrc
 site.retry
-.config/**
-!.config/nvim/**
+node_modules
+
+# dotfiles specific
+.config
+!.config/nvim/**/*
 .config/nvim/bundle
+!/.config/karabiner
 /.gem
 /.yarn-cache
 /.zcompdump*
+/.local
+/.cache

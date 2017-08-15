@@ -51,7 +51,7 @@
             "name": "Default profile",
             "selected": true,
             "simple_modifications": {
-                "caps_lock": "caps_lock",
+                "caps_lock": "left_control",
                 "right_option": "fn"
             },
             "virtual_hid_keyboard": {
