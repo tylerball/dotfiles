@@ -14,9 +14,10 @@ node_modules
 
 # dotfiles specific
 .config
-!.config/nvim/**/*
+!/.config/nvim/**/*
 .config/nvim/bundle
 !/.config/karabiner
+!/.config/git/*
 /.gem
 /.yarn-cache
 /.zcompdump*

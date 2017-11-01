@@ -4,7 +4,6 @@
 [color]
   ui = auto
 [core]
-  excludesfile = ~/.gitignore
   autocrlf = false
 [push]
   default = current
