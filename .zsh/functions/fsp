@@ -1,6 +1,6 @@
 function fsp() {
   local projects=$(tree -di -L 1 --noreport ~/code/ | grep -v "$HOME") &&
-  local project=$(echo "$projects" | fzf-tmux --exit-0 +m) || return 1
+  local project=$(echo "$projects" | fzf --exit-0 +m) || return 1
   if [ -n "$project" ]
   then
     _open_project $project
@@ -12,7 +12,6 @@ function _open_project() {
   tmux new-window -n $1 -c ~/code/$1
   tmux send-keys "nvim" C-m
   tmux split-window -p 20 -c ~/code/$1
-  tmux send-keys "dev up" C-m
   tmux split-window -h -c ~/code/$1
 }
 # vim:ft=zsh
