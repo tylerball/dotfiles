@@ -28,6 +28,8 @@ fi
 
 ansible-playbook -c local site.yml
 
+unset GIT_DIR
+unset GIT_WORK_TREE
 $HOME/.tmux/plugins/tpm/bin/update_plugins all
 source ~/.zplug/init.zsh
 zplug update
