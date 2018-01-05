@@ -9,6 +9,7 @@ local apps = {
   u = 'iTunes',
   c = 'Calendar',
   r = 'Reminders',
+  t = 'Firefox',
 }
 
 for key, app in pairs(apps) do
@@ -17,13 +18,7 @@ for key, app in pairs(apps) do
   end)
 end
 
-hs.hotkey.bind(modifier, 't', function ()
-  hs.application.launchOrFocus('Google Chrome')
-  hs.application.get('Google Chrome'):selectMenuItem({'People', 'Tyler'})
-end)
-
 hs.hotkey.bind(modifier, 'w', function ()
-  hs.application.launchOrFocus('Google Chrome')
   hs.application.get('Google Chrome'):selectMenuItem({'People', 'Shopify'})
 end)
 

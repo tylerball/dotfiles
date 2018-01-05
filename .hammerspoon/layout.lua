@@ -12,7 +12,6 @@ positions = {
   rightThird = {x=layout.GRIDWIDTH / 3 * 2, y=0, w=layout.GRIDWIDTH / 3, h=layout.GRIDHEIGHT},
   leftThird = {x=0, y=0, w=layout.GRIDWIDTH / 3, h=layout.GRIDHEIGHT},
   rightTwoThird = {x=layout.GRIDWIDTH / 3, y=0, w=layout.GRIDWIDTH / 3 * 2, h=layout.GRIDHEIGHT},
-  leftTwoThird = {x=0, y=0, w=layout.GRIDWIDTH / 3 * 2, h=layout.GRIDHEIGHT},
   full      =  {x=0, y=0, w=layout.GRIDWIDTH, h=layout.GRIDHEIGHT},
 
   lowerRight = {x=layout.GRIDWIDTH / 2, y=layout.GRIDWIDTH / 2, w=layout.GRIDWIDTH / 2, h=layout.GRIDWIDTH / 2},
@@ -20,6 +19,8 @@ positions = {
   lowerLeft = {x=0, y=layout.GRIDWIDTH / 2, w=layout.GRIDWIDTH / 2, h=layout.GRIDWIDTH / 2},
   upperLeft = {x=0, y=0, w=layout.GRIDWIDTH / 2, h=layout.GRIDWIDTH / 2},
   upperThird = {x=0, y=0, w=layout.GRIDWIDTH, h=layout.GRIDHEIGHT / 3},
+  upperHalf = {x=0, y=0, w=layout.GRIDWIDTH, h=layout.GRIDHEIGHT / 2},
+  lowerHalf = {x=0, y=layout.GRIDHEIGHT / 2, w=layout.GRIDWIDTH, h=layout.GRIDHEIGHT / 2},
 }
 
 -- contains a table indexed by screen name and grid instructions
@@ -132,11 +133,11 @@ layout.setGrid('L', positions.rightHalf)
 layout.setGrid('P', positions.rightThird)
 layout.setGrid('U', positions.leftThird)
 layout.setGrid('O', positions.rightTwoThird)
-layout.setGrid('I', positions.leftTwoThird)
 
+layout.setGrid('I', positions.upperHalf)
+layout.setGrid('M', positions.lowerHalf)
 layout.setGrid(',', positions.lowerRight)
 layout.setGrid('K', positions.upperRight)
-layout.setGrid('M', positions.lowerRight)
 layout.setGrid('J', positions.upperRight)
 
 hs.hotkey.bind(hs.settings.get('modifier'), '=', function ()
@@ -189,6 +190,11 @@ layout.bind('Dash',    {
 })
 
 layout.bind('Google Chrome', {
+  one = { main = positions.full },
+  two = { alt1 = positions.full },
+})
+
+layout.bind('Firefox', {
   one = { main = positions.full },
   two = { alt1 = positions.full },
 })

@@ -44,28 +44,33 @@ urls.chooser = function (url)
       ['subText'] = '',
       ['name'] = "Tyler",
     },
-    {
-      ['text'] = "Apps",
-      ['subText'] = '',
-      ['name'] = "Apps",
-    }
   })
 
   chooser:show()
 end
 
 urls.openHome = function (url)
-  urls._open(url, 'Tyler')
+  urls._openFirefox(url)
 end
 
 urls.openWork = function (url)
-  urls._open(url, 'Shopify')
+  urls._openChrome(url, 'Shopify')
 end
 
-urls._open = function (url, profile)
+urls._openChrome = function (url, profile)
   hs.application.get('Google Chrome'):selectMenuItem({'People', profile})
   local bool, result = hs.osascript.applescript([[
     tell application "Google Chrome" to open location "]] .. url .. '"'
+  )
+  if not bool then
+    print(result)
+  end
+end
+
+urls._openFirefox = function (url)
+  hs.application.launchOrFocus('Firefox')
+  local bool, result = hs.osascript.applescript([[
+    tell application "Firefox" to open location "]] .. url .. '"'
   )
   if not bool then
     print(result)
