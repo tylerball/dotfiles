@@ -9,7 +9,7 @@ local apps = {
   u = 'iTunes',
   c = 'Calendar',
   r = 'Reminders',
-  t = 'Firefox',
+  a = 'Firefox',
 }
 
 for key, app in pairs(apps) do
