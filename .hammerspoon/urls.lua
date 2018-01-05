@@ -26,8 +26,10 @@ end
 
 urls.chooser = function (url)
   chooser = hs.chooser.new(function (choice)
-    if choice then
-      urls._open(url, choice.text)
+    if choice['browser'] == 'firefox' then
+      urls._openFirefox(url, choice.text)
+    elseif choice['browser'] == 'chrome' then
+      urls._openChrome(url, choice.text)
     end
   end)
 
@@ -38,11 +40,13 @@ urls.chooser = function (url)
       ['text'] = "Shopify",
       ['subText'] = '',
       ['name'] = "Shopify",
+      ['browser'] = "chrome",
     },
     {
-      ['text'] = "Tyler",
+      ['text'] = "Home",
       ['subText'] = '',
-      ['name'] = "Tyler",
+      ['name'] = 'Home',
+      ['browser'] = "Firefox",
     },
   })
 
@@ -58,7 +62,7 @@ urls.openWork = function (url)
 end
 
 urls._openChrome = function (url, profile)
-  hs.application.get('Google Chrome'):selectMenuItem({'People', profile})
+  hs.application.launchOrFocus('Google Chrome')
   local bool, result = hs.osascript.applescript([[
     tell application "Google Chrome" to open location "]] .. url .. '"'
   )
