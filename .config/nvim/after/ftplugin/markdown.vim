@@ -1,8 +1,9 @@
 " turn a visual selection into a markdown formatted link, depends on surround.vim
 vmap <localleader>l ygvS]%a(http://<esc>p)<esc>
 
-setl expandtab ts=4 shiftwidth=4 softtabstop=4
-setl expandtab ts=4 shiftwidth=4 softtabstop=4
+setl ts=4 shiftwidth=4 softtabstop=4
+
+setlocal tw=0
 
 setlocal spell
 

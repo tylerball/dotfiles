@@ -7,6 +7,12 @@ let g:python3_host_prog = $HOME."/.config/nvim/virtualenv/bin/python3"
 
 call plug#begin('~/.config/nvim/bundle')
 
+" Completion
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'roxma/nvim-completion-manager'
+Plug 'SirVer/ultisnips'
+
 " Syntaxes
 Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
@@ -14,19 +20,14 @@ Plug 'sorin-ionescu/python.vim', { 'for': 'python' }
 Plug 'othree/html5.vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
 Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
 Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
 Plug 'mtscout6/vim-cjsx', { 'for': 'jsx' }
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
 Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
 Plug 'vim-ruby/vim-ruby'
-
-" Completion
-Plug 'ervandew/supertab'
-Plug 'SirVer/ultisnips'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
-Plug 'carlitux/deoplete-ternjs', { 'do': 'yarn global add tern' }
+Plug 'jparise/vim-graphql'
 
 " Undo/paste
 Plug 'sjl/gundo.vim'
@@ -65,8 +66,8 @@ Plug 'janko-m/vim-test'
 if system('uname') == 'Darwin\n'
   Plug 'powerline/fonts', { 'do': './install.sh' }
 endif
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
+Plug 'daviesjamie/vim-base16-lightline'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-obsession'
 Plug 'ConradIrwin/vim-bracketed-paste'
@@ -87,7 +88,7 @@ call plug#end()
 " gundo.vim shortcut
 nnoremap <F5> :GundoToggle<CR>
 
-" Gitgutter
+e Gitgutter
 let g:gitgutter_on_bufenter = 0
 
 " vim-test

@@ -1,6 +1,4 @@
-setlocal foldmethod=marker
-setlocal foldmarker={,}
-setlocal omnifunc=javascriptcomplete#CompleteJS
+setlocal omnifunc=LanguageClient#complete
 setlocal commentstring=//\ %s
 
 let test#javascript#runner = 'Teaspoon'

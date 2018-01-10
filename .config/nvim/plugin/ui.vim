@@ -31,7 +31,9 @@ endfunction
 " Colors
 " ------
 set termguicolors
-let g:airline_theme='base16_default'
+let g:lightline = {
+\   'colorscheme': 'base16'
+\ }
 au BufNew * call matchadd('Todo', 'TODOF')
 au BufNew * call matchadd('Todo', 'TODOB')
 au BufNew * call matchadd('Todo', 'TODO')
