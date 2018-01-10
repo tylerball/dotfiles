@@ -49,7 +49,6 @@ BASE16_SHELL=$ZPLUG_REPOS/chriskempson/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 export FZF_DEFAULT_OPTS='--bind ctrl-d:page-down,ctrl-u:page-up'
-export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/*'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
@@ -70,11 +69,11 @@ function git() {
     fi
     export GIT_DIR=$HOME/dotfiles/
     export GIT_WORK_TREE=$HOME
+    export FZF_DEFAULT_COMMAND="git ls-files"
   else
     unset GIT_DIR
     unset GIT_WORK_TREE
+    export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/*'"
   fi
   command git "$@"
 }
-
-export PATH="$HOME/.yarn/bin:$PATH"

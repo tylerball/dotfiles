@@ -43,3 +43,5 @@ if [[ ! -d "$TMPPREFIX" ]]; then
 fi
 
 fpath=(~/.zsh/functions $fpath)
+
+export PATH="$(yarn global dir)/node_modules/.bin:$PATH"

@@ -5,6 +5,7 @@
   ui = auto
 [core]
   autocrlf = false
+  hooksPath = ~/.config/git/hooks
 [push]
   default = current
 [pull]
@@ -24,6 +25,7 @@
   # see the commits you're going to pull into your repo. Assumes remote is called origin
   incoming = !git fetch && git log ..origin/$(git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3)
   cleanup = !git branch -D `git branch --merged master`
+  set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [difftool "fugitive"]
   cmd = vim -c "Gdiff"
   keepBackup = false
