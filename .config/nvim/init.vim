@@ -88,7 +88,7 @@ call plug#end()
 " gundo.vim shortcut
 nnoremap <F5> :GundoToggle<CR>
 
-e Gitgutter
+" Gitgutter
 let g:gitgutter_on_bufenter = 0
 
 " vim-test
