@@ -16,6 +16,7 @@ node_modules
 .config
 !/.config/nvim/**/*
 .config/nvim/bundle
+.config/nvim/autoload/plug.vim
 !/.config/karabiner
 !/.config/git/*
 /.gem
