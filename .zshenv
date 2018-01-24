@@ -44,4 +44,6 @@ fi
 
 fpath=(~/.zsh/functions $fpath)
 
-export PATH="$(yarn global dir)/node_modules/.bin:$PATH"
+if (( $+commands[yarn] )); then
+  export PATH="$(yarn global dir)/node_modules/.bin:$PATH"
+fi
