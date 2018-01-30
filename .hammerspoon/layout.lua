@@ -61,7 +61,9 @@ end
 
 function layout.getLayout()
   local l = 'one'
-  if length(hs.screen.allScreens()) == 2 then
+  if hs.fnutils.filter(hs.screen.allScreens(), function (screen) return screen:name() == 'Acer P243W' end) then
+    l = 'studio'
+  elseif length(hs.screen.allScreens()) == 2 then
     l = 'two'
   end
   return l
@@ -162,16 +164,19 @@ layout.bind('iTerm', {
 layout.bind('Dash',        {
   one = { main = positions.rightTwoThird },
   two = { alt1 = positions.rightTwoThird },
+  studio = { alt1 = positions.full },
 })
 
 layout.bind('Slack', {
   one = { main = positions.rightTwoThird },
   two = { alt1 = positions.rightTwoThird },
+  studio = { alt1 = positions.lowerHalf },
 })
 
 layout.bind('Tweetbot',    {
   one = { main = {x=0, y=0, w=layout.GRIDWIDTH / 3, h=layout.GRIDHEIGHT - 0.1} },
   two = { alt1 = positions.leftThird },
+  studio = { alt1 = positions.leftHalf },
 })
 
 layout.bind('iTunes', {
@@ -182,6 +187,7 @@ layout.bind('iTunes', {
 layout.bind('Messages',    {
   one = { main = positions.upperRight },
   two = { alt1 = positions.upperRight },
+  studio = { alt1 = positions.upperHalf },
 })
 
 layout.bind('Dash',    {
@@ -213,6 +219,12 @@ layout.bind('Reminders', {
   one = { main = positions.lowerRight },
   two = { alt1 = positions.lowerRight },
 })
+
+hs.fnutils.each(layout.apps, function (app)
+  if app['studio'] == nil then
+    app['studio'] = app['two']
+  end
+end)
 
 hs.hotkey.bind(hs.settings.get('modifier'), 'e', function ()
   layout.doChanges()
