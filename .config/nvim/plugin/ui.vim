@@ -29,7 +29,6 @@ function! AdjustWindowHeight(minheight, maxheight)
 endfunction
 
 " Colors
-" ------
 set termguicolors
 let g:lightline = {
 \   'colorscheme': 'base16'
@@ -40,6 +39,22 @@ au BufNew * call matchadd('Todo', 'TODO')
 hi Todo guifg=#AC000B ctermfg=124
 hi SpecialKey ctermfg=red guifg=#CA0908 gui=bold
 
+let g:lightline.component_function = {
+\ 'filename': 'LightlineFilename'
+\ }
+
+" let g:lightline.component = {
+" \ 'fname': '%<%:p'
+" \ }
+
+function! LightlineFilename()
+  if expand('%:t') == ''
+    return '[No Name]'
+  else
+    return winwidth(0) > 80 ? expand('%') : expand('%:t')
+  endif
+endfunction
+
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
@@ -48,14 +63,14 @@ nnoremap <F8> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> t
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 function! s:goyo_leave()
-  NumbersEnable
+  hi LineNr guibg=#282828
 endfunction
 
 autocmd! User GoyoLeave call <SID>goyo_leave()
 
 function! s:goyo_enable()
-  NumbersDisable
   Goyo
+  hi LineNr guibg=#181818
 endfunction
 
 command! Write call <SID>goyo_enable()
