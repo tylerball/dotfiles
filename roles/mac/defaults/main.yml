@@ -34,7 +34,6 @@ homebrew_apps:
   - urlview
 
 homebrew_cask_apps:
-  - karabiner-elements
   - hammerspoon
   - path-finder
   - mailplane

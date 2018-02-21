@@ -11,16 +11,3 @@ Session.vim
 .nvimrc
 site.retry
 node_modules
-
-# dotfiles specific
-.config
-!/.config/nvim/**/*
-.config/nvim/bundle
-.config/nvim/autoload/plug.vim
-!/.config/karabiner
-!/.config/git/*
-/.gem
-/.yarn-cache
-/.zcompdump*
-/.local
-/.cache
