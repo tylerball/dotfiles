@@ -1,13 +1,7 @@
 " Fugitive
-nnoremap <leader>gs :Gina status<cr>
-nnoremap <leader>gd :Gina compare :<cr>
-nnoremap <leader>ga :Gina add %<cr>
-nnoremap <leader>gc :Gina commit
-nnoremap <leader>gb :Gina blame :<cr>
-nnoremap <leader>gl :Gina log :<cr>
-nnoremap <leader>gB :Gina blame :%<CR>
-nnoremap <leader>gP :Gina patch<CR>
-nnoremap <leader>gb :Gina browse :%<CR>
-vnoremap <leader>gb :Gina browse :%<CR>
-
-command! Gread !git checkout -- %
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>ga :Gwrite<cr>
+nnoremap <leader>gc :Gcommit
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gl :Glog<cr>:copen<cr>

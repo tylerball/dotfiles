@@ -41,7 +41,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'justinmk/vim-dirvish'
 
 "version control
-Plug 'lambdalisue/gina.vim'
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Text manipulation
