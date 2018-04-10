@@ -61,7 +61,7 @@ end
 
 function layout.getLayout()
   local l = 'one'
-  if hs.fnutils.filter(hs.screen.allScreens(), function (screen) return screen:name() == 'Acer P243W' end) then
+  if hs.fnutils.find(hs.screen.allScreens(), function (screen) return screen:name() == 'Acer P243W' end) then
     l = 'studio'
   elseif length(hs.screen.allScreens()) == 2 then
     l = 'two'

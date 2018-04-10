@@ -10,6 +10,7 @@ local apps = {
   c = 'Calendar',
   r = 'Reminders',
   a = 'Firefox',
+  w = 'Google Chrome',
 }
 
 for key, app in pairs(apps) do
@@ -19,7 +20,7 @@ for key, app in pairs(apps) do
 end
 
 hs.hotkey.bind(modifier, 'w', function ()
-  hs.application.get('Google Chrome'):selectMenuItem({'People', 'Shopify'})
+  hs.application.launchOrFocusByBundleID('com.google.chrome')
 end)
 
 -- prevent window closes in Chrome

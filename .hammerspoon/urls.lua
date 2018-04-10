@@ -17,6 +17,7 @@ urls.handler = function (scheme, host, params, fullURL)
     or string.find(fullURL, 'invisionapp.com')
     or string.find(fullURL, 'invis.io')
     or string.find(fullURL, 'datadoghq.com')
+    or string.find(fullURL, 'circleci.com/gh/Shopify')
     then
       urls.openWork(fullURL)
   else
@@ -62,7 +63,7 @@ urls.openWork = function (url)
 end
 
 urls._openChrome = function (url, profile)
-  hs.application.launchOrFocus('Google Chrome')
+  hs.application.launchOrFocusByBundleID('com.google.chrome')
   local bool, result = hs.osascript.applescript([[
     tell application "Google Chrome" to open location "]] .. url .. '"'
   )
