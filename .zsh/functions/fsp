@@ -1,17 +1,13 @@
 function fsp() {
-  local projects=$(tree -di -L 1 --noreport ~/code/ | grep -v "$HOME") &&
-  local project=$(echo "$projects" | fzf --exit-0 +m) || return 1
-  if [ -n "$project" ]
-  then
-    _open_project $project
+  local project
+  local name
+  project=$(find ~/code -maxdepth 1 -type d | fzf -0 -1 --preview 'cat {}/README.md') || return 1
+  if [ -n "$project" ]; then
+    name=$(echo $project | sed 's|'"$HOME/code/"'||g')
+    tmux new-window -n $name -c $project
+    tmux send-keys "nvim" C-m
+    tmux split-window -p 20 -c $project
+    tmux split-window -h -c $project
   fi
-}
-
-function _open_project() {
-  echo $1
-  tmux new-window -n $1 -c ~/code/$1
-  tmux send-keys "nvim" C-m
-  tmux split-window -p 20 -c ~/code/$1
-  tmux split-window -h -c ~/code/$1
 }
 # vim:ft=zsh
