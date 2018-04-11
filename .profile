@@ -30,3 +30,4 @@ umask 0002
 
 alias runserver='./manage.py runserver 0:8000'
 alias macmount='sudo mount -t vboxsf -o rw,uid=1000,gid=1000 mac /home/tball/mac'
+export PATH="$HOME/.cargo/bin:$PATH"
