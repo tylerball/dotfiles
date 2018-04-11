@@ -77,3 +77,16 @@ function git() {
   fi
   command git "$@"
 }
+
+zstyle ':vcs_info:git:thaw' thawformat " *frozen*"
+
+function prompt_thaw_precmd () {
+  thaw="$(git log -2 --format="%s" 2> /dev/null | grep -E "WIP \[\w+\]")"
+  if [[ -n "$thaw" ]]; then
+    local thaw_formatted
+    zstyle -s ':vcs_info:git:thaw' thawformat thaw_formatted
+    psvar[2]+=$thaw_formatted
+  fi
+}
+
+add-zsh-hook precmd prompt_thaw_precmd
