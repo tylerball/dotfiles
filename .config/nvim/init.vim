@@ -26,7 +26,6 @@ Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
 Plug 'mtscout6/vim-cjsx', { 'for': 'jsx' }
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
 Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
-Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 Plug 'vim-ruby/vim-ruby'
 Plug 'jparise/vim-graphql'
 
@@ -42,6 +41,7 @@ Plug 'justinmk/vim-dirvish'
 
 "version control
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
 " Text manipulation
