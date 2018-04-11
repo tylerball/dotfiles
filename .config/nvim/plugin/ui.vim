@@ -37,7 +37,6 @@ au BufNew * call matchadd('Todo', 'TODOF')
 au BufNew * call matchadd('Todo', 'TODOB')
 au BufNew * call matchadd('Todo', 'TODO')
 hi Todo guifg=#AC000B ctermfg=124
-hi SpecialKey ctermfg=red guifg=#CA0908 gui=bold
 
 let g:lightline.component_function = {
 \ 'filename': 'LightlineFilename'
@@ -61,18 +60,5 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 nnoremap <F8> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-function! s:goyo_leave()
-  hi LineNr guibg=#282828
-endfunction
-
-autocmd! User GoyoLeave call <SID>goyo_leave()
-
-function! s:goyo_enable()
-  Goyo
-  hi LineNr guibg=#181818
-endfunction
-
-command! Write call <SID>goyo_enable()
 
 let g:goyo_width = '40%'
