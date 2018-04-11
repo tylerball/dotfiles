@@ -16,17 +16,20 @@ if [[ "$(uname)" = 'Darwin' ]]; then
     echo "Installing ansible"
     brew install ansible 2>&1
   fi
+  ansible-playbook -c local site.yml
 else
-  if [[ ! -x `which ansible` ]]; then
-    echo "Installing ansible"
-    sudo apt-get install software-properties-common
-    sudo apt-add-repository ppa:ansible/ansible
-    sudo apt-get update
-    sudo apt-get install ansible
-  fi
+  # if [[ ! -x `which ansible` ]]; then
+  #   echo "Installing ansible"
+  #   sudo apt-get install software-properties-common
+  #   sudo apt-add-repository ppa:ansible/ansible
+  #   sudo apt-get update
+  #   sudo apt-get install ansible
+  # fi
 fi
 
-ansible-playbook -c local site.yml
+if [[ ! -d $HOME/.tmux/plugins/tpm ]]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
 
 unset GIT_DIR
 unset GIT_WORK_TREE
