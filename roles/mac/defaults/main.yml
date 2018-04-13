@@ -3,6 +3,8 @@ homebrew_taps:
   - homebrew/dupes
   - caskroom/cask
   - neovim/neovim
+  - colinstein/imgcat
+  - chrokh/tap
 
 homebrew_apps:
   - git
@@ -32,6 +34,9 @@ homebrew_apps:
   - mutt
   - offlineimap
   - urlview
+  - ranger
+  - imgcat
+  - base16-manager
 
 homebrew_cask_apps:
   - hammerspoon

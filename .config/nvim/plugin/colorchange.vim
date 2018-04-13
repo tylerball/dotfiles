@@ -6,17 +6,22 @@ function! s:setup_color()
   exec "hi GitGutterAdd guibg=#" . g:base16_gui00
   exec "hi GitGutterChange guibg=#" . g:base16_gui00
   exec "hi GitGutterDelete guibg=#" . g:base16_gui00
+  exec "hi GitGutterChangeDelete guibg=#" . g:base16_gui00
   exec "hi StatusLineNC guibg=#" . g:base16_gui00
-  exec "hi LightlineMiddle_normal guibg=#" . g:base16_gui00
-  exec "hi LightlineLeft_normal_1 guibg=#" . g:base16_gui00
-  exec "hi LightlineLeft_normal_1_2 guibg=#" . g:base16_gui00
-  exec "hi LightlineRight_normal_1 guibg=#" . g:base16_gui00
-  exec "hi LightlineRight_normal_2_3 guibg=#" . g:base16_gui00
+  exec "hi LightlineMiddle_inactive guibg=#" . g:base16_gui00 . " guifg=#" . g:base16_gui04
+  exec "hi LightlineLeft_normal_0 guibg=#" . g:base16_gui06
+  exec "hi LightlineLeft_normal_1 guibg=#" . g:base16_gui01
+  exec "hi LightlineLeft_normal_1_2 guibg=#" . g:base16_gui02
+  exec "hi LightlineLeft_inactive_0 guibg=#" . g:base16_gui00 . " guifg=#" . g:base16_gui04
+  exec "hi LightlineRight_normal_0 guibg=#" . g:base16_gui06
+  exec "hi LightlineRight_normal_1 guibg=#" . g:base16_gui01
+  exec "hi LightlineRight_inactive_0 guibg=#" . g:base16_gui00 . " guifg=#" . g:base16_gui04
+  exec "hi LightlineRight_inactive_1 guibg=#" . g:base16_gui00 . " guifg=#" . g:base16_gui04
   exec "hi NonText guifg=#" . g:base16_gui00
   hi SpecialKey ctermfg=red guifg=#CA0908 gui=bold
   hi diffText   guibg=#1D3163 guifg=#7cafc2
   hi diffChange guibg=#1D3163 guifg=#585858
-  hi ColorColumn guibg=#1D1D1D
+  exec "hi ColorColumn guibg=" . color#lighten('#' . g:base16_gui00, '0.2')
 endfunction
 
 if filereadable(expand("~/.vimrc_background"))

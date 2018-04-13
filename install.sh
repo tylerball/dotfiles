@@ -28,7 +28,9 @@ else
 fi
 
 if [[ ! -d $HOME/.tmux/plugins/tpm ]]; then
+  /bin/cd $HOME/.tmux
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  /bin/cd $HOME
 fi
 
 unset GIT_DIR

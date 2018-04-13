@@ -2,6 +2,7 @@ export ZPLUG_HOME=~/.zplug
 
 export ENHANCD_FILTER='fzf'
 export ENHANCD_DOT_SHOW_FULLPATH=1
+export BASE16_SCHEME="material-darker"
 
 if [[ ! -f "${ZDOTDIR:-$HOME}/.zplug/init.zsh" ]]; then
   git clone https://github.com/zplug/zplug $ZPLUG_HOME
@@ -13,7 +14,6 @@ zplug "Tarrasch/zsh-autoenv"
 zplug "supercrabtree/k"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions", hook-build:"compinit"
-BASE16_SCHEME="default-dark"
 zplug "chriskempson/base16-shell"
 if [[ `uname` == 'Darwin' ]]; then
   zplug "Code-Hex/battery", as:command, from:gh-r
