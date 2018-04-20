@@ -61,3 +61,9 @@ au BufRead,BufNewFile * :silent! execute WatchForChanges("*", autoreadargs)
 let g:ale_linters = {
 \   'graphql': ['prettier'],
 \}
+
+let g:ale_fixers = {
+\   'typescript': [
+\       'prettier',
+\   ],
+\}
