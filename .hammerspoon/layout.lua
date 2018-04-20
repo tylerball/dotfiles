@@ -74,7 +74,9 @@ function layout.doChanges()
   hs.fnutils.each(layout.apps, function (app)
     layout.changeApp(app['name'])
   end)
-  focused:focus()
+  if focused then
+    focused:focus()
+  end
 end
 
 function layout.changeApp(a)
@@ -152,7 +154,7 @@ hs.hotkey.bind(hs.settings.get('modifier'), '-', function ()
   hs.grid.set(win, hs.grid.get(win), win:screen():previous())
 end)
 
-layout.bind('Path Finder', {
+layout.bind('Finder', {
   one = { main = positions.rightTwoThird },
   two = { main = positions.rightHalf },
 })

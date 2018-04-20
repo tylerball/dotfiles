@@ -1,7 +1,7 @@
 urls = {}
 
 urls.handler = function (scheme, host, params, fullURL)
-  if hs.eventtap.checkKeyboardModifiers()['cmd'] then
+  if hs.eventtap.checkKeyboardModifiers()['cmd'] and hs.eventtap.checkKeyboardModifiers()['shift'] then
     return urls.chooser(fullURL)
   end
 
