@@ -1,11 +1,12 @@
 function ncmpcpp {
+  MPD_PASS=$(cat ~/.mpd/password | tr -d '\n')
   if [[ -z `pgrep mpd` ]]; then
     mpd
   fi
   if [[ -z `pgrep ncmpcpp` ]]; then
-    /usr/local/bin/ncmpcpp
+    /usr/local/bin/ncmpcpp --host "${MPD_PASS}@home.tylerball.net" "$@"
   else
-    killall ncmpcpp && /usr/local/bin/ncmpcpp
+    killall ncmpcpp && /usr/local/bin/ncmpcpp --host "${MPD_PASS}@home.tylerball.net"
   fi
 }
 # vim:ft=zsh

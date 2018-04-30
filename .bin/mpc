@@ -1,0 +1,8 @@
+#!/bin/bash
+
+MPD_PASS=$(cat ~/.mpd/password | tr -d '\n')
+/usr/local/bin/mpc -P "$MPD_PASS" -h home.tylerball.net "$@"
+if [[ "$*" =~ toggle ]]
+then
+  /usr/local/bin/mpc "$@"
+fi

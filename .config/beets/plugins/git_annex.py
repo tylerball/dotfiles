@@ -81,7 +81,8 @@ class GitAnnexPlugin(BeetsPlugin):
         self.unlock(path)
 
     def write(self, path, tags):
-        self.unlock_file(path)
+        if not 'import' in sys.argv:
+            self.unlock_file(path)
 
     def delete(self, item):
         if not 'import' in sys.argv:

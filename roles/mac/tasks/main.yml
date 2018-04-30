@@ -25,3 +25,8 @@
     dest: /etc/auto_klein
     mode: '600'
   become: true
+
+- copy:
+    src: mpd_pass
+    dest: ~/.mpd/password
+  become: true

@@ -64,13 +64,17 @@ alias rt="be ruby -Itest"
 alias dvs="dev server"
 alias dvu="dev up"
 
-alias light='base16_default-light'
-alias dark='base16_default-dark'
+alias light='base16_tomorrow'
+alias dark='base16_tomorrow-night'
 
 # utilities
 alias ln="${aliases[ln]:-ln} -i"
 
 alias l='ls -1A'
 alias ll='ls -lh'
+
+# music
+alias djm="beet modify dj=true -y"
+alias m="~/.bin/mpc"
 
 # vim:ft=zsh
