@@ -47,3 +47,7 @@ fpath=(~/.zsh/functions $fpath)
 if (( $+commands[yarn] )); then
   export PATH="$(yarn global dir)/node_modules/.bin:$PATH"
 fi
+
+if [ -n "${NVM_DIR+1}" ]; then
+  export NVM_DIR="$HOME/.nvm"
+fi
