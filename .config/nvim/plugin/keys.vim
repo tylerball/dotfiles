@@ -1,7 +1,3 @@
-inoremap kj <ESC>
-inoremap kJ <ESC>
-inoremap KJ <ESC>
-
 " sane movement
 noremap j gj
 noremap k gk

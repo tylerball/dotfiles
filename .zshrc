@@ -23,7 +23,6 @@ source ~/.zaliases
 alias c='git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 
 bindkey '^R' history-incremental-search-backward
-bindkey -M viins 'kj' vi-cmd-mode
 bindkey -M viins '\e' vi-cmd-mode
 bindkey '^O' edit-command-line
 bindkey -M vicmd '^O' edit-command-line
