@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mkdir -p "$HOME/Sync/music/_lib/h6/backups/$(date "+%Y-%m-%d")"
+rsync -avzP /Volumes/*H6*/FOLDER* "$HOME/Sync/music/_lib/h6/backups/$(date "+%Y-%m-%d")/"
