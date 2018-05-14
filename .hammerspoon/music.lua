@@ -25,7 +25,7 @@ end
 
 apps.mpc = {}
 apps.mpc.toggle = function ()
-  hs.execute('~/.bin/mpc pause')
+  hs.execute('~/.bin/mpc toggle')
 end
 apps.mpc.next = function ()
   hs.execute('~/.bin/mpc next')
@@ -35,18 +35,19 @@ apps.mpc.prev = function ()
 end
 
 hs.hotkey.bind(modifier, 'return', function ()
-  if hs.settings.get('paused') then
-    apps[hs.settings.get('lastplayed')].toggle()
+  _, _, _, mpcrc = hs.execute('~/.bin/mpc status | grep "\\[playing\\]"')
+  if hs.itunes.getPlaybackState() == hs.itunes.state_playing then
+    hs.settings.set('lastplayed', 'itunes')
+  elseif hs.spotify.getPlaybackState() == hs.spotify.state_playing then
+    hs.settings.set('lastplayed', 'spotify')
+  elseif mpcrc < 1 then
+    hs.settings.set('lastplayed', 'mpc')
   else
-    _, _, _, mpcrc = hs.execute('~/.bin/mpc status | grep "\\[playing\\]"')
-    if hs.itunes.getPlaybackState() == hs.itunes.state_playing then
-      hs.settings.set('lastplayed', 'itunes')
-    elseif hs.spotify.getPlaybackState() == hs.spotify.state_playing then
-      hs.settings.set('lastplayed', 'spotify')
-    elseif mpcrc < 1 then
-      hs.settings.set('lastplayed', 'mpc')
-    end
-    apps[hs.settings.get('lastplayed')].toggle()
+    hs.settings.set('paused', true)
+  end
+
+  apps[hs.settings.get('lastplayed')].toggle()
+  if hs.settings.get('paused') == false then
     hs.settings.set('paused', true)
   end
 end)
