@@ -5,13 +5,15 @@ fi
 OUTPUT=$(osascript <<-EOF
 tell app "iTunes"
   if it is running then
-    set track_name to name of current track
-    set artist_name to artist of current track
+    if player state is playing then
+      set track_name to name of current track
+      set artist_name to artist of current track
 
-    if artist_name > 0
-      "♫ " & artist_name & " - " & track_name
-    else
-      "~ " & track_name
+      if artist_name > 0
+        "♫ " & artist_name & " - " & track_name
+      else
+        "~ " & track_name
+      end if
     end if
   end if
 end tell

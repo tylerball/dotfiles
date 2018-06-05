@@ -20,6 +20,7 @@ plugins: [
 import:
   move: yes
   incremental: yes
+  incremental_skip_later: yes
 
 library: ~/tunes/beets.db
 directory: ~/tunes/

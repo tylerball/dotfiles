@@ -36,9 +36,9 @@ end
 
 hs.hotkey.bind(modifier, 'return', function ()
   _, _, _, mpcrc = hs.execute('~/.bin/mpc status | grep "\\[playing\\]"')
-  if hs.itunes.getPlaybackState() == hs.itunes.state_playing then
+  if hs.itunes.isRunning() and hs.itunes.getPlaybackState() == hs.itunes.state_playing then
     hs.settings.set('lastplayed', 'itunes')
-  elseif hs.spotify.getPlaybackState() == hs.spotify.state_playing then
+  elseif hs.spotify.isRunning() and hs.spotify.getPlaybackState() == hs.spotify.state_playing then
     hs.settings.set('lastplayed', 'spotify')
   elseif mpcrc < 1 then
     hs.settings.set('lastplayed', 'mpc')
