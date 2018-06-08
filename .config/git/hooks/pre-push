@@ -5,7 +5,7 @@ current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 
 if [ $protected_branch = $current_branch ]
 then
-if [[ $PWD =~ "$HOME/code" ]]
+if [[ $PWD =~ $HOME/code.* ]]
 then
   if [ -d .git/annex ]; then
     exit 0

@@ -22,9 +22,9 @@ endfunction
 
 function! test#typescript#dev#executable() abort
   if filereadable('node_modules/.bin/sewing-kit')
-    return 'node_modules/.bin/sewing-kit test'
+    return 'node_modules/.bin/sewing-kit test --watch=false'
   else
-    return 'sewing-kit test'
+    return 'sewing-kit test --watch=false'
   endif
 endfunction
 

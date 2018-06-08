@@ -4197,7 +4197,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>318 979 606 456 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>412 544 616 174 0 0 1440 900 </string>
+	<string>652 769 616 174 0 0 1920 1200 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 147 599 459 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -4205,9 +4205,9 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>230 856 592 584 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 521 1440 379 0 0 1440 900 </string>
+	<string>0 1061 2560 379 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>13 113 490 354 0 0 2560 1440 </string>
+	<string>0 24 1920 1176 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>419 144 490 376 0 0 2560 1418 </string>
 	<key>NeverWarnAboutMeta</key>
@@ -7647,7 +7647,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-04-27T15:46:34Z</date>
+	<date>2018-06-06T15:58:23Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -7655,7 +7655,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<false/>
 	<key>ShowPaneTitles</key>
