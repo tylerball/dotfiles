@@ -67,3 +67,7 @@ let g:ale_fixers = {
 \       'prettier',
 \   ],
 \}
+
+map <localleader>a :ALEDetail<cr>
+
+let test#custom_runners = {'typescript': ['Dev']}
