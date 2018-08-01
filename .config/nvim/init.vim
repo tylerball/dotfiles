@@ -8,9 +8,11 @@ let g:python3_host_prog = $HOME."/.config/nvim/virtualenv/bin/python3"
 call plug#begin('~/.config/nvim/bundle')
 
 " Completion
-Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'roxma/nvim-completion-manager'
 Plug 'SirVer/ultisnips'
 
 " Syntaxes

@@ -49,8 +49,6 @@ set formatoptions=clt " see http://vimdoc.sourceforge.net/htmldoc/change.html#fo
 
 set dictionary=/usr/share/dict/words
 
-let g:deoplete#enable_at_startup = 1
-
 " vim-trailing-whitespace
 nnoremap <localleader>w :FixWhitespace<cr>
 

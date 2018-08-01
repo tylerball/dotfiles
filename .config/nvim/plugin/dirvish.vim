@@ -4,5 +4,5 @@ nmap <leader>f :vsplit<CR>:Dirvish %<CR>
 augroup dirvish_config
   autocmd!
   autocmd FileType dirvish silent! unmap <buffer> <C-p>
-  autocmd FileType dirvish nmap e :e <C-R>=expand('%')<CR>
+  autocmd FileType dirvish nmap <buffer> e :e <C-R>=expand('%')<CR>
 augroup END

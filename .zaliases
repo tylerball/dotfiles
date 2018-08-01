@@ -63,6 +63,7 @@ alias rt="be ruby -Itest"
 # shopify
 alias dvs="dev server"
 alias dvu="dev up"
+alias sk="sewing-kit"
 
 alias light='base16_tomorrow'
 alias dark='base16_tomorrow-night'
