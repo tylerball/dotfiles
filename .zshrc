@@ -77,6 +77,11 @@ function git() {
   command git "$@"
 }
 
+autoload -Uz promptinit
+fpath=($fpath ~/.zplug/repos/BrandonRoehl/zsh-clean)
+promptinit
+prompt clean 256
+
 zstyle ':vcs_info:git:thaw' thawformat " *frozen*"
 
 function prompt_thaw_precmd () {
