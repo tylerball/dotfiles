@@ -27,7 +27,9 @@ end
 
 urls.chooser = function (url)
   chooser = hs.chooser.new(function (choice)
-    if choice['browser'] == 'firefox' then
+    if choice['browser'] == 'safari' then
+      urls._openSafari(url, choice.text)
+    elseif choice['browser'] == 'firefox' then
       urls._openFirefox(url, choice.text)
     elseif choice['browser'] == 'chrome' then
       urls._openChrome(url, choice.text)
@@ -44,6 +46,12 @@ urls.chooser = function (url)
       ['browser'] = "chrome",
     },
     {
+      ['text'] = "Safari",
+      ['subText'] = '',
+      ['name'] = "Safari",
+      ['browser'] = "safari",
+    },
+    {
       ['text'] = "Home",
       ['subText'] = '',
       ['name'] = 'Home',
@@ -55,7 +63,7 @@ urls.chooser = function (url)
 end
 
 urls.openHome = function (url)
-  urls._openFirefox(url)
+  urls._openSafari(url)
 end
 
 urls.openWork = function (url)
@@ -76,6 +84,16 @@ urls._openFirefox = function (url)
   hs.application.launchOrFocus('Firefox')
   local bool, result = hs.osascript.applescript([[
     tell application "Firefox" to open location "]] .. url .. '"'
+  )
+  if not bool then
+    print(result)
+  end
+end
+
+urls._openSafari = function (url)
+  hs.application.launchOrFocus('Safari')
+  local bool, result = hs.osascript.applescript([[
+    tell application "Safari" to open location "]] .. url .. '"'
   )
   if not bool then
     print(result)

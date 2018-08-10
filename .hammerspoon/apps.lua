@@ -12,6 +12,7 @@ local apps = {
   a = 'Firefox',
   w = 'Google Chrome',
   p = 'Spotify',
+  z = 'Safari',
 }
 
 for key, app in pairs(apps) do
