@@ -35,19 +35,17 @@ homebrew_apps:
   - offlineimap
   - urlview
   - ranger
-  - imgcat
-  - base16-manager
 
 homebrew_cask_apps:
   - hammerspoon
   - mailplane
-  - dropbox
-  - google-chrome
-  - 1password
   - java
   - hazel
   - resilio-sync
   - dash
+  - alfred
+  - iterm2
+  - spotify
 
 mas_apps:
   - 890031187 # Marked 2
@@ -60,7 +58,6 @@ python_packages:
   - beets
   - discogs-client
   - pylast
-  - neovim
 
 launch_agents:
   - mailsync.plist

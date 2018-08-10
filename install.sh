@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/bin/zsh
 unset GIT_WORK_DIR
 
 if [[ "$(uname)" = 'Darwin' ]]; then

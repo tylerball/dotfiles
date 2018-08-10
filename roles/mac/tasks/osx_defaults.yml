@@ -18,14 +18,6 @@
     # Finder: show all filename extensions
     - { key: AppleShowAllExtensions, value: true }
 
-# dark theme
-- osx_defaults:
-    domain: /Library/Preferences/.GlobalPreferences
-    key: AppleInterfaceTheme
-    type: string
-    value: Dark
-    state: present
-
 - osx_defaults:
     domain: com.apple.universalaccess
     key: reduceTransparency
