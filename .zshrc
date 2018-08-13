@@ -13,11 +13,6 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_VERIFY
 unsetopt ignoreeof # allow exiting from shell with ctrl+d
 
-export ENHANCD_FILTER='fzf'
-export ENHANCD_DOT_SHOW_FULLPATH=1
-export PURE_GIT_DOWN_ARROW='⬇'
-export PURE_GIT_UP_ARROW='⬆'
-
 source ~/.zplugs
 source ~/.zaliases
 alias c='git --git-dir=$HOME/dotfiles --work-tree=$HOME'

@@ -1,6 +1,7 @@
 - name: Install python packages
   pip:
-    name: "neovim"
+    name: neovim
+    virtualenv_python: python3
     virtualenv: "{{ playbook_dir }}/.config/nvim/virtualenv"
 
 - name: Install python packages
