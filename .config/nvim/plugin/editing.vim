@@ -3,7 +3,6 @@ set tabstop=2
 set shiftwidth=2
 set sts=2            "" number of spaces deleted when you hit <bs>
 set textwidth=79
-set exrc
 set undofile
 set autowriteall
 set wildmode=list:longest

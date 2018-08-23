@@ -100,3 +100,5 @@ nmap <silent> <localleader>T :TestFile<CR>
 nmap <silent> <localleader>l :TestLast<CR>
 nmap <silent> <localleader>g :TestVisit<CR>
 let test#strategy = "dispatch"
+
+set exrc
