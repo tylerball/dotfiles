@@ -39,6 +39,8 @@ export FZF_COMPLETION_TRIGGER='~~'
 
 export NVM_DIR='' # wtf
 
+export TOUCHBAR_GIT_ENABLED=false
+
 BASE16_SHELL=$ZPLUG_REPOS/chriskempson/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 

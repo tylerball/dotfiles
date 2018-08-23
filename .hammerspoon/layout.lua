@@ -186,6 +186,11 @@ layout.bind('iTunes', {
   two = { alt1 = positions.full },
 })
 
+layout.bind('Spotify', {
+  one = { main = positions.full },
+  two = { alt1 = positions.full },
+})
+
 layout.bind('Messages',    {
   one = { main = positions.upperRight },
   two = { alt1 = positions.upperRight },

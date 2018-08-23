@@ -24,6 +24,7 @@ zplug "sharat87/zsh-vim-mode"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:2
 zplug "BrandonRoehl/zsh-clean", lazy:true
+zplug "iam4x/zsh-iterm-touchbar"
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "

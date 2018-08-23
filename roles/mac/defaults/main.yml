@@ -53,6 +53,7 @@ mas_apps:
   - 557168941 # Tweetbot
   - 413965349 # Soulver
   - 803453959 # Slack
+  - 918207447 # Annotate
 
 python_packages:
   - beets
