@@ -181,16 +181,6 @@ layout.bind('Tweetbot',    {
   studio = { alt1 = positions.leftHalf },
 })
 
-layout.bind('iTunes', {
-  one = { main = positions.full },
-  two = { alt1 = positions.full },
-})
-
-layout.bind('Spotify', {
-  one = { main = positions.full },
-  two = { alt1 = positions.full },
-})
-
 layout.bind('Messages',    {
   one = { main = positions.upperRight },
   two = { alt1 = positions.upperRight },
@@ -202,25 +192,23 @@ layout.bind('Dash',    {
   two = { alt1 = positions.rightTwoThird },
 })
 
-layout.bind('Google Chrome', {
-  one = { main = positions.full },
-  two = { alt1 = positions.full },
-})
+fullScreens = {
+  'Google Chrome',
+  'Safari',
+  'Firefox',
+  'Fantastical',
+  'Lightroom',
+  'Calendar',
+  'iTunes',
+  'Spotify',
+}
 
-layout.bind('Firefox', {
-  one = { main = positions.full },
-  two = { alt1 = positions.full },
-})
-
-layout.bind('Lightroom', {
-  one = { main = positions.full },
-  two = { alt1 = positions.full },
-})
-
-layout.bind('Calendar', {
-  one = { main = positions.full },
-  two = { alt1 = positions.full },
-})
+hs.fnutils.each(fullScreens, function (app)
+  layout.bind(app, {
+    one = { main = positions.full },
+    two = { alt1 = positions.full },
+  })
+end)
 
 layout.bind('Reminders', {
   one = { main = positions.lowerRight },
