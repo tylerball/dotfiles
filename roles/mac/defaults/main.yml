@@ -15,9 +15,6 @@ homebrew_apps:
   - tree
   - zsh
   - fasd
-  - gst-python
-  - mp3val
-  - mp3gain
   - mpd
   - mpc
   - ncmpcpp
@@ -35,6 +32,8 @@ homebrew_apps:
   - offlineimap
   - urlview
   - ranger
+  - ruby-install
+  - chruby
 
 homebrew_cask_apps:
   - hammerspoon
