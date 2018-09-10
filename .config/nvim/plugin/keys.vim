@@ -30,5 +30,3 @@ cmap w!! w !sudo tee % >/dev/null
 nmap Q <nop>
 
 cnoremap <C-a> <Home>
-
-nmap <localleader>F :ALEFix<cr>

@@ -65,6 +65,7 @@ let g:ale_fixers = {
 \   ],
 \}
 
-map <localleader>a :ALEDetail<cr>
+nmap <localleader>a :ALEDetail<cr>
+nmap <localleader>F :ALEFix<cr>
 
 let test#custom_runners = {'typescript': ['Dev']}
