@@ -201,6 +201,7 @@ fullScreens = {
   'Calendar',
   'iTunes',
   'Spotify',
+  'Notion',
 }
 
 hs.fnutils.each(fullScreens, function (app)

@@ -45,6 +45,7 @@ homebrew_cask_apps:
   - alfred
   - iterm2
   - spotify
+  - notion
 
 mas_apps:
   - 890031187 # Marked 2

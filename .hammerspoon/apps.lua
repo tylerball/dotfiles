@@ -13,6 +13,7 @@ local apps = {
   w = 'Google Chrome',
   p = 'Spotify',
   z = 'Safari',
+  n = 'Notion',
 }
 
 for key, app in pairs(apps) do
@@ -33,18 +34,3 @@ hs.hotkey.bind({'cmd', 'shift'}, 'w', function ()
     hs.application.frontmostApplication():selectMenuItem({'File', 'Close Window'})
   end
 end)
-
-local watcher = hs.application.watcher.new(function (app, event)
-  local bind = hs.hotkey.bind({'cmd'}, 'm', function ()
-    hs.application.get('Finder'):selectMenuItem('Merge All Windows')
-  end):disable()
-  if app == 'Finder' then
-    if event == hs.application.watcher.activated then
-      bind:enable()
-    else
-      bind:disable()
-    end
-  end
-end)
-
-watcher:start()
