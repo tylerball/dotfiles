@@ -48,7 +48,7 @@ export FZF_DEFAULT_OPTS='--bind ctrl-d:page-down,ctrl-u:page-up'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
-[ -f source /usr/local/opt/chruby/share/chruby/auto.sh ] && source /usr/local/opt/chruby/share/chruby/auto.sh
+[ -f /usr/local/opt/chruby/share/chruby/auto.sh ] && source /usr/local/opt/chruby/share/chruby/auto.sh
 
 function {
   setopt LOCAL_OPTIONS EXTENDED_GLOB
