@@ -1,9 +1,0 @@
-- name: Apt Repositories
-  apt_repository: repo={{ item }}
-  with_items: ['{{apt_repositories}}']
-  become_user: sudo
-
-- name: Apt Packages
-  apt: name={{ item }}
-  with_items: ['{{apt_packages}}']
-  become_user: sudo
