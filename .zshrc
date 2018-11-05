@@ -37,8 +37,6 @@ fi
 
 export FZF_COMPLETION_TRIGGER='~~'
 
-export NVM_DIR='' # wtf
-
 export TOUCHBAR_GIT_ENABLED=false
 
 BASE16_SHELL=$ZPLUG_REPOS/chriskempson/base16-shell/
