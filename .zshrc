@@ -30,11 +30,6 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey -v '^?' backward-delete-char
 
-if [[ -s "/etc/profile.d/chruby.sh" ]]; then
-  # shopify's chruby script
-  source /etc/profile.d/chruby.sh
-fi
-
 export FZF_COMPLETION_TRIGGER='~~'
 
 export TOUCHBAR_GIT_ENABLED=false
@@ -46,7 +41,6 @@ export FZF_DEFAULT_OPTS='--bind ctrl-d:page-down,ctrl-u:page-up'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
-[ -f /usr/local/opt/chruby/share/chruby/auto.sh ] && source /usr/local/opt/chruby/share/chruby/auto.sh
 
 function {
   setopt LOCAL_OPTIONS EXTENDED_GLOB
