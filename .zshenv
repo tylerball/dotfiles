@@ -51,3 +51,7 @@ fi
 if [ -n "${NVM_DIR+1}" ]; then
   export NVM_DIR="$HOME/.nvm"
 fi
+
+if (( $+commands[brew] )); then
+  export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH
+fi
