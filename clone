@@ -1,4 +1,4 @@
-git clone --bare https://github.com/tylerball/dotfiles.git $HOME/dotfiles
+git clone --bare --recurse-submodules https://github.com/tylerball/dotfiles.git $HOME/dotfiles
 function config {
    git --git-dir=$HOME/dotfiles/ --work-tree=$HOME $@
 }

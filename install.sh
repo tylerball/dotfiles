@@ -18,23 +18,16 @@ if [[ "$(uname)" = 'Darwin' ]]; then
   fi
   ansible-playbook -c local site.yml
 else
-  # if [[ ! -x `which ansible` ]]; then
-  #   echo "Installing ansible"
-  #   sudo apt-get install software-properties-common
-  #   sudo apt-add-repository ppa:ansible/ansible
-  #   sudo apt-get update
-  #   sudo apt-get install ansible
-  # fi
-fi
-
-if [[ ! -d $HOME/.tmux/plugins/tpm ]]; then
-  /bin/cd $HOME/.tmux
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-  /bin/cd $HOME
+  if [[ ! -x `which ansible` ]]; then
+    echo "Installing ansible"
+    sudo apt-get install software-properties-common
+    sudo apt-add-repository ppa:ansible/ansible
+    sudo apt-get update
+    sudo apt-get install ansible
+  fi
 fi
 
 unset GIT_DIR
 unset GIT_WORK_TREE
-$HOME/.tmux/plugins/tpm/bin/update_plugins all
 source ~/.zplug/init.zsh
 zplug update
