@@ -5,7 +5,7 @@ plugins: [
   convert,
   fetchart,
   play,
-  replaygain,
+  # replaygain,
   missing,
   mpdstats,
   smartplaylist,
@@ -13,7 +13,6 @@ plugins: [
   lastgenre,
   duplicates,
   mbsync,
-  git_annex,
   edit,
 ]
 
@@ -22,8 +21,8 @@ import:
   incremental: yes
   incremental_skip_later: yes
 
-library: ~/tunes/beets.db
-directory: ~/tunes/
+library: /mnt/pool/tunes/beets.db
+directory: /mnt/pool/tunes
 pluginpath:
   - ~/.config/beets/plugins
 
@@ -37,17 +36,21 @@ replaygain:
   overwrite: yes
 
 smartplaylist:
-  relative_to: ~/tunes
-  playlist_dir: ~/.mpd/playlists
+  relative_to: /mnt/pool/tunes
+  playlist_dir: /mnt/pool/tunes
   playlists:
-    - name: "1-added_this_week.m3u"
-      album_query: added:-1w..
-    - name: "2-added_this_month.m3u"
-      album_query: added:-1m..
+    - name: "added this week.m3u"
+      album_query: 'added:-1w.. added-'
+    - name: "added this month.m3u"
+      album_query: 'added:-1m.. added-'
+    - name: "alarm.m3u"
+      query: 'alarm:true'
+    - name: "grinch.m3u"
+      query: 'grinch:true'
 
 itunescopy:
   auto: yes
-  dest: ~/Music/iTunes/iTunes Media/Automatically Add to iTunes.localized
+  dest: /mnt/pool/toitunes
 
 lastgenre:
   count: 3
