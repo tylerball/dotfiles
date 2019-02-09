@@ -42,7 +42,12 @@
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
-[credential]
-  helper = cache
 [diff]
 	algorithm = patience
+[http "https://git-mirror.shopifycloud.com"]
+	cookieFile = /tmp/galaxy.cookies
+	saveCookies = true
+[protocol]
+	version = 2
+[credential]
+	helper = osxkeychain
