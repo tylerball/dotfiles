@@ -1,5 +1,8 @@
 #!/bin/zsh
+git submodule init
+git submodule update
 unset GIT_WORK_DIR
+unset PYTHONPATH
 
 if [[ "$(uname)" = 'Darwin' ]]; then
   if [[ -x `which brew` ]]; then
