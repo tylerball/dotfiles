@@ -8,7 +8,6 @@ homebrew_taps:
 
 homebrew_apps:
   - git
-  - lua
   - node
   - python
   - tmux
@@ -18,7 +17,6 @@ homebrew_apps:
   - mpd
   - mpc
   - ncmpcpp
-  - git-annex
   - fzf
   - gawk
   - neovim
@@ -28,24 +26,23 @@ homebrew_apps:
   - ripgrep
   - reattach-to-user-namespace
   - mas
-  - mutt
-  - offlineimap
   - urlview
   - ranger
   - ruby-install
   - chruby
+  - hub
 
 homebrew_cask_apps:
   - hammerspoon
-  - mailplane
   - java
-  - hazel
   - resilio-sync
   - dash
   - alfred
   - iterm2
   - spotify
   - notion
+  - syncthing
+  - tunnelblick
 
 mas_apps:
   - 890031187 # Marked 2
@@ -53,7 +50,6 @@ mas_apps:
   - 557168941 # Tweetbot
   - 413965349 # Soulver
   - 803453959 # Slack
-  - 918207447 # Annotate
 
 python_packages:
   - beets
