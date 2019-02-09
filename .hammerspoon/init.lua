@@ -18,10 +18,8 @@ hs.settings.set('NightShift:ignoredApps', {
 hs.pathwatcher.new(hs.configdir .. '/', hs.reload):start()
 
 hs.audiodevice.watcher.setCallback(function ()
-  -- NEVER USE DISPLAY AUDIO
-  if hs.audiodevice.current().name == 'Display Audio' and string.find(hs.wifi.currentNetwork(), 'Shopify') then
-    hs.audiodevice.findDeviceByName('Built-in Output'):setDefaultOutputDevice()
-    print('display audio prevented')
+  if hs.audiodevice.findDeviceByName('FiiO USB DAC-E10') then
+    hs.audiodevice.findOutputByName('FiiO USB DAC-E10'):setDefaultOutputDevice()
   end
 end)
 hs.audiodevice.watcher.start()

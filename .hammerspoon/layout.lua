@@ -11,6 +11,7 @@ positions = {
   rightHalf =  {x=layout.GRIDWIDTH / 2, y=0, w=layout.GRIDWIDTH / 2, h=layout.GRIDHEIGHT},
   rightThird = {x=layout.GRIDWIDTH / 3 * 2, y=0, w=layout.GRIDWIDTH / 3, h=layout.GRIDHEIGHT},
   leftThird = {x=0, y=0, w=layout.GRIDWIDTH / 3, h=layout.GRIDHEIGHT},
+  leftTwoThird = {x=0, y=0, w=layout.GRIDWIDTH / 3 * 2, h=layout.GRIDHEIGHT},
   rightTwoThird = {x=layout.GRIDWIDTH / 3, y=0, w=layout.GRIDWIDTH / 3 * 2, h=layout.GRIDHEIGHT},
   full      =  {x=0, y=0, w=layout.GRIDWIDTH, h=layout.GRIDHEIGHT},
 
@@ -61,8 +62,8 @@ end
 
 function layout.getLayout()
   local l = 'one'
-  if hs.fnutils.find(hs.screen.allScreens(), function (screen) return screen:name() == 'Acer P243W' end) then
-    l = 'studio'
+  if hs.fnutils.find(hs.screen.allScreens(), function (screen) return screen:name() == 'HP Z27n G2' end) then
+    l = 'office'
   elseif length(hs.screen.allScreens()) == 2 then
     l = 'two'
   end
@@ -136,6 +137,7 @@ layout.setGrid('H', positions.leftHalf)
 layout.setGrid('L', positions.rightHalf)
 layout.setGrid('P', positions.rightThird)
 layout.setGrid('U', positions.leftThird)
+layout.setGrid('Y', positions.leftTwoThird)
 layout.setGrid('O', positions.rightTwoThird)
 
 layout.setGrid('I', positions.upperHalf)
@@ -161,30 +163,31 @@ layout.bind('Finder', {
 
 layout.bind('iTerm', {
   one = { main = positions.full },
+  office = { main = positions.leftTwoThird },
 })
 
 layout.bind('Dash',        {
   one = { main = positions.rightTwoThird },
   two = { alt1 = positions.rightTwoThird },
-  studio = { alt1 = positions.full },
+  office = { alt1 = positions.right },
 })
 
 layout.bind('Slack', {
   one = { main = positions.rightTwoThird },
   two = { alt1 = positions.rightTwoThird },
-  studio = { alt1 = positions.lowerHalf },
+  office = { alt1 = positions.right },
 })
 
 layout.bind('Tweetbot',    {
   one = { main = {x=0, y=0, w=layout.GRIDWIDTH / 3, h=layout.GRIDHEIGHT - 0.1} },
   two = { alt1 = positions.leftThird },
-  studio = { alt1 = positions.leftHalf },
+  office = { alt1 = positions.leftThird },
 })
 
 layout.bind('Messages',    {
   one = { main = positions.upperRight },
   two = { alt1 = positions.upperRight },
-  studio = { alt1 = positions.upperHalf },
+  office = { alt1 = positions.upperRight },
 })
 
 layout.bind('Dash',    {
@@ -193,21 +196,30 @@ layout.bind('Dash',    {
 })
 
 fullScreens = {
-  'Google Chrome',
-  'Safari',
-  'Firefox',
   'Fantastical',
   'Lightroom',
-  'Calendar',
   'iTunes',
   'Spotify',
-  'Notion',
 }
 
 hs.fnutils.each(fullScreens, function (app)
   layout.bind(app, {
     one = { main = positions.full },
     two = { alt1 = positions.full },
+  })
+end)
+
+fullScreensRightOffice = {
+  'Google Chrome',
+  'Safari',
+  'Notion',
+}
+
+hs.fnutils.each(fullScreensRightOffice, function (app)
+  layout.bind(app, {
+    one = { main = positions.full },
+    two = { alt1 = positions.full },
+    office = { alt1 = positions.right },
   })
 end)
 
@@ -218,7 +230,7 @@ layout.bind('Reminders', {
 
 hs.fnutils.each(layout.apps, function (app)
   if app['studio'] == nil then
-    app['studio'] = app['two']
+    app['studio'] = app['one']
   end
 end)
 
