@@ -14,6 +14,7 @@ plugins: [
   duplicates,
   mbsync,
   edit,
+  copyartifacts,
 ]
 
 import:
@@ -26,11 +27,24 @@ directory: /mnt/pool/tunes
 pluginpath:
   - ~/.config/beets/plugins
 
+copyartifacts:
+  extensions: .jpg .pdf
+  print_ignored: yes
+
+mpd:
+  music_directory: ''
+
 embedart:
   auto: yes
 
 convert:
   dest: ~/Downloads
+  max_bitrate: 320
+  format: mp3
+  formats:
+    mp3:
+      command: ffmpeg -i $source -ab 320k -map_metadata 0 $dest
+      extension: mp3
 
 replaygain:
   overwrite: yes
@@ -41,8 +55,10 @@ smartplaylist:
   playlists:
     - name: "added this week.m3u"
       album_query: 'added:-1w.. added-'
-    - name: "added this month.m3u"
-      album_query: 'added:-1m.. added-'
+    - name: "added last week.m3u"
+      album_query: 'added:-2w..-1w added-'
+    # - name: "added this month.m3u"
+    #   album_query: 'added:-1m.. added-'
     - name: "alarm.m3u"
       query: 'alarm:true'
     - name: "grinch.m3u"

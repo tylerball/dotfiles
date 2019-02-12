@@ -5,10 +5,11 @@ import os
 import sys
 import argparse
 import shutil
-from beets import config, ui, logging
+from beets import config, ui, util, logging
 from beets.plugins import BeetsPlugin
-from beets.ui import print_
+from beets.ui import print_, Subcommand
 from beets.ui.commands import import_cmd, default_commands
+from beetsplug import convert
 
 default_commands[default_commands.index(import_cmd)].parser.add_option(
     '-u', '--itunes', help='copy to itunes', default=False, dest='copyitunes',
@@ -23,6 +24,11 @@ default_commands[default_commands.index(import_cmd)].parser.add_option(
 class iTunesPlugin(BeetsPlugin):
     def __init__(self):
         super(iTunesPlugin, self).__init__()
+        self.dest_dir = util.bytestring_path(os.path.abspath(os.path.expanduser(
+            config['itunescopy']['dest'].get(unicode)
+        )))
+        self.convert = convert.ConvertPlugin()
+        self.convert_cmd = convert.get_format('mp3')[0]
         self.register_listener('import_task_files', self.imported)
 
     def imported(self, task, session):
@@ -36,10 +42,17 @@ class iTunesPlugin(BeetsPlugin):
     def copy(self, item):
         src = item['path'].decode('utf-8')
         dest = os.path.join(
-            os.path.abspath(os.path.expanduser(config['itunescopy']['dest'].get(unicode))),
+            self.dest_dir,
             os.path.basename(src)
         )
-        shutil.copyfile(src, dest)
+        if item.format != u'MP3':
+            self.convert.encode(
+                self.convert_cmd,
+                item.path,
+                util.bytestring_path(os.path.splitext(dest)[0] + '.mp3')
+            )
+        else:
+            shutil.copyfile(src, dest)
         self._log.info(u'Copying {0.title} - {0.artist} to iTunes', item)
 
     def commands(self):
