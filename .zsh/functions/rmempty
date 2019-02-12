@@ -1,0 +1,8 @@
+function rmempty() {
+  if [[ -f .empty-ignore ]]; then
+    find . -type d -empty ! -name '.stfolder' $(printf "! -name %s " $(cat .empty-ignore)) -exec rmdir {} \;
+  else
+		find . -type d -empty -not -name '.stfolder' -exec rmdir {} \;
+  fi
+}
+# vim:ft=zsh
