@@ -39,12 +39,16 @@ au BufNew * call matchadd('Todo', 'TODO')
 hi Todo guifg=#AC000B ctermfg=124
 
 let g:lightline.component_function = {
-\ 'filename': 'LightlineFilename'
+\ 'filename': 'LightlineFilename',
+\ 'gitbranch': 'fugitive#head'
 \ }
 
-" let g:lightline.component = {
-" \ 'fname': '%<%:p'
-" \ }
+let g:lightline.active = {}
+let g:lightline.active.right = [
+\ [ 'lineinfo' ],
+\ [ 'filetype' ],
+\ [ 'gitbranch' ]
+\ ]
 
 function! LightlineFilename()
   if expand('%:t') == ''

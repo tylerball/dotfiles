@@ -24,6 +24,8 @@ function! s:setup_color()
   hi diffText   guibg=#1D3163 guifg=#7cafc2
   hi diffChange guibg=#1D3163 guifg=#585858
   exec "hi ColorColumn guibg=" . color#lighten('#' . g:base16_gui00, '0.2')
+  exec "hi ALEWarningSign guibg=#" . g:base16_gui00 . " guifg=#" . g:base16_gui08
+  exec "hi ALEErrorSign guibg=#" . g:base16_gui00 . " guifg=#" . g:base16_gui08
 endfunction
 
 if filereadable(expand("~/.vimrc_background"))
