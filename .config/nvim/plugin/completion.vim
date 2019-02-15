@@ -13,5 +13,5 @@ nnoremap <silent> <localleader>r :call LanguageClient_textDocument_rename()<CR>
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-let g:deoplete#enable_at_startup = 1
-let g:UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"
+imap <C-Space> <Plug>snipMateTrigger
+
