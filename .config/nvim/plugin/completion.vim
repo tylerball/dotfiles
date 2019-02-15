@@ -1,6 +1,7 @@
 let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ }
+  \ 'ruby': ['tcp://localhost:7658'],
+  \ 'javascript': ['javascript-typescript-stdio'],
+  \ }
 
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
@@ -13,5 +14,9 @@ nnoremap <silent> <localleader>r :call LanguageClient_textDocument_rename()<CR>
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
+set completeopt=noinsert,menuone,noselect
+set shortmess+=c
+
 imap <C-Space> <Plug>snipMateTrigger
 
+let g:ale_ruby_solargraph_executable = 'solargraph'

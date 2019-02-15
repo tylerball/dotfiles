@@ -65,6 +65,9 @@ let g:ale_fixers = {
 \   ],
 \}
 
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '○'
+
 nmap <localleader>a :ALEDetail<cr>
 nmap <localleader>F :ALEFix<cr>
 

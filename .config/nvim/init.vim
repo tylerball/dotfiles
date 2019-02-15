@@ -3,12 +3,15 @@ syntax on
 let mapleader = ","
 let maplocalleader = "\\"
 
+let g:ale_completion_enabled = 1
+
 let g:python3_host_prog = $HOME."/.config/nvim/virtualenv/bin/python3"
 
 call plug#begin('~/.config/nvim/bundle')
 
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
+
 " Completion
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
