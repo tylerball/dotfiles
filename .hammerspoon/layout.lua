@@ -169,25 +169,25 @@ layout.bind('iTerm', {
 layout.bind('Dash',        {
   one = { main = positions.rightTwoThird },
   two = { alt1 = positions.rightTwoThird },
-  office = { alt1 = positions.right },
+  office = { main = positions.right },
 })
 
 layout.bind('Slack', {
   one = { main = positions.rightTwoThird },
   two = { alt1 = positions.rightTwoThird },
-  office = { alt1 = positions.right },
+  office = { main = positions.right },
 })
 
 layout.bind('Tweetbot',    {
   one = { main = {x=0, y=0, w=layout.GRIDWIDTH / 3, h=layout.GRIDHEIGHT - 0.1} },
   two = { alt1 = positions.leftThird },
-  office = { alt1 = positions.leftThird },
+  office = { main = positions.leftThird },
 })
 
 layout.bind('Messages',    {
   one = { main = positions.upperRight },
   two = { alt1 = positions.upperRight },
-  office = { alt1 = positions.upperRight },
+  office = { main = positions.upperRight },
 })
 
 layout.bind('Dash',    {
@@ -195,7 +195,7 @@ layout.bind('Dash',    {
   two = { alt1 = positions.rightTwoThird },
 })
 
-fullScreens = {
+local fullScreens = {
   'Fantastical',
   'Lightroom',
   'iTunes',
@@ -209,7 +209,7 @@ hs.fnutils.each(fullScreens, function (app)
   })
 end)
 
-fullScreensRightOffice = {
+local fullScreensRightOffice = {
   'Google Chrome',
   'Safari',
   'Notion',
@@ -219,7 +219,7 @@ hs.fnutils.each(fullScreensRightOffice, function (app)
   layout.bind(app, {
     one = { main = positions.full },
     two = { alt1 = positions.full },
-    office = { alt1 = positions.right },
+    office = { main = positions.right },
   })
 end)
 
