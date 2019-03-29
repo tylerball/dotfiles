@@ -109,7 +109,7 @@ end
 function layout.setWindow(win, cell, screen)
   local active = layout.getLayout()
   local iterm = hs.application.find('iTerm')
-  if iterm then
+  if iterm and iterm:allWindows()[1] then
     local itermscreen = iterm:allWindows()[1]:screen()
     if screen:name() == itermscreen:name() and cell.h == 6 then
       if hs.screen.allScreens()[screen:name()] == 'main' then
