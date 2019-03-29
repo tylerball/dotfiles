@@ -44,9 +44,6 @@
   smudge = git-media-smudge %f
 [diff]
 	algorithm = patience
-[http "https://git-mirror.shopifycloud.com"]
-	cookieFile = /tmp/galaxy.cookies
-	saveCookies = true
 [protocol]
 	version = 2
 [credential]

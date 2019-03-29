@@ -18,3 +18,5 @@ function! Rg(args)
         \ .'--smart-case --hidden --glob "!.git/*" --color=always "'.l:escaped_args.'"| tr -d "\017"',
         \ 0, 0)
 endfunction
+
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
