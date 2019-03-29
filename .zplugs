@@ -4,9 +4,6 @@ export ENHANCD_FILTER='fzf'
 export ENHANCD_DOT_SHOW_FULLPATH=1
 export BASE16_SCHEME="material-darker"
 
-if [[ ! -f "${ZDOTDIR:-$HOME}/.zplug/init.zsh" ]]; then
-  git clone https://github.com/zplug/zplug $ZPLUG_HOME
-fi
 source ~/.zplug/init.zsh
 
 zplugs=()
@@ -23,9 +20,11 @@ zplug "djui/alias-tips"
 zplug "sharat87/zsh-vim-mode"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:2
-zplug "BrandonRoehl/zsh-clean", lazy:true
 zplug "iam4x/zsh-iterm-touchbar"
-zplug "holman/spark", as:command, from:gh-r
+zplug "holman/spark", as:command, use:spark
+
+# zplug "BrandonRoehl/zsh-clean", use:clean.plugin.zsh
+zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
