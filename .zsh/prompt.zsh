@@ -5,7 +5,7 @@ SPACESHIP_VI_MODE_INSERT='↪'
 SPACESHIP_VI_MODE_NORMAL='⎋'
 SPACESHIP_VI_MODE_COLOR='grey'
 SPACESHIP_GIT_STATUS_COLOR='grey'
-SPACESHIP_GIT_SYMBOL='ᛋ '
+SPACESHIP_GIT_BRANCH_PREFIX='ᛋ '
 
 function spaceship_thaw() {
   thaw="$(git log -2 --format="%s" 2> /dev/null | grep -E "WIP \[\w+\]")"
