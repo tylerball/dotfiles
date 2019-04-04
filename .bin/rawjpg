@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+require 'open3'
+
+dir = ARGV
+glob = '/**/*.raf'
+files = Dir.glob(File.join(dir, glob))
+
+files.select! do |file|
+  base = file.gsub(File.extname(file), '')
+  !File.exist?("#{base}.jpg")
+end
+
+total = files.size
+files.each_with_index do |file, i|
+  base = file.gsub(File.extname(file), '')
+  count = i + 1
+  puts "#{' ' * (total.to_s.size - count.to_s.size)}#{count}/#{total} converting #{file}"
+  Open3.capture2("sips -s format jpeg '#{file}' --out '#{base}.jpg'")
+end
