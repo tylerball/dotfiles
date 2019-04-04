@@ -62,7 +62,7 @@ end
 
 function layout.getLayout()
   local l = 'one'
-  if hs.fnutils.find(hs.screen.allScreens(), function (screen) return screen:name() == 'HP Z27n G2' end) then
+  if hs.screen.mainScreen():name() == 'HP Z27n G2' or hs.screen.mainScreen():name() == 'LG Ultra HD' then
     l = 'office'
   elseif length(hs.screen.allScreens()) == 2 then
     l = 'two'
@@ -163,7 +163,7 @@ layout.bind('Finder', {
 
 layout.bind('iTerm', {
   one = { main = positions.full },
-  office = { main = positions.leftTwoThird },
+  office = { main = positions.full },
 })
 
 layout.bind('Dash',        {
