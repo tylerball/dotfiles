@@ -28,7 +28,7 @@ pluginpath:
   - ~/.config/beets/plugins
 
 copyartifacts:
-  extensions: .jpg .pdf
+  extensions: .pdf
   print_ignored: yes
 
 mpd:
