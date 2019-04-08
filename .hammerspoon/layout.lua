@@ -134,7 +134,7 @@ function layout.setGrid(key, cell)
 end
 
 layout.setGrid('G', positions.leftTwoThird)
-layout.setGrid(':', positions.rightTwoThird)
+layout.setGrid(';', positions.rightTwoThird)
 layout.setGrid('H', positions.leftHalf)
 layout.setGrid('L', positions.rightHalf)
 layout.setGrid('J', positions.leftThird)
@@ -168,13 +168,13 @@ layout.bind('iTerm', {
 layout.bind('Dash',        {
   one = { main = positions.rightTwoThird },
   two = { alt1 = positions.rightTwoThird },
-  office = { main = positions.right },
+  office = { main = positions.rightHalf },
 })
 
 layout.bind('Slack', {
   one = { main = positions.rightTwoThird },
   two = { alt1 = positions.rightTwoThird },
-  office = { main = positions.right },
+  office = { main = positions.rightHalf },
 })
 
 layout.bind('Tweetbot',    {
@@ -194,31 +194,37 @@ layout.bind('Dash',    {
   two = { alt1 = positions.rightTwoThird },
 })
 
+layout.bind('Google Chrome', {
+  one = { main = positions.full },
+  two = { alt1 = positions.full },
+  office = { main = positions.leftTwoThird },
+})
+
 local fullScreens = {
   'Fantastical',
   'Lightroom',
-  'iTunes',
-  'Spotify',
 }
 
 hs.fnutils.each(fullScreens, function (app)
   layout.bind(app, {
     one = { main = positions.full },
     two = { alt1 = positions.full },
+    office = { main = positions.full },
   })
 end)
 
 local fullScreensRightOffice = {
-  'Google Chrome',
   'Safari',
   'Notion',
+  'Spotify',
+  'iTunes',
 }
 
 hs.fnutils.each(fullScreensRightOffice, function (app)
   layout.bind(app, {
     one = { main = positions.full },
     two = { alt1 = positions.full },
-    office = { main = positions.right },
+    office = { main = positions.rightHalf },
   })
 end)
 
