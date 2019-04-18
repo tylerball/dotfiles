@@ -18,13 +18,8 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey -v '^?' backward-delete-char
 
-export FZF_COMPLETION_TRIGGER='~~'
-
 export TOUCHBAR_GIT_ENABLED=false
 
-export FZF_DEFAULT_OPTS='--bind ctrl-d:page-down,ctrl-u:page-up'
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 
 function {
