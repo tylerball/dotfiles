@@ -22,18 +22,7 @@ Plug 'garbas/vim-snipmate'
 " Syntaxes
 Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
-Plug 'sorin-ionescu/python.vim', { 'for': 'python' }
-Plug 'othree/html5.vim'
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
-Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
-Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
-Plug 'mtscout6/vim-cjsx', { 'for': 'jsx' }
-Plug 'elmcast/elm-vim', { 'for': 'elm' }
-Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
-Plug 'vim-ruby/vim-ruby'
-Plug 'jparise/vim-graphql'
+Plug 'sheerun/vim-polyglot'
 
 " Undo/paste
 Plug 'sjl/gundo.vim'
