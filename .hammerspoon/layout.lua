@@ -61,13 +61,13 @@ function layout.getScreens()
 end
 
 function layout.getLayout()
-  local l = 'one'
-  if hs.screen.mainScreen():name() == 'HP Z27n G2' or hs.screen.mainScreen():name() == 'LG Ultra HD' then
-    l = 'office'
-  elseif length(hs.screen.allScreens()) == 2 then
-    l = 'two'
+  if length(hs.screen.allScreens()) == 2 then
+    return 'two'
   end
-  return l
+  if hs.screen.mainScreen():name() == 'HP Z27n G2' or hs.screen.mainScreen():name() == 'LG Ultra HD' then
+    return 'office'
+  end
+  return 'one'
 end
 
 function layout.doChanges()
