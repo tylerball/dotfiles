@@ -35,6 +35,7 @@ homebrew_apps:
 
 homebrew_cask_apps:
   - hammerspoon
+  - zplug
   - java
   - resilio-sync
   - dash

@@ -1,11 +1,10 @@
-export ZPLUG_HOME=~/.zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
 export ENHANCD_FILTER='fzf'
 export ENHANCD_DOT_SHOW_FULLPATH=1
 export BASE16_SCHEME="material-darker"
 export FZF_DEFAULT_OPTS='--bind ctrl-d:page-down,ctrl-u:page-up'
-
-source ~/.zplug/init.zsh
 
 zplugs=()
 zplug "Tarrasch/zsh-autoenv"

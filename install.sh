@@ -32,5 +32,3 @@ fi
 
 unset GIT_DIR
 unset GIT_WORK_TREE
-source ~/.zplug/init.zsh
-zplug update
