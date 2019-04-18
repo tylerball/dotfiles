@@ -24,6 +24,7 @@ zplug "zsh-users/zsh-history-substring-search", defer:2
 # zplug "iam4x/zsh-iterm-touchbar"
 zplug "holman/spark", as:command, use:spark
 zplug "junegunn/fzf", use:shell/key-bindings.zsh
+zplug "tylerball/raw2jpg", as:command, use:raw2jpg
 
 # zplug "BrandonRoehl/zsh-clean", use:clean.plugin.zsh
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
