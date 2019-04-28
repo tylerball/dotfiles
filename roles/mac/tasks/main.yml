@@ -1,8 +1,8 @@
 - include_vars: vault.yml
 - include: homebrew.yml
-- include: python.yml
 - include: mas.yml
 - include: osx_defaults.yml
+- include: python.yml
 
 - copy: src={{ item }} dest=~/Library/LaunchAgents
   with_fileglob: "*.plist"

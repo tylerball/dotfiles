@@ -34,6 +34,7 @@ homebrew_apps:
   - mosh
 
 homebrew_cask_apps:
+  - tunnelblick
   - hammerspoon
   - zplug
   - java
@@ -44,14 +45,12 @@ homebrew_cask_apps:
   - spotify
   - notion
   - syncthing
-  - tunnelblick
 
 mas_apps:
   - 890031187 # Marked 2
   - 411643860 # DaisyDisk
   - 557168941 # Tweetbot
   - 413965349 # Soulver
-  - 803453959 # Slack
 
 python_packages:
   - beets
