@@ -5,6 +5,7 @@ plugins: [
   convert,
   fetchart,
   play,
+  badfiles,
   # replaygain,
   missing,
   mpdstats,
@@ -57,8 +58,8 @@ smartplaylist:
       album_query: 'added:-1w.. added-'
     - name: "added last week.m3u"
       album_query: 'added:-2w..-1w added-'
-    # - name: "added this month.m3u"
-    #   album_query: 'added:-1m.. added-'
+    - name: "added this month.m3u"
+      album_query: 'added:-1m.. added-'
     - name: "alarm.m3u"
       query: 'alarm:true'
     - name: "grinch.m3u"
