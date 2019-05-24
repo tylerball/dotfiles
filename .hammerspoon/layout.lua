@@ -254,4 +254,9 @@ hs.hotkey.bind(hs.settings.get('modifier'), 'return', function ()
   end
 end)
 
+hs.hotkey.bind(hs.settings.get('modifier'), 'y', function ()
+  local win = hs.window.focusedWindow()
+  win:setFrame(hs.geometry.rect(0,0,1920,1080))
+end)
+
 hs.screen.watcher.new(layout.doChanges):start()

@@ -48,3 +48,6 @@
 ; 	version = 2
 [credential]
 	helper = osxkeychain
+[url "https://github.com/Shopify/"]
+	insteadOf = git@github.com:Shopify/
+	insteadOf = git@github.com:shopify/
