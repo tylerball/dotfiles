@@ -20,6 +20,7 @@ if [[ "$(uname)" = 'Darwin' ]]; then
     brew install ansible 2>&1
   fi
   ansible-playbook -c local site.yml
+  go get -u github.com/Code-Hex/battery/cmd/battery
 else
   if [[ ! -x `which ansible` ]]; then
     echo "Installing ansible"

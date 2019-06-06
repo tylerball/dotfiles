@@ -1,5 +1,5 @@
 source ~/.zsh/history.zsh
-source ~/.zplugs
+source ~/.zsh/plugins.zsh
 source ~/.zaliases
 source ~/.zsh/prompt.zsh
 
@@ -47,4 +47,4 @@ function git() {
   command git "$@"
 }
 
-[ -f "/Users/tball/.shopify-cli/shopify.sh" ] && source "/Users/tball/.shopify-cli/shopify.sh"
+[ -f "/Users/tball/.shopify-app-cli/shopify.sh" ] && source "/Users/tball/.shopify-app-cli/shopify.sh"

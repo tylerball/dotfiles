@@ -33,11 +33,11 @@ homebrew_apps:
   - chruby
   - hub
   - mosh
+  - go
 
 homebrew_cask_apps:
   - tunnelblick
   - hammerspoon
-  - zplug
   - java
   - resilio-sync
   - dash
