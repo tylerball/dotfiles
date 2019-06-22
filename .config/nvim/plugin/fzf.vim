@@ -1,8 +1,8 @@
 nnoremap <leader>a :Rg<Space>
-nnoremap <C-b> :Buffers<CR>
-nnoremap <C-f> :Lines<CR>
-nnoremap <leader>m :History<CR>
-nnoremap <C-p> :FZF<cr>
+nnoremap <C-b> :Buffers<CR><C-\><C-n>0i
+nnoremap <C-f> :Lines<CR><C-\><C-n>0i
+nnoremap <leader>m :History<CR><C-\><C-n>0i
+nnoremap <C-p> :FZF<cr><C-\><C-n>0i
 
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
