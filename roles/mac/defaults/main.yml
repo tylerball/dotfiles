@@ -1,6 +1,7 @@
 homebrew_taps:
   - homebrew/versions
   - homebrew/dupes
+  - homebrew/cask-fonts
   - caskroom/cask
   - neovim/neovim
   - colinstein/imgcat
@@ -45,6 +46,7 @@ homebrew_cask_apps:
   - spotify
   - notion
   - syncthing
+  - homebrew/cask-fonts/font-hack
 
 mas_apps:
   - 890031187 # Marked 2

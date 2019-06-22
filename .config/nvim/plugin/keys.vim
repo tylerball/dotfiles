@@ -30,3 +30,5 @@ cmap w!! w !sudo tee % >/dev/null
 nmap Q <nop>
 
 cnoremap <C-a> <Home>
+
+vnoremap π "_dP
