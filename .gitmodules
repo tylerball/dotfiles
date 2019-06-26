@@ -22,33 +22,33 @@
 [submodule ".tmux/plugins/tmux-yank"]
 	path = .tmux/plugins/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank.git
-[submodule "/Users/tball/.zsh/plugins/zsh-autoenv"]
-	path = /Users/tball/.zsh/plugins/zsh-autoenv
+[submodule ".zsh/plugins/zsh-autoenv"]
+	path = .zsh/plugins/zsh-autoenv
 	url = https://github.com/Tarrasch/zsh-autoenv.git
-[submodule "/Users/tball/.zsh/plugins/zsh-autosuggestions"]
-	path = /Users/tball/.zsh/plugins/zsh-autosuggestions
+[submodule ".zsh/plugins/zsh-autosuggestions"]
+	path = .zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "/Users/tball/.zsh/plugins/zsh-completions"]
-	path = /Users/tball/.zsh/plugins/zsh-completions
+[submodule ".zsh/plugins/zsh-completions"]
+	path = .zsh/plugins/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions.git
-[submodule "/Users/tball/.zsh/plugins/base16-shell"]
-	path = /Users/tball/.zsh/plugins/base16-shell
+[submodule ".zsh/plugins/base16-shell"]
+	path = .zsh/plugins/base16-shell
 	url = https://github.com/chriskempson/base16-shell.git
-[submodule "/Users/tball/.zsh/plugins/spaceship-prompt"]
-	path = /Users/tball/.zsh/plugins/spaceship-prompt
+[submodule ".zsh/plugins/spaceship-prompt"]
+	path = .zsh/plugins/spaceship-prompt
 	url = https://github.com/denysdovhan/spaceship-prompt.git
-[submodule "/Users/tball/.zsh/plugins/zsh-vim-mode"]
-	path = /Users/tball/.zsh/plugins/zsh-vim-mode
+[submodule ".zsh/plugins/zsh-vim-mode"]
+	path = .zsh/plugins/zsh-vim-mode
 	url = https://github.com/sharat87/zsh-vim-mode.git
-[submodule "/Users/tball/.zsh/plugins/enhancd"]
-	path = /Users/tball/.zsh/plugins/enhancd
+[submodule ".zsh/plugins/enhancd"]
+	path = .zsh/plugins/enhancd
 	url = https://github.com/b4b4r07/enhancd.git
-[submodule "/Users/tball/.zsh/plugins/zsh-syntax-highlighting"]
-	path = /Users/tball/.zsh/plugins/zsh-syntax-highlighting
+[submodule ".zsh/plugins/zsh-syntax-highlighting"]
+	path = .zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "/Users/tball/.zsh/plugins/zsh-history-substring-search"]
-	path = /Users/tball/.zsh/plugins/zsh-history-substring-search
+[submodule ".zsh/plugins/zsh-history-substring-search"]
+	path = .zsh/plugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
-[submodule "/Users/tball/.zsh/plugins/fzf"]
-	path = /Users/tball/.zsh/plugins/fzf
+[submodule ".zsh/plugins/fzf"]
+	path = .zsh/plugins/fzf
 	url = https://github.com/junegunn/fzf.git
