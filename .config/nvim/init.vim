@@ -11,6 +11,8 @@ call plug#begin('~/.config/nvim/bundle')
 
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
+Plug 'Shopify/shadowenv.vim'
+Plug 'xolox/vim-misc'
 
 " Completion
 Plug 'autozimu/LanguageClient-neovim', {
@@ -33,6 +35,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'djoshea/vim-autoread'
 Plug 'tpope/vim-eunuch'
 Plug 'justinmk/vim-dirvish'
+Plug 'xolox/vim-notes'
 
 "version control
 Plug 'tpope/vim-fugitive'

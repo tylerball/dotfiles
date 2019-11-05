@@ -72,3 +72,6 @@ nmap <localleader>a :ALEDetail<cr>
 nmap <localleader>F :ALEFix<cr>
 
 let test#custom_runners = {'typescript': ['Dev']}
+
+let g:notes_directories = [ $HOME . '/Library/Mobile\ Documents/com~apple~CloudDocs/notes' ]
+let g:notes_suffix = '.md'
