@@ -6,7 +6,6 @@ local apps = {
   e = 'Messages',
   s = 'Slack',
   f = 'Finder',
-  u = 'iTunes',
   c = 'Fantastical 2',
   r = 'Reminders',
   a = 'Firefox',
@@ -34,3 +33,13 @@ hs.hotkey.bind({'cmd', 'shift'}, 'w', function ()
     hs.application.frontmostApplication():selectMenuItem({'File', 'Close Window'})
   end
 end)
+
+if hs.host.operatingSystemVersion()['minor'] >= 15 then
+  hs.hotkey.bind(modifier, 'u', function()
+    hs.application.launchOrFocus('Music')
+  end)
+else
+  hs.hotkey.bind(modifier, 'u', function()
+    hs.application.launchOrFocus('iTunes')
+  end)
+end
