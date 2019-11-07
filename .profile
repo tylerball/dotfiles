@@ -31,3 +31,4 @@ umask 0002
 alias runserver='./manage.py runserver 0:8000'
 alias macmount='sudo mount -t vboxsf -o rw,uid=1000,gid=1000 mac /home/tball/mac'
 export PATH="$HOME/.cargo/bin:$PATH"
+if [ -e /Users/tball/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/tball/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

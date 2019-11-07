@@ -6,6 +6,7 @@
 [core]
   autocrlf = false
   hooksPath = ~/.config/git/hooks
+	commitGraph = true
 [push]
   default = current
 [pull]
@@ -48,8 +49,12 @@
 ; 	version = 2
 [credential]
 	helper = osxkeychain
+[protocol]
+	version = 2
+[gc]
+	writeCommitGraph = true
 [url "https://github.com/Shopify/"]
 	insteadOf = git@github.com:Shopify/
 	insteadOf = git@github.com:shopify/
-[protocol]
-	version = 2
+	insteadOf = ssh://git@github.com/Shopify/
+	insteadOf = ssh://git@github.com/shopify/
