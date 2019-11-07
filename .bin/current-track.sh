@@ -2,8 +2,14 @@
 if [ -z `which osascript` ]; then
   exit 0
 fi
-OUTPUT=$(osascript <<-EOF
-tell app "iTunes"
+os=$(defaults read loginwindow SystemVersionStampAsString)
+itunes="iTunes"
+if [[ $os =~ "10.15" ]]; then
+  itunes="Music"
+fi
+
+OUTPUT=$(osascript <<-END
+tell app "$itunes"
   if it is running then
     if player state is playing then
       set track_name to name of current track
@@ -17,7 +23,7 @@ tell app "iTunes"
     end if
   end if
 end tell
-EOF)
+END)
 
 if [ -z "$OUTPUT" ]; then
   OUTPUT=$(osascript <<-END
