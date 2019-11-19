@@ -1,9 +1,0 @@
-#
-# Automounter master map
-#
-+auto_master		# Use directory service
-/net			-hosts		-nobrowse,hidefromfinder,nosuid
-/home			auto_home	-nobrowse,hidefromfinder
-/Network/Servers	-fstab
-/-			-static
-/mnt/klein		auto_klein

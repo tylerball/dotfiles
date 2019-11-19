@@ -1,7 +1,0 @@
-{
-    "extends": "plugin:shopify/esnext",
-    "env": {
-      "browser":true,
-      "es6":true
-    }
-}

@@ -1,3 +1,0 @@
-- name: load launchctl
-  shell: launchctl load ~/Library/LaunchAgents/{{ item }}
-  with_fileglob: "*.plist"

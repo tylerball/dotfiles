@@ -1,8 +1,0 @@
-user_interface = alternative
-media_library_primary_tag = album_artist
-ignore_leading_the = yes
-
-main_window_color = white
-browser_sort_format = {%A - }{%t}|{%f} {(%l)}
-song_list_format = {%A - }{%b - }{%t}|{$8%f$9}$R{$3(%l)$9}
-alternative_header_second_line_format = {{$7$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
