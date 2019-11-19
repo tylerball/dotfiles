@@ -1,0 +1,6 @@
+dot_zsh/plugins/*
+dot_tmux/plugins/*
+dot_tmux/resurrect/*
+dot_config/nvim/autoload/plug.vim
+dot_config/nvim/bundle/*
+dot_bin/executable_chezmoi
