@@ -52,3 +52,6 @@
 [submodule "dot_zsh/plugins/fzf"]
 	path = dot_zsh/plugins/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "git"]
+	path = git
+	url = https://github.com/tmux-plugins/tmux-sensible.git
