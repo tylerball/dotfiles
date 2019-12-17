@@ -9,3 +9,5 @@ setlocal spell
 
 " vim-marked
 nnoremap <localleader>m :MarkedOpen<cr>
+
+let g:vim_markdown_new_list_item_indent = 0
