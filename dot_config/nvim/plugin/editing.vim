@@ -80,3 +80,8 @@ let g:nv_search_paths = [ $HOME . '/Library/Mobile Documents/com~apple~CloudDocs
 let g:nv_ignore_pattern = ['*.vim']
 let g:nv_preview_direction = 'down'
 let g:nv_window_command = 'aboveleft'
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
