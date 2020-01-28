@@ -11,7 +11,10 @@ if [[ ! -x `which brew` ]]; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 brew update
-brew tap homebrew/cask neovim/neovim homebrew/cask-fonts
+brew tap homebrew/cask
+brew tap neovim/neovim
+brew tap homebrew/cask-fonts
+brew tap Goles/battery
 brew install git \
   node \
   python \
@@ -37,6 +40,8 @@ brew install git \
   chruby \
   hub \
   mosh \
+  tinc \
+  battery \
   go
 brew cask install tunnelblick \
   hammerspoon \
