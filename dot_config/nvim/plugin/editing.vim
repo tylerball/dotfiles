@@ -65,12 +65,6 @@ let g:ale_fixers = {
 \   ],
 \}
 
-let g:ale_sign_error = '●'
-let g:ale_sign_warning = '○'
-
-nmap <localleader>a :ALEDetail<cr>
-nmap <localleader>F :ALEFix<cr>
-
 let test#custom_runners = {'typescript': ['Dev']}
 
 let g:notes_directories = [ $HOME . '/Library/Mobile Documents/com~apple~CloudDocs/notes' ]
@@ -83,5 +77,5 @@ let g:nv_window_command = 'aboveleft'
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <localleader>f  <Plug>(coc-format-selected)
+nmap <localleader>f  <Plug>(coc-format-selected)

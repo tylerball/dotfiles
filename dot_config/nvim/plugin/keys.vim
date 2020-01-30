@@ -32,8 +32,6 @@ nmap Q <nop>
 cnoremap <C-a> <Home>
 
 " paste overtop of visually highlighted text without deleting/yanking
-nnoremap d "_d
-nnoremap D "_D
 nnoremap c "_c
 vnoremap c "_c
 nnoremap C "_C
