@@ -12,3 +12,4 @@ Session.vim
 site.retry
 node_modules
 yarn-error.log
+.undodir/
