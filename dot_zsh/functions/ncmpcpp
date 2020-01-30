@@ -4,9 +4,9 @@ function ncmpcpp {
     mpd
   fi
   if [[ -z `pgrep ncmpcpp` ]]; then
-    /usr/local/bin/ncmpcpp --host "${MPD_PASS}@home.tylerball.net" "$@"
+    /usr/local/bin/ncmpcpp --host "${MPD_PASS}@2030davenport.com" "$@"
   else
-    killall ncmpcpp && /usr/local/bin/ncmpcpp --host "${MPD_PASS}@home.tylerball.net"
+    killall ncmpcpp && /usr/local/bin/ncmpcpp --host "${MPD_PASS}@2030davenport.com"
   fi
 }
 # vim:ft=zsh

@@ -1,3 +1,4 @@
 dot_tmux/resurrect/*
 dot_config/nvim/autoload/plug.vim
 dot_bin/executable_chezmoi
+dot_config/nvim/bundle
