@@ -51,10 +51,6 @@ set dictionary=/usr/share/dict/words
 " vim-trailing-whitespace
 nnoremap <localleader>w :FixWhitespace<cr>
 
-" vim-autoread
-let autoreadargs={'autoread':1}
-au BufRead,BufNewFile * :silent! execute WatchForChanges("*", autoreadargs)
-
 let g:ale_linters = {
 \   'graphql': ['prettier'],
 \}
