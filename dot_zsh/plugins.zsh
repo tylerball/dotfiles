@@ -18,6 +18,7 @@ export ENHANCD_FILTER='fzf'
 export ENHANCD_DOT_SHOW_FULLPATH=1
 export BASE16_SCHEME="material-darker"
 export FZF_DEFAULT_OPTS='--bind ctrl-d:page-down,ctrl-u:page-up'
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
 export SPACESHIP_ROOT="$PLUGIN_HOME/spaceship-prompt"
 
 zle -N history-substring-search-up
