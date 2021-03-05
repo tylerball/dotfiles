@@ -9,6 +9,12 @@ require 'battery'
 require 'nightshift'
 
 hs.loadSpoon('ControlEscape'):start()
+local VimMode = hs.loadSpoon('VimMode')
+local vim = VimMode:new()
+vim
+  :disableForApp('iTerm')
+  :shouldDimScreenInNormalMode(false)
+  :enterWithSequence('jk')
 
 hs.settings.set('modifier', {'cmd', 'shift', 'ctrl'})
 hs.settings.set('NightShift:ignoredApps', {
@@ -24,3 +30,9 @@ hs.audiodevice.watcher.setCallback(function ()
   end
 end)
 hs.audiodevice.watcher.start()
+
+local ctrlDoublePress = require('doubletap')
+ctrlDoublePress.timeFrame = 2
+ctrlDoublePress.action = function()
+  vim:setInsertMode()
+end
