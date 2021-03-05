@@ -23,6 +23,8 @@ path=(
   $HOME/.bin
   ./node_modules/.bin
   $HOME/.local/bin
+  /usr/local/go/bin
+  $HOME/go/bin
   $path
 )
 
