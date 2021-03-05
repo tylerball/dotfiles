@@ -32,4 +32,4 @@ function {
 
 [ -f "/usr/local/share/chruby/chruby.sh" ] && source "/usr/local/share/chruby/chruby.sh"
 
-[ -x `which pyenv` ] && eval "$(pyenv init -)"
+[[ -x `which pyenv` ]] && eval "$(pyenv init -)"

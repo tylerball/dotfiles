@@ -45,12 +45,8 @@
   smudge = git-media-smudge %f
 [diff]
 	algorithm = patience
-; [protocol]
-; 	version = 2
 [credential]
 	helper = osxkeychain
-[protocol]
-	version = 2
 [gc]
 	writeCommitGraph = true
 [url "https://github.com/Shopify/"]
