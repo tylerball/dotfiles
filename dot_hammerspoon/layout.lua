@@ -2,6 +2,8 @@ utils = require 'utils'
 
 hs.grid.setGrid('6x6')
 
+hs.window.animationDuration = 0
+
 layout = {}
 layout.GRIDHEIGHT = 6
 layout.GRIDWIDTH = 6
@@ -216,7 +218,6 @@ end)
 local fullScreensRightOffice = {
   'Safari',
   'Notion',
-  'Spotify',
   'iTunes',
 }
 

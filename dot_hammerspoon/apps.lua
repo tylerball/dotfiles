@@ -10,7 +10,6 @@ local apps = {
   r = 'Reminders',
   a = 'Firefox',
   w = 'Google Chrome',
-  p = 'Spotify',
   z = 'Safari',
   n = 'Notes',
 }

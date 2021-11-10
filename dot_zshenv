@@ -2,6 +2,7 @@
 
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
+  export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 fi
 
 if [[ -x `which nvim` ]]; then
@@ -25,6 +26,7 @@ path=(
   $HOME/.local/bin
   /usr/local/go/bin
   $HOME/go/bin
+  /usr/local/opt/gnu-tar/libexec/gnubin
   $path
 )
 
