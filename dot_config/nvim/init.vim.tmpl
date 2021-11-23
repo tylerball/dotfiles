@@ -5,6 +5,8 @@ let maplocalleader = "\\"
 
 let g:python3_host_prog = $HOME."/.config/nvim/virtualenv/bin/python3"
 
+lua require('plugins')
+
 call plug#begin('~/.config/nvim/bundle')
 
 Plug 'MarcWeber/vim-addon-mw-utils'
