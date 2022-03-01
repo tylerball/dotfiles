@@ -1,6 +1,5 @@
 require 'settings'
 require 'layout'
-require 'urls'
 require 'apps'
 require 'itunes'
 require 'music'
