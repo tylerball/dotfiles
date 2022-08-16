@@ -12,9 +12,6 @@ call plug#begin('~/.config/nvim/bundle')
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 
-" Completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 " Syntaxes
 Plug 'editorconfig/editorconfig-vim'
 Plug 'sheerun/vim-polyglot'
@@ -23,8 +20,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'sjl/gundo.vim'
 
 " Files
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'djoshea/vim-autoread'
 Plug 'tpope/vim-eunuch'
 Plug 'justinmk/vim-dirvish'
@@ -43,7 +38,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'mattn/emmet-vim'
-Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-unimpaired'
 Plug 'michaeljsmith/vim-indent-object'
@@ -54,7 +48,6 @@ Plug 'junegunn/vim-peekaboo'
 " Testing
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
-Plug 'janko-m/vim-test'
 
 " UI
 if system('uname') == 'Darwin\n'
@@ -93,3 +86,5 @@ nmap <silent> <localleader>g :TestVisit<CR>
 let test#strategy = "dispatch"
 
 set exrc
+
+autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path "%"

@@ -1,8 +1,6 @@
-nnoremap <leader>a :Rg<Space>
-nnoremap <C-b> :Buffers<CR><C-\><C-n>0i
-nnoremap <C-f> :Lines<CR><C-\><C-n>0i
-nnoremap <leader>m :History<CR><C-\><C-n>0i
-nnoremap <C-p> :FZF<cr><C-\><C-n>0i
+nnoremap <C-p> :Telescope find_files<cr>
+nnoremap <leader>a :Telescope live_grep<cr>
+nnoremap <C-b> :Telescope buffers<CR>
 
 function! s:build_quickfix_list(lines)
    call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
