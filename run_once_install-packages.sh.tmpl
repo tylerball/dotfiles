@@ -10,55 +10,59 @@ fi
 if [[ ! -x `which brew` ]]; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
-brew update
-brew tap homebrew/cask
-brew tap neovim/neovim
-brew tap homebrew/cask-fonts
-brew tap Goles/battery
-brew install git \
-  node \
-  python \
-  tmux \
-  tree \
-  zsh \
-  fasd \
-  mpd \
-  mpc \
-  ncmpcpp \
-  fzf \
-  gawk \
-  neovim \
-  ansiweather \
-  exif \
-  mackup \
-  ripgrep \
-  reattach-to-user-namespace \
-  mas \
-  urlview \
-  ranger \
-  ruby-install \
-  chruby \
-  hub \
-  mosh \
-  tinc \
-  battery \
-  go \
-  github/gh/gh \
-  telnet
+brew bundle --no-lock --file=/dev/stdin <<EOF
+tap "homebrew/cask"
+tap "neovim/neovim"
+tap "homebrew/cask-fonts"
+tap "Goles/battery"
 
-brew install --cask \
-  hammerspoon \
-  dash \
-  alfred \
-  iterm2 \
-  syncthing \
-  homebrew/cask-fonts/font-hack \
-  tailscale
+brew "git"
+brew "git"
+brew "node"
+brew "python"
+brew "tmux"
+brew "tree"
+brew "zsh"
+brew "fasd"
+brew "mpd"
+brew "mpc"
+brew "ncmpcpp"
+brew "fzf"
+brew "gawk"
+brew "neovim"
+brew "ansiweather"
+brew "exif"
+brew "mackup"
+brew "ripgrep"
+brew "reattach-to-user-namespace"
+brew "mas"
+brew "urlview"
+brew "ranger"
+brew "ruby-install"
+brew "chruby"
+brew "hub"
+brew "mosh"
+brew "tinc"
+brew "battery"
+brew "go"
+brew "github/gh/gh"
+brew "telnet"
 
-mas install 890031187 # Marked 2
-mas install 411643860 # DaisyDisk
-mas install 557168941 # Tweetbot
-mas install 413965349 # Soulver
-mas install 1435957248 # Drafts
+cask "hammerspoon"
+cask "dash"
+cask "alfred"
+cask "iterm2"
+cask "syncthing"
+cask "homebrew/cask-fonts/font-hack"
+cask "tailscale"
+cask "roon"
+
+mas "1Password for Safari", id: 1569813296
+mas "DaisyDisk", id: 411643860
+mas "Drafts", id: 1435957248
+mas "Marked 2", id: 890031187
+mas "Soulver 2", id: 413965349
+mas "Tweetbot", id: 557168941
+EOF
 
 {{ end -}}
