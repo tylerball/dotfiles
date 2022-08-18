@@ -1,0 +1,106 @@
+[".local/share/nvim/site/pack/packer/start/packer.nvim"]
+  type = "archive"
+  url = "https://github.com/wbthomason/packer.nvim/archive/master.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "168h"
+[".tmux/plugins/tpm"]
+  type = "git-repo"
+  url = "https://github.com/tmux-plugins/tpm.git"
+  exact = true
+  refreshPeriod = "168h"
+[".tmux/plugins/extrakto"]
+  type = "git-repo"
+  url = "https://github.com/laktak/extrakto.git"
+  exact = true
+  refreshPeriod = "168h"
+[".tmux/plugins/tmux-pain-control"]
+  type = "git-repo"
+  url = "https://github.com/tmux-plugins/tmux-pain-control.git"
+  exact = true
+  refreshPeriod = "168h"
+[".tmux/plugins/tmux-resurrect"]
+  type = "git-repo"
+  url = "https://github.com/tmux-plugins/tmux-resurrect.git"
+  exact = true
+  refreshPeriod = "168h"
+[".tmux/plugins/tmux-better-mouse-mode"]
+  type = "git-repo"
+  url = "https://github.com/NHDaly/tmux-better-mouse-mode.git"
+  exact = true
+  refreshPeriod = "168h"
+[".tmux/plugins/vim-tmux-navigator"]
+  type = "git-repo"
+  url = "https://github.com/christoomey/vim-tmux-navigator.git"
+  exact = true
+  refreshPeriod = "168h"
+[".tmux/plugins/tmux-yank"]
+  type = "git-repo"
+  url = "https://github.com/tmux-plugins/tmux-yank.git"
+  exact = true
+  refreshPeriod = "168h"
+["https:/hub.com/tmux-plugins/tmux-yank.git"]
+  type = "git-repo"
+  url = "https://github.com/christoomey/vim-tmux-navigator.git"
+  exact = true
+  refreshPeriod = "168h"
+[".tmux/plugins/tmux-sensible"]
+  type = "git-repo"
+  url = "https://github.com/tmux-plugins/tmux-sensible.git"
+  exact = true
+  refreshPeriod = "168h"
+[".zsh/plugins/zsh-autoenv"]
+  type = "git-repo"
+  url = "https://github.com/Tarrasch/zsh-autoenv.git"
+  exact = true
+  refreshPeriod = "168h"
+[".zsh/plugins/zsh-autosuggestions"]
+  type = "git-repo"
+  url = "https://github.com/zsh-users/zsh-autosuggestions.git"
+  exact = true
+  refreshPeriod = "168h"
+[".zsh/plugins/zsh-completions"]
+  type = "git-repo"
+  url = "https://github.com/zsh-users/zsh-completions.git"
+  exact = true
+  refreshPeriod = "168h"
+[".zsh/plugins/base16-shell"]
+  type = "git-repo"
+  url = "https://github.com/chriskempson/base16-shell.git"
+  exact = true
+  refreshPeriod = "168h"
+[".zsh/plugins/spaceship-prompt"]
+  type = "git-repo"
+  url = "https://github.com/denysdovhan/spaceship-prompt.git"
+  exact = true
+  refreshPeriod = "168h"
+[".zsh/plugins/zsh-vim-mode"]
+  type = "git-repo"
+  url = "https://github.com/sharat87/zsh-vim-mode.git"
+  exact = true
+  refreshPeriod = "168h"
+[".zsh/plugins/enhancd"]
+  type = "git-repo"
+  url = "https://github.com/b4b4r07/enhancd.git"
+  exact = true
+  refreshPeriod = "168h"
+[".zsh/plugins/zsh-syntax-highlighting"]
+  type = "git-repo"
+  url = "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+  exact = true
+  refreshPeriod = "168h"
+[".zsh/plugins/zsh-history-substring-search"]
+  type = "git-repo"
+  url = "https://github.com/zsh-users/zsh-history-substring-search.git"
+  exact = true
+  refreshPeriod = "168h"
+[".zsh/plugins/fzf"]
+  type = "git-repo"
+  url = "https://github.com/junegunn/fzf.git"
+  exact = true
+  refreshPeriod = "168h"
+[".hammerspoon/Spoons/VimMode.spoon"]
+  type = "git-repo"
+  url = "https://github.com/dbalatero/VimMode.spoon.git"
+  exact = true
+  refreshPeriod = "168h"

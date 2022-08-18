@@ -62,19 +62,3 @@ mas install 413965349 # Soulver
 mas install 1435957248 # Drafts
 
 {{ end -}}
-
-if [[ ! -f $HOME/.local/share/nvim/site/pack/packer/opt/packer.nvim ]]; then
-  mkdir -p $HOME/.local/share/nvim/site/pack/packer/opt
-  git clone --depth 1 https://github.com/wbthomason/packer.nvim > $HOME/.local/share/nvim/site/pack/packer/opt/packer.nvim
-fi
-
-while read line; do
-  DEST="$(cut -d',' -f1 <<<"$line")"
-  URL="$(cut -d',' -f2 <<<"$line")"
-  echo $URL
-  if [[ -d $DEST ]]; then
-    git --work-tree $DEST --git-dir $DEST/.git pull origin master
-  else
-    git clone "${URL}" "${HOME}/${DEST}"
-  fi
-done < "$(chezmoi source-path)/plugins.csv"
