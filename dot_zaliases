@@ -70,7 +70,7 @@ alias l='ls -1A'
 alias ll='ls -lh'
 
 # music
-alias djm="beet modify dj=true -y"
+alias djm="beet modify dj=true"
 alias m="~/.bin/mpc"
 
 # vim:ft=zsh
