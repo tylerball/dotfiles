@@ -4,8 +4,6 @@ require 'apps'
 require 'itunes'
 require 'music'
 require 'caffeine'
-require 'battery'
-require 'nightshift'
 
 hs.loadSpoon('ControlEscape'):start()
 local VimMode = hs.loadSpoon('VimMode')
@@ -13,13 +11,9 @@ local vim = VimMode:new()
 vim
   :disableForApp('iTerm')
   :shouldDimScreenInNormalMode(false)
-  :enterWithSequence('jk')
+  :enterWithSequence('kj')
 
 hs.settings.set('modifier', {'cmd', 'shift', 'ctrl'})
-hs.settings.set('NightShift:ignoredApps', {
-  'Lightroom',
-  'Adobe Premiere Pro CC 2015',
-})
 
 hs.pathwatcher.new(hs.configdir .. '/', hs.reload):start()
 
