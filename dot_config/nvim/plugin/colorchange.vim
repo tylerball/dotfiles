@@ -3,10 +3,6 @@ function! s:setup_color()
   exec "hi LineNr guibg=#" . g:base16_gui00
   exec "hi VertSplit guibg=#" . g:base16_gui00 . " guifg=#" . g:base16_gui00
   exec "hi LineNr guibg=#" . g:base16_gui00
-  exec "hi GitGutterAdd guibg=#" . g:base16_gui00
-  exec "hi GitGutterChange guibg=#" . g:base16_gui00
-  exec "hi GitGutterDelete guibg=#" . g:base16_gui00
-  exec "hi GitGutterChangeDelete guibg=#" . g:base16_gui00
   exec "hi StatusLineNC guibg=#" . g:base16_gui00
   exec "hi LightlineMiddle_normal guibg=#" . g:base16_gui00
   exec "hi LightlineMiddle_inactive guibg=#" . g:base16_gui00 . " guifg=#" . g:base16_gui04

@@ -9,5 +9,3 @@ nmap <localleader>d d2f"<left>x<right>
 imap <c-_> <C-X><C-O>
 
 setlocal foldmethod=indent
-
-setlocal omnifunc=htmlcomplete#CompleteTags
