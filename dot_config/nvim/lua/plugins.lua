@@ -10,6 +10,8 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/nvim-cmp'
+  use "rafamadriz/friendly-snippets"
+  use 'hrsh7th/vim-vsnip'
 
   -- editing
   use "McAuleyPenney/tidy.nvim"

@@ -11,6 +11,8 @@ lua require('gitsigns').setup()
 
 lua require('lsp')
 
+lua require('completion')
+
 " vim-test
 nmap <silent> <localleader>t :TestNearest<CR>
 nmap <silent> <localleader>T :TestFile<CR>
