@@ -14,6 +14,7 @@ return require('packer').startup(function()
   use 'hrsh7th/vim-vsnip'
 
   -- editing
+  use 'sheerun/vim-polyglot'
   use "McAuleyPenney/tidy.nvim"
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
