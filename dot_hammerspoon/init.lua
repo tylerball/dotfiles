@@ -10,6 +10,7 @@ local VimMode = hs.loadSpoon('VimMode')
 local vim = VimMode:new()
 vim
   :disableForApp('iTerm')
+  :disableForApp('Screen Sharing')
   :shouldDimScreenInNormalMode(false)
   :enterWithSequence('kj')
 
