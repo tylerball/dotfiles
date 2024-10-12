@@ -11,9 +11,7 @@ if [[ -x `which nvim` ]]; then
 fi
 export PAGER='less'
 
-if [[ -z "$LANG" ]]; then
-  export LANG='en_US.UTF-8'
-fi
+export LANG='en_US.UTF-8'
 
 typeset -gU cdpath fpath mailpath path
 
