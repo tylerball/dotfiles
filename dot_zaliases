@@ -59,6 +59,7 @@ alias bi="bundle check || bundle install --jobs=4"
 alias rt="be ruby -Itest"
 
 alias dc="docker-compose"
+alias sdc="sudo docker-compose"
 
 alias light='base16_tomorrow'
 alias dark='base16_tomorrow-night'
@@ -72,5 +73,7 @@ alias ll='ls -lh'
 # music
 alias djm="beet modify dj=true"
 alias m="~/.bin/mpc"
+
+alias rgr="ranger"
 
 # vim:ft=zsh
