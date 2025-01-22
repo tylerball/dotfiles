@@ -1,7 +1,4 @@
-require 'layout'
-
 hs.loadSpoon('ControlEscape'):start()
-hs.settings.set('modifier', {'cmd', 'shift', 'ctrl'})
 
 hs.pathwatcher.new(hs.configdir .. '/', hs.reload):start()
 
