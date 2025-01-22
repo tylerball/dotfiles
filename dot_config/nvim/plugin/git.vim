@@ -1,7 +1,8 @@
 " Fugitive
-nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gs :Neogit kind=split_below_all<cr>
 nnoremap <leader>gd :DiffviewOpen<cr>
 nnoremap <leader>ga :Gwrite<cr>
-nnoremap <leader>gc :Gcommit
-nnoremap <leader>gb :Gblame<cr>
-nnoremap <leader>gl :Glog<cr>:copen<cr>
+nnoremap <leader>gc :Neogit commit<cr>
+nnoremap <leader>gl :Neogit log --% l<cr>
+
+autocmd FileType diffview nmap <buffer> q :DiffviewClose<CR>

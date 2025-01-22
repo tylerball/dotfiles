@@ -32,7 +32,7 @@ return require('packer').startup(function()
 
   -- files
   use 'tpope/vim-eunuch'
-  use 'justinmk/vim-dirvish'
+  use 'tamago324/lir.nvim'
 
   use {
     'nvim-telescope/telescope.nvim',
@@ -72,5 +72,10 @@ return require('packer').startup(function()
     config = function()
       -- config goes here
     end,
+  }
+
+  use {
+    'xvzc/chezmoi.nvim',
+    requires = { 'nvim-lua/plenary.nvim' }
   }
 end)

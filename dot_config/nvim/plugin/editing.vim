@@ -60,14 +60,6 @@ let g:ale_fixers = {
 
 let test#custom_runners = {'typescript': ['Dev']}
 
-let g:notes_directories = [ $HOME . '/Library/Mobile Documents/com~apple~CloudDocs/notes' ]
-let g:notes_suffix = '.md'
-
-let g:nv_search_paths = [ $HOME . '/Library/Mobile Documents/com~apple~CloudDocs/notes' ]
-let g:nv_ignore_pattern = ['*.vim']
-let g:nv_preview_direction = 'down'
-let g:nv_window_command = 'aboveleft'
-
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 xmap <localleader>f  <Plug>(coc-format-selected)
