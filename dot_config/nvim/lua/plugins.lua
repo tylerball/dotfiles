@@ -55,10 +55,8 @@ return require('packer').startup(function()
       require('neogit').setup({})
     end
   }
-
-  use {
-    'lewis6991/gitsigns.nvim',
-  }
+  use "sindrets/diffview.nvim"
+  use 'lewis6991/gitsigns.nvim'
 
   use {
     'rmagatti/auto-session',
