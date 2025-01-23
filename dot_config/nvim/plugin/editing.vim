@@ -47,20 +47,3 @@ nnoremap N Nzzzv
 set formatoptions=clt " see http://vimdoc.sourceforge.net/htmldoc/change.html#fo-table
 
 set dictionary=/usr/share/dict/words
-
-let g:ale_linters = {
-\   'graphql': ['prettier'],
-\}
-
-let g:ale_fixers = {
-\   'typescript': [
-\       'prettier',
-\   ],
-\}
-
-let test#custom_runners = {'typescript': ['Dev']}
-
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-xmap <localleader>f  <Plug>(coc-format-selected)
-nmap <localleader>f  <Plug>(coc-format-selected)

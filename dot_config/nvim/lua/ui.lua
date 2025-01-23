@@ -14,6 +14,7 @@ local actions = require('lir.actions')
 require('lir').setup({
   mappings = {
     ['l'] = actions.edit,
+    ['v'] = actions.vsplit,
     ['-'] = actions.up,
     ['h'] = actions.up,
     ['q'] = actions.quit,
@@ -21,9 +22,11 @@ require('lir').setup({
     ['N'] = actions.newfile,
     ['R'] = actions.rename,
     ['Y'] = actions.yank_path,
-    ['.'] = actions.toggle_show_hidden
+    ['.'] = actions.toggle_show_hidden,
+    ['dd'] = actions.delete,
   }
 })
 
 vim.cmd "nmap - :e %:h<cr>"
+vim.cmd "autocmd FileType lir nmap <buffer> e :e <C-R>=expand('%') . '/'<CR>"
 vim.cmd "autocmd FileType lir nmap <buffer> e :e <C-R>=expand('%') . '/'<CR>"
