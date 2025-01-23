@@ -1,7 +1,6 @@
 [".local/share/nvim/site/pack/packer/start/packer.nvim"]
   type = "archive"
   url = "https://github.com/wbthomason/packer.nvim/archive/master.tar.gz"
-  exact = true
   stripComponents = 1
   refreshPeriod = "168h"
 [".tmux/plugins/tpm"]

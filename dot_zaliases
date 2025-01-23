@@ -75,5 +75,6 @@ alias djm="beet modify dj=true"
 alias m="~/.bin/mpc"
 
 alias rgr="ranger"
+alias y="yazi"
 
 # vim:ft=zsh
