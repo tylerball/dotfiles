@@ -1,0 +1,24 @@
+[[manager.prepend_keymap]]
+on   = "E"
+run  = "shell 'find . -empty -type d -delete'"
+desc = "delete empty directories"
+
+[[manager.prepend_keymap]]
+on   = ["b", "i"]
+run  = '''shell --block 'beet import "$@"''''
+desc = "beet import"
+
+[[manager.prepend_keymap]]
+on   = ["b", "t"]
+run  = '''shell --block 'beet import -s "$@"''''
+desc = "beet import single"
+
+[[manager.prepend_keymap]]
+on   = ["b", "j", "a"]
+run  = '''shell --block 'beet import --set=dj=true "$@"''''
+desc = "beet import DJ"
+
+[[manager.prepend_keymap]]
+on   = ["b", "j", "t"]
+run  = '''shell --block 'beet import -s --set=dj=true "$@"''''
+desc = "beet import DJ single"
