@@ -78,11 +78,6 @@
   url = "https://github.com/sharat87/zsh-vim-mode.git"
   exact = true
   refreshPeriod = "168h"
-[".zsh/plugins/enhancd"]
-  type = "git-repo"
-  url = "https://github.com/b4b4r07/enhancd.git"
-  exact = true
-  refreshPeriod = "168h"
 [".zsh/plugins/zsh-syntax-highlighting"]
   type = "git-repo"
   url = "https://github.com/zsh-users/zsh-syntax-highlighting.git"

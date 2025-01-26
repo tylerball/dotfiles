@@ -14,8 +14,6 @@ function plugin() {
   fi
 }
 
-export ENHANCD_FILTER='fzf'
-export ENHANCD_DOT_SHOW_FULLPATH=1
 export BASE16_SCHEME="material-darker"
 export FZF_DEFAULT_OPTS='--bind ctrl-d:page-down,ctrl-u:page-up'
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
@@ -32,7 +30,6 @@ plugin "k"
 plugin "zsh-autosuggestions"
 plugin "zsh-completions"
 plugin "base16-shell"
-plugin "enhancd"
 plugin "zsh-vim-mode"
 plugin "zsh-syntax-highlighting"
 plugin "zsh-history-substring-search"

@@ -41,3 +41,4 @@ if [ -f "/usr/local/share/chruby/chruby.sh" ]; then
 fi
 
 [[ -x `which pyenv` ]] && eval "$(pyenv init -)"
+[[ -x `which zoxide` ]] && eval "$(zoxide init zsh)"
